@@ -1,0 +1,2596 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>阿坝高三英语冲刺 · 本科上岸</title>
+<style>
+  :root{
+    --bg:#f4f6fb; --card:#ffffff; --ink:#1e293b; --sub:#64748b; --line:#e2e8f0;
+    --blue:#2563eb; --blue-l:#dbeafe; --amber:#d97706; --amber-l:#fef3c7;
+    --green:#059669; --green-l:#d1fae5; --red:#dc2626; --red-l:#fee2e2;
+    --purple:#7c3aed; --purple-l:#ede9fe;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+    background:var(--bg); color:var(--ink); font-size:15px; line-height:1.6;
+  }
+  .wrap{max-width:880px; margin:0 auto; padding:0 12px 80px;}
+  /* ---------- header ---------- */
+  header.top{
+    background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);
+    color:#fff; padding:14px 16px 12px; position:sticky; top:0; z-index:50;
+    box-shadow:0 2px 12px rgba(30,64,175,.25);
+  }
+  .top-row{max-width:880px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;}
+  .brand{font-size:17px; font-weight:700; letter-spacing:.5px;}
+  .brand small{display:block; font-size:11px; font-weight:400; opacity:.85;}
+  .countdown{background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35); border-radius:12px; padding:6px 14px; text-align:center;}
+  .countdown b{font-size:24px; display:block; line-height:1.1;}
+  .countdown span{font-size:11px; opacity:.9;}
+  /* ---------- nav ---------- */
+  nav.tabs{
+    position:sticky; top:0; z-index:49; background:var(--bg);
+    display:flex; gap:8px; overflow-x:auto; padding:10px 12px; max-width:880px; margin:0 auto;
+    scrollbar-width:none;
+  }
+  nav.tabs::-webkit-scrollbar{display:none;}
+  nav.tabs button{
+    flex:0 0 auto; border:1px solid var(--line); background:#fff; color:var(--sub);
+    padding:7px 14px; border-radius:999px; font-size:14px; cursor:pointer; white-space:nowrap;
+    transition:all .15s;
+  }
+  nav.tabs button.active{background:var(--blue); border-color:var(--blue); color:#fff; font-weight:600;}
+  /* ---------- cards ---------- */
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px; margin-top:14px; box-shadow:0 1px 3px rgba(15,23,42,.04);}
+  .card h2{font-size:16px; margin-bottom:10px; display:flex; align-items:center; gap:8px;}
+  .card h3{font-size:14px; margin:14px 0 8px; color:var(--ink);}
+  .muted{color:var(--sub); font-size:13px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:6px; border:none; border-radius:10px;
+    padding:9px 16px; font-size:14px; cursor:pointer; background:var(--blue); color:#fff; font-weight:600;
+  }
+  .btn:active{transform:scale(.97);}
+  .btn.ghost{background:#fff; color:var(--blue); border:1px solid var(--blue);}
+  .btn.warn{background:var(--amber);}
+  .btn.gray{background:#f1f5f9; color:var(--sub);}
+  .btn.green{background:var(--green);}
+  .btn.sm{padding:5px 10px; font-size:12.5px; border-radius:8px;}
+  .btn[disabled]{opacity:.5; pointer-events:none;}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:10px;}
+  @media(max-width:560px){ .grid3{grid-template-columns:repeat(2,1fr);} }
+  .stat{background:#f8fafc; border:1px solid var(--line); border-radius:12px; padding:10px 12px;}
+  .stat b{font-size:20px; color:var(--blue); display:block; line-height:1.2;}
+  .stat span{font-size:12px; color:var(--sub);}
+  .pbar{height:8px; background:#e2e8f0; border-radius:99px; overflow:hidden; margin-top:6px;}
+  .pbar i{display:block; height:100%; background:linear-gradient(90deg,#3b82f6,#2563eb); border-radius:99px;}
+  table.tbl{width:100%; border-collapse:collapse; font-size:13px; margin-top:6px;}
+  table.tbl th{background:#f1f5f9; text-align:left; padding:7px 8px; border:1px solid var(--line); white-space:nowrap;}
+  table.tbl td{padding:7px 8px; border:1px solid var(--line); vertical-align:top;}
+  .tag{display:inline-block; font-size:11.5px; padding:1px 8px; border-radius:99px; font-weight:600;}
+  .tag.b{background:var(--blue-l); color:var(--blue);}
+  .tag.g{background:var(--green-l); color:var(--green);}
+  .tag.a{background:var(--amber-l); color:var(--amber);}
+  .tag.r{background:var(--red-l); color:var(--red);}
+  .tag.p{background:var(--purple-l); color:var(--purple);}
+  /* ---------- flashcards ---------- */
+  .flash{perspective:1200px; margin-top:6px;}
+  .flash-inner{position:relative; min-height:230px; transition:transform .35s; transform-style:preserve-3d; cursor:pointer;}
+  .flash.flipped .flash-inner{transform:rotateY(180deg);}
+  .face{position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden;
+    background:#fff; border:1px solid var(--line); border-radius:16px; padding:22px 18px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:8px;}
+  .face.back{transform:rotateY(180deg); background:#f8faff; border-color:#bfdbfe;}
+  .face .word{font-size:28px; font-weight:700; color:var(--blue); letter-spacing:.5px;}
+  .face .ph{color:var(--sub); font-size:14px;}
+  .face .mean{font-size:18px; font-weight:700;}
+  .face .ex{font-size:14px; color:var(--ink); background:#fff; border:1px dashed var(--line); border-radius:8px; padding:6px 10px; width:100%;}
+  .face .exc{font-size:12.5px; color:var(--sub);}
+  .face .tip{font-size:12.5px; color:var(--amber);}
+  /* ---------- study card (word + meaning + 2 examples) ---------- */
+  .sc{border:2px solid var(--blue); border-radius:16px; padding:14px 14px 12px; margin-top:6px;
+      background:linear-gradient(180deg,#f8faff,#fff);}
+  .sc .word{font-size:32px; font-weight:800; color:var(--blue); text-align:center; letter-spacing:.5px;}
+  .sc .ph{color:var(--sub); text-align:center; font-size:14px; margin-top:2px;}
+  .sc .spk-row{display:flex; justify-content:center; margin-top:8px;}
+  .sc .mean-box{margin-top:10px; background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:8px 12px;
+      font-size:17px; font-weight:700; display:flex; align-items:center; gap:8px;}
+  .sc .mean-box .lab{font-size:12px; font-weight:700; color:#b45309; background:#fef3c7; border-radius:6px; padding:2px 6px; flex:none;}
+  .sc-ex{margin-top:8px; background:#fff; border:1px dashed var(--line); border-radius:10px; padding:8px 12px; font-size:14px;}
+  .sc-ex.alt{background:#f0fdf4; border:1px solid #bbf7d0;}
+  .sc-ex-head{display:flex; justify-content:space-between; align-items:center; gap:8px;}
+  .sc-ex-lab{font-size:11px; font-weight:700; color:var(--sub); background:var(--blue-l); border-radius:6px; padding:1px 6px; flex:none;}
+  .sc-ex.alt .sc-ex-lab{background:#dcfce7; color:#15803d;}
+  .sc-ex-en{font-weight:600; line-height:1.5;}
+  .sc-ex-zh{color:var(--sub); font-size:12.5px; margin-top:2px;}
+  .sc .tip{margin-top:8px; font-size:12.5px; color:var(--amber);}
+  /* ---------- word list item ---------- */
+  .wli{border:1px solid var(--line); border-radius:12px; padding:10px 12px; margin-top:10px; background:#fff;}
+  .wli-head{display:flex; justify-content:space-between; align-items:baseline; gap:10px; flex-wrap:wrap;}
+  .wli-w{font-size:19px; color:var(--blue);}
+  .wli-ph{color:var(--sub); font-size:12.5px; margin:0 6px;}
+  .wli-m{font-weight:700; font-size:14.5px;}
+  .wli-kp{margin-top:6px; font-size:12.5px; color:var(--amber); background:#fffbeb; border:1px dashed #fde68a; border-radius:8px; padding:5px 10px;}
+  /* ---------- 真题考场 ---------- */
+  .chip{border:1px solid var(--line); background:#fff; color:var(--sub); border-radius:99px; padding:5px 14px; font-size:13px; cursor:pointer; font-weight:600;}
+  .chip.on{background:var(--blue); border-color:var(--blue); color:#fff;}
+  .tag.p{background:#f3e8ff; color:#7e22ce;}
+  .pq{border:1px solid var(--line); border-radius:12px; padding:10px 12px; margin-top:10px; background:#fff;}
+  .pq-h{display:flex; align-items:center; gap:8px; flex-wrap:wrap;}
+  .pq-kp{font-size:11px; font-weight:700; color:#7e22ce; background:#f3e8ff; border-radius:6px; padding:1px 7px;}
+  .pq-q{font-size:15px; font-weight:600; line-height:1.6; margin:8px 0 10px;}
+  .pq-opts{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+  .opt{border:1px solid var(--line); background:#fff; border-radius:10px; padding:8px 10px; font-size:13.5px; cursor:pointer; text-align:left; line-height:1.4;}
+  .opt:hover{border-color:var(--blue);}
+  .opt.sel{border-color:var(--blue); background:var(--blue-l); color:var(--blue); font-weight:700;}
+  .opt.ok{border-color:var(--green); background:#f0fdf4; color:#15803d; font-weight:700;}
+  .opt.no{border-color:var(--red); background:#fef2f2; color:var(--red); font-weight:700;}
+  .fill{width:100%; border:1px solid var(--line); border-radius:10px; padding:9px 12px; font-size:15px; font-family:inherit;}
+  .fill:focus{outline:none; border-color:var(--blue); background:var(--blue-l);}
+  .pq-exp{margin-top:8px; font-size:13px; line-height:1.6; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:7px 10px; color:#166534;}
+  .pq-exp.no{background:#fef2f2; border-color:#fecaca; color:#991b1b;}
+  .pq-passage{font-size:14.5px; line-height:1.9; color:var(--ink); background:#f8fafc; border:1px solid var(--line); border-radius:8px; padding:10px 12px;}
+  .pq-req{font-size:14.5px; line-height:1.7; background:#f8fafc; border:1px solid var(--line); border-radius:8px; padding:10px 12px;}
+  .pq-tip{font-size:13px; color:var(--sub); line-height:1.6; margin-top:4px;}
+  @media (max-width:560px){ .pq-opts{grid-template-columns:1fr;} }
+  .spk{background:var(--blue-l); color:var(--blue); border:none; border-radius:99px; padding:5px 14px; font-size:13px; cursor:pointer; font-weight:600;}
+  .spk.sm{padding:3px 10px; font-size:12px;}
+  .study-actions{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:12px;}
+  .word-list{max-height:300px; overflow:auto; margin-top:8px;}
+  .word-row{display:flex; justify-content:space-between; align-items:center; gap:8px; padding:8px 4px; border-bottom:1px dashed var(--line); font-size:14px;}
+  .word-row .l b{color:var(--blue);}
+  .word-row .l span{color:var(--sub); font-size:12.5px; margin-left:8px;}
+  /* ---------- quiz ---------- */
+  .q-box{background:#f8fafc; border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin-top:10px;}
+  .q-box .qt{font-weight:600; margin-bottom:8px;}
+  .opt{display:block; width:100%; text-align:left; background:#fff; border:1px solid var(--line); border-radius:10px; padding:9px 12px; margin-top:6px; cursor:pointer; font-size:14px; transition:all .12s;}
+  .opt:hover{border-color:var(--blue);}
+  .opt.correct{background:var(--green-l); border-color:var(--green); color:#065f46; font-weight:600;}
+  .opt.wrong{background:var(--red-l); border-color:var(--red); color:#991b1b;}
+  .explain{display:none; margin-top:8px; background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:8px 12px; font-size:13px; color:#78350f;}
+  .opt.done{pointer-events:none;}
+  /* ---------- reading ---------- */
+  .passage{font-size:14.5px; line-height:1.9;}
+  .passage p{margin-bottom:10px; text-align:justify;}
+  .blank-chip{display:inline-block; min-width:34px; border-bottom:2px solid var(--blue); color:var(--blue); text-align:center; margin:0 2px; font-weight:700;}
+  .opts-row{display:flex; flex-wrap:wrap; gap:8px; margin:6px 0 12px;}
+  .seven-opt{background:#fff; border:1px solid var(--blue); color:var(--blue); border-radius:8px; padding:5px 12px; cursor:pointer; font-size:13.5px;}
+  .seven-opt.used{opacity:.35; pointer-events:none;}
+  .seven-opt.picked{border-color:var(--green); color:var(--green);}
+  /* ---------- timeline ---------- */
+  .tl{border-left:3px solid var(--blue-l); margin-left:8px; padding-left:16px;}
+  .tl-item{position:relative; margin-bottom:14px;}
+  .tl-item::before{content:""; position:absolute; left:-23px; top:5px; width:11px; height:11px; border-radius:50%; background:var(--blue); border:2px solid #fff; box-shadow:0 0 0 2px var(--blue-l);}
+  .tl-item b{color:var(--blue);}
+  .tl-item .d{font-size:12.5px; color:var(--sub); display:block; margin-bottom:2px;}
+  /* ---------- misc ---------- */
+  a{color:var(--blue); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .res{display:block; border:1px solid var(--line); border-radius:10px; padding:10px 12px; margin-top:8px; background:#fff;}
+  .res:hover{border-color:var(--blue); text-decoration:none;}
+  .res b{font-size:14px;}
+  .res .d{font-size:12.5px; color:var(--sub); margin-top:2px;}
+  .input{width:100%; border:1px solid var(--line); border-radius:10px; padding:9px 12px; font-size:15px; margin-top:6px;}
+  .hl{background:linear-gradient(transparent 62%, #fde68a 62%); font-weight:600;}
+  .notice{border-radius:12px; padding:12px 14px; margin-top:12px; font-size:13.5px;}
+  .notice.warn{background:#fffbeb; border:1px solid #fcd34d; color:#78350f;}
+  .notice.info{background:#eff6ff; border:1px solid #bfdbfe; color:#1e3a8a;}
+  .footer{max-width:880px; margin:18px auto 0; padding:0 14px; font-size:12px; color:var(--sub); text-align:center;}
+  .unit-item{display:flex; justify-content:space-between; align-items:center; width:100%; background:#fff; border:1px solid var(--line); border-radius:10px; padding:10px 12px; margin-top:8px; cursor:pointer; text-align:left;}
+  .unit-item:hover{border-color:var(--blue);}
+  .unit-item-main{display:flex; justify-content:space-between; align-items:center; gap:10px; flex:1; background:none; border:none; padding:0; margin:0; font:inherit; color:inherit; text-align:left; cursor:pointer;}
+  .unit-item .meta{font-size:12.5px; color:var(--sub);}
+  .g-item{display:flex; gap:10px; align-items:flex-start; width:100%; background:#fff; border:1px solid var(--line); border-radius:10px; padding:10px 12px; margin-top:8px; cursor:pointer; text-align:left;}
+  .g-item:hover{border-color:var(--blue);}
+  .g-item .n{flex:0 0 26px; height:26px; border-radius:50%; background:var(--blue); color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700;}
+  .g-item .n.done{background:var(--green);}
+  .r-item{display:block; width:100%; background:#fff; border:1px solid var(--line); border-radius:10px; padding:10px 12px; margin-top:8px; cursor:pointer; text-align:left;}
+  .r-item:hover{border-color:var(--blue);}
+  .r-item .row2{display:flex; gap:6px; margin-top:5px; flex-wrap:wrap; align-items:center;}
+  .tpl{background:#fff; border:1px solid var(--line); border-left:4px solid var(--green); border-radius:10px; padding:10px 12px; margin-top:8px; font-size:14px;}
+  .tpl .en{font-weight:600;}
+  .tpl .cn{font-size:12.5px; color:var(--sub); margin-top:2px;}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-row">
+    <div class="brand">🎓 阿坝高三英语冲刺<small>背单词 · 学语法 · 读短文 · 冲本科</small></div>
+    <div class="countdown"><b id="cd">--</b><span>天后高考 · 2027.6.7</span></div>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs"></nav>
+
+<div class="wrap" id="view"></div>
+
+<div class="footer">为高三学生：丹波波私人定制 · 数据保存在本机浏览器 · 加油，本科见！</div>
+
+<script>
+/* ==================== 数据占位 ==================== */
+/*__VOCAB__*/
+const VOCAB=[
+{name:"Unit 1 · 学习与考试",words:[
+{w:"academic",p:"/ˌækəˈdemɪk/",m:"adj. 学业的，学术的",e:"He got high grades for his academic work.",et:"他学业成绩很好。",c:"academic performance 学业成绩"},
+{w:"revise",p:"/rɪˈvaɪz/",m:"v. 复习；修订",e:"We need two weeks to revise for the exam.",et:"我们需要两周时间复习备考。"},
+{w:"schedule",p:"/ˈʃedjuːl/",m:"n. 日程表 v. 安排",e:"My study schedule changes every week.",et:"我的学习安排每周都会变。",c:"ahead of schedule 提前；on schedule 按时"},
+{w:"deadline",p:"/ˈdedlaɪn/",m:"n. 截止日期",e:"We must finish the plan before the deadline.",et:"我们必须在截止日期前完成计划。"},
+{w:"assignment",p:"/əˈsaɪnmənt/",m:"n. 作业；任务",e:"The English assignment is due tomorrow.",et:"英语作业明天要交。",c:"be due 到期"},
+{w:"concentrate",p:"/ˈkɒnsntreɪt/",m:"v. 集中（注意力）",e:"It is hard to concentrate in a noisy room.",et:"在嘈杂的房间里很难集中注意力。",c:"concentrate on 专注于"},
+{w:"memorize",p:"/ˈmeməraɪz/",m:"v. 记忆，背诵",e:"I try to memorize ten new words every day.",et:"我每天努力记十个新单词。"},
+{w:"recite",p:"/rɪˈsaɪt/",m:"v. 背诵",e:"Our teacher asks us to recite the text.",et:"我们老师让我们背课文。"},
+{w:"review",p:"/rɪˈvjuː/",m:"v./n. 复习；评论",e:"We will review the whole book this Friday.",et:"我们周五要复习整本书。"},
+{w:"quiz",p:"/kwɪz/",m:"n. 小测验",e:"We have a short English quiz every Monday.",et:"我们每周一有一个英语小测验。"},
+{w:"graduate",p:"/ˈɡrædʒueɪt/",m:"v. 毕业",e:"She will graduate from high school next year.",et:"她明年高中毕业。"},
+{w:"grade",p:"/ɡreɪd/",m:"n. 分数；年级 v. 评分",e:"He received a good grade in English.",et:"他英语得了好分数。"},
+{w:"score",p:"/skɔː/",m:"n./v. 得分",e:"She scored high on the listening test.",et:"她听力测试得了高分。"},
+{w:"pass",p:"/pɑːs/",m:"v. 通过 n. 通行证",e:"I hope I can pass the final exam.",et:"我希望能通过期末考试。"},
+{w:"fail",p:"/feɪl/",m:"v. 失败；不及格",e:"Do not be afraid to fail.",et:"不要害怕失败。",c:"fail to do 未能做成"},
+{w:"improve",p:"/ɪmˈpruːv/",m:"v. 提高，改善",e:"Reading every day can improve your English.",et:"每天阅读可以提高你的英语。"},
+{w:"progress",p:"/ˈprəʊɡres/",m:"n. 进步（不可数）",e:"You have made great progress this term.",et:"你这学期取得了很大进步。",c:"make progress 取得进步"},
+{w:"achieve",p:"/əˈtʃiːv/",m:"v. 实现，达到",e:"Only effort helps you achieve your dream.",et:"只有努力才能帮你实现梦想。",c:"achieve one's goal 实现目标"},
+{w:"effort",p:"/ˈefət/",m:"n. 努力",e:"He made an effort to speak English aloud.",et:"他努力大声说英语。",c:"make an effort to do 努力做"},
+{w:"method",p:"/ˈmeθəd/",m:"n. 方法",e:"Try a new method to learn grammar.",et:"尝试一种新方法学语法。"},
+{w:"strategy",p:"/ˈstrætədʒi/",m:"n. 策略",e:"A good strategy is more important than luck.",et:"好的策略比运气更重要。"},
+{w:"knowledge",p:"/ˈnɒlɪdʒ/",m:"n. 知识（不可数）",e:"Reading widely increases your knowledge.",et:"广泛阅读增长知识。"},
+{w:"ability",p:"/əˈbɪləti/",m:"n. 能力",e:"Practice builds confidence and ability.",et:"练习建立信心和能力。",c:"the ability to do 做某事的能力"},
+{w:"develop",p:"/dɪˈveləp/",m:"v. 发展；培养",e:"We should develop good study habits.",et:"我们应该培养良好的学习习惯。"},
+]},
+{name:"Unit 2 · 情感与态度",words:[
+{w:"anxious",p:"/ˈæŋkʃəs/",m:"adj. 焦虑的",e:"She felt anxious before the big exam.",et:"大考之前她感到焦虑。",c:"be anxious about 为...担忧"},
+{w:"nervous",p:"/ˈnɜːvəs/",m:"adj. 紧张的",e:"Do not be nervous about speaking English.",et:"说英语不要紧张。",c:"be nervous of 害怕..."},
+{w:"confident",p:"/ˈkɒnfɪdənt/",m:"adj. 自信的",e:"He is confident of passing the test.",et:"他有信心通过考试。",c:"be confident of / that"},
+{w:"proud",p:"/praʊd/",m:"adj. 自豪的",e:"I am proud of my school.",et:"我为我的学校感到自豪。",c:"be proud of 为...骄傲"},
+{w:"grateful",p:"/ˈɡreɪtfl/",m:"adj. 感激的",e:"We are grateful to our teachers.",et:"我们感激老师。",c:"be grateful to sb for sth"},
+{w:"upset",p:"/ʌpˈset/",m:"adj. 难过的，沮丧的",e:"It made me upset to see him cry.",et:"看到他哭我很难过。"},
+{w:"disappointed",p:"/ˌdɪsəˈpɔɪntɪd/",m:"adj. 失望的",e:"She was disappointed with her grades.",et:"她对成绩很失望。",c:"be disappointed with / at"},
+{w:"embarrassed",p:"/ɪmˈbærəst/",m:"adj. 尴尬的，难为情的",e:"I felt embarrassed when I answered wrongly.",et:"我答错时感到很尴尬。"},
+{w:"curious",p:"/ˈkjʊəriəs/",m:"adj. 好奇的",e:"Children are curious about everything.",et:"孩子对一切都好奇。",c:"be curious about 对...好奇"},
+{w:"ashamed",p:"/əˈʃeɪmd/",m:"adj. 羞愧的",e:"He felt ashamed of his laziness.",et:"他为自己的懒惰感到羞愧。",c:"be ashamed of 为...羞愧"},
+{w:"delighted",p:"/dɪˈlaɪtɪd/",m:"adj. 高兴的",e:"We were delighted to hear the good news.",et:"听到这个好消息我们很高兴。",c:"be delighted to do / that"},
+{w:"terrified",p:"/ˈterɪfaɪd/",m:"adj. 恐惧的",e:"She is terrified of speaking in public.",et:"她害怕在公众场合讲话。",c:"be terrified of 害怕..."},
+{w:"calm",p:"/kɑːm/",m:"adj. 冷静的 v. 使冷静",e:"Keep calm and carry on.",et:"保持冷静，继续前进。"},
+{w:"patient",p:"/ˈpeɪʃnt/",m:"adj. 耐心的 n. 病人",e:"Our English teacher is very patient.",et:"我们英语老师很有耐心。",c:"be patient with sb 对某人有耐心"},
+{w:"honest",p:"/ˈɒnɪst/",m:"adj. 诚实的",e:"Be honest about your weak points.",et:"对自己的弱点要诚实。"},
+{w:"generous",p:"/ˈdʒenərəs/",m:"adj. 大方的，慷慨的",e:"It is generous of you to share your notes.",et:"你分享笔记真大方。"},
+{w:"modest",p:"/ˈmɒdɪst/",m:"adj. 谦虚的",e:"He is modest about his success.",et:"他对自己的成功很谦虚。"},
+{w:"sympathetic",p:"/ˌsɪmpəˈθetɪk/",m:"adj. 同情的，有同情心的",e:"The nurse was kind and sympathetic.",et:"那位护士和善又有同情心。"},
+{w:"optimistic",p:"/ˌɒptɪˈmɪstɪk/",m:"adj. 乐观的",e:"Stay optimistic even when life is hard.",et:"即使生活艰难也要保持乐观。"},
+{w:"pessimistic",p:"/ˌpesɪˈmɪstɪk/",m:"adj. 悲观的",e:"There is no point being pessimistic.",et:"悲观没有意义。"},
+{w:"mature",p:"/məˈtʃʊə/",m:"adj. 成熟的",e:"He is mature for his age.",et:"他比同龄人成熟。"},
+{w:"independent",p:"/ˌɪndɪˈpendənt/",m:"adj. 独立的，自立的",e:"A high school student should be independent.",et:"高中生应该独立。",c:"independent of 不依赖于"},
+{w:"emotional",p:"/ɪˈməʊʃənl/",m:"adj. 情绪的，情感上的",e:"It was an emotional moment for everyone.",et:"对每个人来说那都是情绪激动的时刻。"},
+{w:"warm-hearted",p:"/ˌwɔːm ˈhɑːtɪd/",m:"adj. 热心肠的",e:"The warm-hearted driver helped us find the way.",et:"那位热心司机帮我们找到了路。"},
+]},
+{name:"Unit 3 · 人物外貌与性格",words:[
+{w:"appearance",p:"/əˈpɪərəns/",m:"n. 外貌，外表",e:"Never judge a person by appearance.",et:"不要以貌取人。"},
+{w:"figure",p:"/ˈfɪɡə/",m:"n. 身材；人物；数字",e:"She keeps her figure by running every day.",et:"她每天跑步保持身材。"},
+{w:"slender",p:"/ˈslendə/",m:"adj. 苗条的，纤细的",e:"The slender girl danced gracefully.",et:"那个苗条的女孩舞姿优雅。"},
+{w:"elegant",p:"/ˈelɪɡənt/",m:"adj. 优雅的",e:"She wore an elegant dress to the party.",et:"她穿着优雅的礼服参加聚会。"},
+{w:"energetic",p:"/ˌenəˈdʒetɪk/",m:"adj. 精力充沛的",e:"The energetic boy never stops running.",et:"那个精力充沛的男孩跑个不停。"},
+{w:"cheerful",p:"/ˈtʃɪəfl/",m:"adj. 开朗的，快乐的",e:"Her cheerful smile made us relax.",et:"她开朗的微笑让我们放松下来。"},
+{w:"gentle",p:"/ˈdʒentl/",m:"adj. 温和的，轻柔的",e:"He spoke to the child in a gentle voice.",et:"他温和地对孩子说话。"},
+{w:"reliable",p:"/rɪˈlaɪəbl/",m:"adj. 可靠的",e:"Tom is reliable, so we can trust him.",et:"汤姆可靠，我们可以信任他。"},
+{w:"talented",p:"/ˈtæləntɪd/",m:"adj. 有天赋的",e:"She is a talented singer in our school.",et:"她是我们学校有天赋的歌手。"},
+{w:"creative",p:"/kriˈeɪtɪv/",m:"adj. 有创造力的",e:"We need creative ideas for the project.",et:"这个项目我们需要有创意的想法。"},
+{w:"diligent",p:"/ˈdɪlɪdʒənt/",m:"adj. 勤奋的",e:"Diligent students usually get better grades.",et:"勤奋的学生通常成绩更好。"},
+{w:"responsible",p:"/rɪˈspɒnsəbl/",m:"adj. 负责的",e:"She is responsible for the English corner.",et:"她负责英语角。",c:"be responsible for 对...负责"},
+{w:"considerate",p:"/kənˈsɪdərət/",m:"adj. 体贴的，考虑周到的",e:"It was considerate of you to keep quiet.",et:"你保持安静真是体贴。"},
+{w:"humble",p:"/ˈhʌmbl/",m:"adj. 谦逊的",e:"Though famous, he remains humble.",et:"虽然有名，他依然谦逊。"},
+{w:"outstanding",p:"/aʊtˈstændɪŋ/",m:"adj. 杰出的，突出的",e:"She is an outstanding student in our class.",et:"她是我们班杰出的学生。"},
+{w:"remarkable",p:"/rɪˈmɑːkəbl/",m:"adj. 非凡的，显著的",e:"He has made remarkable progress in English.",et:"他英语取得了显著进步。"},
+{w:"sincere",p:"/sɪnˈsɪə/",m:"adj. 真诚的",e:"Please accept my sincere apology.",et:"请接受我真诚的道歉。"},
+{w:"brave",p:"/breɪv/",m:"adj. 勇敢的",e:"The brave girl spoke first on the stage.",et:"那个勇敢的女孩第一个上台发言。"},
+{w:"ambitious",p:"/æmˈbɪʃəs/",m:"adj. 有雄心的，有抱负的",e:"He is ambitious to enter a good university.",et:"他渴望进入一所好大学。"},
+{w:"polite",p:"/pəˈlaɪt/",m:"adj. 有礼貌的",e:"It is polite to greet teachers first.",et:"先向老师问好是有礼貌的。"},
+{w:"smart",p:"/smɑːt/",m:"adj. 聪明的",e:"She is smart and works hard.",et:"她既聪明又努力。"},
+{w:"kind",p:"/kaɪnd/",m:"adj. 善良的",e:"It is kind of you to help me.",et:"你帮助我真是善良。",c:"It is kind of sb to do 某人做...真好"},
+{w:"stubborn",p:"/ˈstʌbən/",m:"adj. 固执的",e:"He is too stubborn to change his mind.",et:"他太固执了，不肯改变主意。"},
+{w:"humorous",p:"/ˈhjuːmərəs/",m:"adj. 幽默的",e:"His humorous story made everyone laugh.",et:"他幽默的故事让大家都笑了。"},
+]},
+{name:"Unit 4 · 校园与家庭生活",words:[
+{w:"campus",p:"/ˈkæmpəs/",m:"n. 校园",e:"Our campus is beautiful in autumn.",et:"我们校园秋天很美。",c:"on campus 在校园里"},
+{w:"dormitory",p:"/ˈdɔːmətri/",m:"n. 宿舍",e:"We share a dormitory with six students.",et:"我们六个人合住一间宿舍。"},
+{w:"canteen",p:"/kænˈtiːn/",m:"n. 食堂",e:"The canteen serves cheap and healthy food.",et:"食堂提供便宜健康的食物。"},
+{w:"club",p:"/klʌb/",m:"n. 俱乐部，社团",e:"I joined the English club last term.",et:"我上学期参加了英语社团。"},
+{w:"volunteer",p:"/ˌvɒlənˈtɪə/",m:"n. 志愿者",e:"We need volunteers for the sports meeting.",et:"运动会我们需要志愿者。"},
+{w:"ceremony",p:"/ˈserəməni/",m:"n. 典礼，仪式",e:"The opening ceremony was held on Monday.",et:"开幕式在周一举行。"},
+{w:"graduation",p:"/ˌɡrædʒuˈeɪʃn/",m:"n. 毕业；毕业典礼",e:"She wrote a speech for the graduation.",et:"她为毕业典礼写了一篇演讲稿。"},
+{w:"roommate",p:"/ˈruːmmeɪt/",m:"n. 室友",e:"My roommate helps me with English.",et:"我室友帮我学英语。"},
+{w:"housework",p:"/ˈhaʊswɜːk/",m:"n. 家务（不可数）",e:"I do housework every weekend.",et:"我每周末做家务。"},
+{w:"neighbor",p:"/ˈneɪbə/",m:"n. 邻居",e:"Our neighbors are friendly and helpful.",et:"我们的邻居友好又乐于助人。"},
+{w:"relative",p:"/ˈrelətɪv/",m:"n. 亲戚",e:"We visit relatives during the holiday.",et:"假期我们走亲戚。"},
+{w:"generation",p:"/ˌdʒenəˈreɪʃn/",m:"n. 一代人",e:"Our generation faces great challenges.",et:"我们这一代面临巨大挑战。"},
+{w:"tradition",p:"/trəˈdɪʃn/",m:"n. 传统",e:"Singing is a tradition in our family.",et:"唱歌是我们家的传统。"},
+{w:"celebrate",p:"/ˈselɪbreɪt/",m:"v. 庆祝",e:"We celebrate the New Year with our family.",et:"我们和家人一起庆祝新年。"},
+{w:"respect",p:"/rɪˈspekt/",m:"v./n. 尊重",e:"Students should respect their teachers.",et:"学生应该尊重老师。",c:"show respect for 对...表示尊重"},
+{w:"support",p:"/səˈpɔːt/",m:"v./n. 支持，供养",e:"My parents support me to study hard.",et:"我父母支持我努力学习。"},
+{w:"encourage",p:"/ɪnˈkʌrɪdʒ/",m:"v. 鼓励",e:"Our teacher encourages us to speak English.",et:"我们老师鼓励我们说英语。",c:"encourage sb to do 鼓励某人做"},
+{w:"protect",p:"/prəˈtekt/",m:"v. 保护",e:"Everyone should protect the environment.",et:"每个人都应该保护环境。",c:"protect...from 保护...免受"},
+{w:"provide",p:"/prəˈvaɪd/",m:"v. 提供",e:"Volunteers provide food for the animals.",et:"志愿者为动物提供食物。",c:"provide sb with sth"},
+{w:"accompany",p:"/əˈkʌmpəni/",m:"v. 陪伴",e:"She accompanied her grandma to the hospital.",et:"她陪奶奶去了医院。"},
+{w:"forgive",p:"/fəˈɡɪv/",m:"v. 原谅，宽恕",e:"We should learn to forgive others.",et:"我们应该学会原谅别人。"},
+{w:"share",p:"/ʃeə/",m:"v. 分享，共用",e:"He shares his notes with classmates.",et:"他和同学分享笔记。",c:"share sth with sb"},
+{w:"communicate",p:"/kəˈmjuːnɪkeɪt/",m:"v. 交流，沟通",e:"We communicate with each other in English.",et:"我们用英语互相交流。",c:"communicate with sb 与某人交流"},
+{w:"experience",p:"/ɪkˈspɪəriəns/",m:"n. 经验；经历 v. 经历",e:"This trip gave me a useful experience.",et:"这次旅行给了我一次有用的经历。"},
+]},
+{name:"Unit 5 · 健康与身体",words:[
+{w:"symptom",p:"/ˈsɪmptəm/",m:"n. 症状",e:"A fever is a common symptom of the flu.",et:"发烧是流感的常见症状。"},
+{w:"fever",p:"/ˈfiːvə/",m:"n. 发烧，发热",e:"He has a high fever and stays in bed.",et:"他发高烧卧床不起。",c:"have a fever 发烧"},
+{w:"cough",p:"/kɒf/",m:"n./v. 咳嗽",e:"The cold air made him cough all night.",et:"冷空气让他咳了一整夜。"},
+{w:"headache",p:"/ˈhedeɪk/",m:"n. 头痛",e:"Too much screen time gives me a headache.",et:"看屏幕太久让我头疼。",c:"have a headache 头疼"},
+{w:"cure",p:"/kjʊə/",m:"v./n. 治愈",e:"Rest and water cured my cold.",et:"休息和喝水治好了我的感冒。"},
+{w:"treat",p:"/triːt/",m:"v. 治疗；对待",e:"Doctors treat the sick with patience.",et:"医生耐心地治疗病人。",c:"treat sb with kindness 善待某人"},
+{w:"recover",p:"/rɪˈkʌvə/",m:"v. 恢复，康复",e:"She recovered quickly after the operation.",et:"手术后她恢复得很快。",c:"recover from 从...中恢复"},
+{w:"prevent",p:"/prɪˈvent/",m:"v. 预防，阻止",e:"Exercise can prevent many illnesses.",et:"运动能预防许多疾病。",c:"prevent sb from doing 阻止某人做"},
+{w:"diet",p:"/ˈdaɪət/",m:"n. 饮食，节食",e:"A balanced diet keeps us healthy.",et:"均衡饮食使我们保持健康。",c:"be on a diet 节食"},
+{w:"nutrition",p:"/njuˈtrɪʃn/",m:"n. 营养",e:"Milk and eggs give us good nutrition.",et:"牛奶和鸡蛋给我们提供良好的营养。"},
+{w:"exercise",p:"/ˈeksəsaɪz/",m:"n./v. 锻炼",e:"I take exercise for an hour every day.",et:"我每天锻炼一小时。",c:"take exercise 做运动"},
+{w:"balance",p:"/ˈbæləns/",m:"v./n. 平衡",e:"We should balance study and rest.",et:"我们应该平衡学习和休息。",c:"keep a balance 保持平衡"},
+{w:"pressure",p:"/ˈpreʃə/",m:"n. 压力",e:"Too much pressure is bad for students.",et:"太多压力对学生不好。",c:"under pressure 在压力之下"},
+{w:"relax",p:"/rɪˈlæks/",m:"v. 放松",e:"Music helps me relax after study.",et:"音乐帮助我学习后放松。"},
+{w:"energy",p:"/ˈenədʒi/",m:"n. 精力；能量",e:"A good breakfast gives me energy.",et:"好的早餐给我能量。",c:"be full of energy 精力充沛"},
+{w:"illness",p:"/ˈɪlnəs/",m:"n. 疾病",e:"He missed school because of illness.",et:"他因病缺课。"},
+{w:"medicine",p:"/ˈmedsn/",m:"n. 药；医学",e:"Take the medicine three times a day.",et:"这药一天吃三次。",c:"take medicine 服药"},
+{w:"healthy",p:"/ˈhelθi/",m:"adj. 健康的",e:"Healthy food and sleep make us strong.",et:"健康食品和睡眠使我们强壮。",c:"keep healthy 保持健康"},
+{w:"weak",p:"/wiːk/",m:"adj. 虚弱的；差的",e:"I am weak in grammar.",et:"我语法差。",c:"be weak in 在...方面弱"},
+{w:"tired",p:"/ˈtaɪəd/",m:"adj. 疲倦的",e:"I felt tired after the long walk.",et:"走了很长路后我感到疲倦。",c:"be tired of 厌倦..."},
+{w:"sleepy",p:"/ˈsliːpi/",m:"adj. 困倦的",e:"I stayed up late and felt sleepy in class.",et:"我熬夜了，上课犯困。",c:"stay up late 熬夜"},
+{w:"strength",p:"/streŋθ/",m:"n. 力量；优势",e:"Running builds strength and courage.",et:"跑步增强力量和勇气。"},
+{w:"daily",p:"/ˈdeɪli/",m:"adj. 每日的 adv. 每天",e:"Daily practice is the key to success.",et:"每天练习是成功的关键。",c:"in daily life 在日常生活中"},
+{w:"habit",p:"/ˈhæbɪt/",m:"n. 习惯",e:"Reading before bed is a good habit.",et:"睡前阅读是个好习惯。",c:"form a habit 养成习惯"},
+]},
+{name:"Unit 6 · 科技与网络",words:[
+{w:"technology",p:"/tekˈnɒlədʒi/",m:"n. 科技，技术",e:"Technology changes our way of learning.",et:"科技改变我们的学习方式。"},
+{w:"scientific",p:"/ˌsaɪənˈtɪfɪk/",m:"adj. 科学的",e:"They made a scientific study of the river.",et:"他们对这条河进行了科学研究。"},
+{w:"invention",p:"/ɪnˈvenʃn/",m:"n. 发明",e:"The phone is a great invention.",et:"电话是一项伟大的发明。"},
+{w:"discover",p:"/dɪˈskʌvə/",m:"v. 发现",e:"Scientists discover new things every day.",et:"科学家每天都有新发现。"},
+{w:"create",p:"/kriˈeɪt/",m:"v. 创造",e:"We can create a better future together.",et:"我们可以共同创造更美好的未来。"},
+{w:"engineer",p:"/ˌendʒɪˈnɪə/",m:"n. 工程师",e:"His dream is to be an engineer.",et:"他的梦想是当工程师。"},
+{w:"software",p:"/ˈsɒftweə/",m:"n. 软件",e:"The school uses new software in class.",et:"学校在课堂上使用新软件。"},
+{w:"website",p:"/ˈwebsaɪt/",m:"n. 网站",e:"I found the news on a website.",et:"我在一个网站上看到了这条新闻。"},
+{w:"online",p:"/ˌɒnˈlaɪn/",m:"adj./adv. 在线的（地）",e:"We study online every weekend.",et:"我们每周末在线学习。"},
+{w:"digital",p:"/ˈdɪdʒɪtl/",m:"adj. 数字的",e:"We live in a digital world.",et:"我们生活在数字世界。",c:"digital products 数字产品"},
+{w:"artificial",p:"/ˌɑːtɪˈfɪʃl/",m:"adj. 人工的，人造的",e:"Artificial intelligence is developing fast.",et:"人工智能发展迅速。",c:"AI = artificial intelligence"},
+{w:"robot",p:"/ˈrəʊbɒt/",m:"n. 机器人",e:"Robots can do boring jobs for us.",et:"机器人能为我们做枯燥的工作。"},
+{w:"machine",p:"/məˈʃiːn/",m:"n. 机器",e:"The machine works day and night.",et:"这台机器日夜运转。"},
+{w:"design",p:"/dɪˈzaɪn/",m:"v./n. 设计",e:"They designed a new app for students.",et:"他们为学生设计了一个新应用。",c:"design for 为...而设计"},
+{w:"product",p:"/ˈprɒdʌkt/",m:"n. 产品",e:"The product sells well because of good quality.",et:"这款产品因质量好而畅销。"},
+{w:"convenient",p:"/kənˈviːniənt/",m:"adj. 方便的",e:"It is convenient to travel by high-speed rail.",et:"坐高铁出行很方便。"},
+{w:"efficient",p:"/ɪˈfɪʃnt/",m:"adj. 高效的",e:"He is an efficient learner.",et:"他是个高效的学习者。"},
+{w:"advantage",p:"/ədˈvɑːntɪdʒ/",m:"n. 优势，好处",e:"Online learning has its own advantages.",et:"在线学习有它自身的优势。",c:"take advantage of 利用"},
+{w:"disadvantage",p:"/ˌdɪsədˈvɑːntɪdʒ/",m:"n. 劣势，缺点",e:"Every invention has disadvantages.",et:"每项发明都有缺点。",c:"at a disadvantage 处于劣势"},
+{w:"influence",p:"/ˈɪnfluəns/",m:"v./n. 影响",e:"Phones influence the way we read.",et:"手机影响我们的阅读方式。",c:"have an influence on 对...有影响"},
+{w:"connect",p:"/kəˈnekt/",m:"v. 连接",e:"The internet connects people around the world.",et:"互联网连接世界各地的人们。",c:"connect...with 把...与...连接"},
+{w:"information",p:"/ˌɪnfəˈmeɪʃn/",m:"n. 信息（不可数）",e:"We can find information online easily.",et:"我们能在网上轻松找到信息。"},
+{w:"message",p:"/ˈmesɪdʒ/",m:"n. 消息，信息",e:"I left a message for my teacher.",et:"我给老师留了言。",c:"take a message 捎口信"},
+{w:"future",p:"/ˈfjuːtʃə/",m:"n. 未来 adj. 将来的",e:"In the future, robots may teach us.",et:"未来机器人可能会教我们。",c:"in the future 在将来"},
+]},
+];
+const VOCAB2=[
+{name:"Unit 7 · 环境与自然",words:[
+{w:"environment",p:"/ɪnˈvaɪrənmənt/",m:"n. 环境",e:"We must protect the environment.",et:"我们必须保护环境。",c:"protect the environment 保护环境"},
+{w:"pollute",p:"/pəˈluːt/",m:"v. 污染",e:"Cars pollute the air of the city.",et:"汽车污染城市空气。"},
+{w:"pollution",p:"/pəˈluːʃn/",m:"n. 污染",e:"Air pollution is a serious problem.",et:"空气污染是个严重问题。",c:"air/water/noise pollution"},
+{w:"waste",p:"/weɪst/",m:"n. 废物 v. 浪费",e:"Do not waste water or electricity.",et:"不要浪费水和电。",c:"waste time doing 浪费时间做"},
+{w:"recycle",p:"/riːˈsaɪkl/",m:"v. 回收利用",e:"We recycle paper, plastic and glass.",et:"我们回收纸张、塑料和玻璃。"},
+{w:"reduce",p:"/rɪˈdjuːs/",m:"v. 减少，降低",e:"We should reduce the use of plastic bags.",et:"我们应该减少塑料袋的使用。"},
+{w:"climate",p:"/ˈklaɪmət/",m:"n. 气候",e:"Climate change affects everyone.",et:"气候变化影响每个人。",c:"climate change 气候变化"},
+{w:"forest",p:"/ˈfɒrɪst/",m:"n. 森林",e:"The forest is home to many animals.",et:"森林是许多动物的家园。"},
+{w:"ocean",p:"/ˈəʊʃn/",m:"n. 海洋",e:"The ocean covers most of the earth.",et:"海洋覆盖地球大部分。"},
+{w:"mountain",p:"/ˈmaʊntn/",m:"n. 山，山脉",e:"We climbed the mountain last Sunday.",et:"我们上周日爬了那座山。"},
+{w:"desert",p:"/ˈdezət/",m:"n. 沙漠",e:"Few plants grow in the desert.",et:"沙漠里几乎没有植物生长。"},
+{w:"wild",p:"/waɪld/",m:"adj. 野生的，荒凉的",e:"Wild animals need our protection.",et:"野生动物需要我们的保护。",c:"in the wild 在野外"},
+{w:"species",p:"/ˈspiːʃiːz/",m:"n. 物种（单复数同形）",e:"Many species are in danger.",et:"许多物种处于危险中。"},
+{w:"nature",p:"/ˈneɪtʃə/",m:"n. 自然，本性",e:"Nature gives us everything we need.",et:"自然给予我们所需要的一切。"},
+{w:"natural",p:"/ˈnætʃrəl/",m:"adj. 自然的，天然的",e:"We enjoy the natural beauty of Aba.",et:"我们欣赏阿坝的自然美景。"},
+{w:"damage",p:"/ˈdæmɪdʒ/",m:"v./n. 损害，破坏",e:"Smoking damages your health.",et:"吸烟损害健康。",c:"do damage to 对...造成损害"},
+{w:"destroy",p:"/dɪˈstrɔɪ/",m:"v. 破坏，摧毁",e:"Fires destroy forests every year.",et:"火灾每年摧毁森林。"},
+{w:"earth",p:"/ɜːθ/",m:"n. 地球（常加the）",e:"The earth is our only home.",et:"地球是我们唯一的家园。"},
+{w:"planet",p:"/ˈplænɪt/",m:"n. 行星",e:"We should keep the planet clean.",et:"我们应该保持地球清洁。"},
+{w:"clean",p:"/kliːn/",m:"adj. 干净的 v. 打扫",e:"Let us keep our classroom clean.",et:"让我们保持教室干净。",c:"clean up 清理干净"},
+{w:"temperature",p:"/ˈtemprətʃə/",m:"n. 温度；气温",e:"The temperature drops below zero at night.",et:"夜间气温降到零度以下。",c:"have a temperature 发烧"},
+{w:"disaster",p:"/dɪˈzɑːstə/",m:"n. 灾难",e:"The flood was a terrible disaster.",et:"洪水是一场可怕的灾难。"},
+{w:"river",p:"/ˈrɪvə/",m:"n. 河流",e:"The river runs through our village.",et:"这条河流经我们的村庄。"},
+{w:"save",p:"/seɪv/",m:"v. 节约；救；节省",e:"We should save every drop of water.",et:"我们应该节约每一滴水。"},
+]},
+{name:"Unit 8 · 旅行与交通",words:[
+{w:"travel",p:"/ˈtrævl/",m:"v./n. 旅行",e:"I want to travel around Sichuan.",et:"我想去四川各地旅行。"},
+{w:"journey",p:"/ˈdʒɜːni/",m:"n. 旅程，旅行",e:"It was a long journey to Jiuzhaigou.",et:"去九寨沟的旅程很长。",c:"have a good journey 一路顺利"},
+{w:"tour",p:"/tʊə/",m:"n./v. 旅游，游览",e:"We took a tour of the old town.",et:"我们游览了老城区。",c:"go on a tour 去旅行"},
+{w:"tourist",p:"/ˈtʊərɪst/",m:"n. 游客",e:"Many tourists visit Aba in autumn.",et:"秋天许多游客来阿坝。",c:"attract tourists 吸引游客"},
+{w:"transport",p:"/ˈtrænspɔːt/",m:"n./v. 运输，交通",e:"Public transport makes the city lively.",et:"公共交通使城市充满活力。"},
+{w:"vehicle",p:"/ˈviːəkl/",m:"n. 车辆，交通工具",e:"No vehicles are allowed on the path.",et:"小路上禁止车辆通行。"},
+{w:"bicycle",p:"/ˈbaɪsɪkl/",m:"n. 自行车",e:"He goes to school by bicycle.",et:"他骑自行车上学。",c:"by bicycle 骑自行车"},
+{w:"subway",p:"/ˈsʌbweɪ/",m:"n. 地铁",e:"The subway is fast but crowded.",et:"地铁快但很挤。"},
+{w:"railway",p:"/ˈreɪlweɪ/",m:"n. 铁路",e:"The new railway connects Aba and Chengdu.",et:"新铁路连接阿坝和成都。"},
+{w:"highway",p:"/ˈhaɪweɪ/",m:"n. 公路，高速",e:"We drove along the highway.",et:"我们沿公路行驶。"},
+{w:"airport",p:"/ˈeəpɔːt/",m:"n. 机场",e:"The airport is far from the town.",et:"机场离镇上很远。"},
+{w:"station",p:"/ˈsteɪʃn/",m:"n. 车站；所；站",e:"I will meet you at the station.",et:"我去车站接你。"},
+{w:"ticket",p:"/ˈtɪkɪt/",m:"n. 票",e:"I booked a ticket online.",et:"我在网上订了票。",c:"book a ticket 订票"},
+{w:"passport",p:"/ˈpɑːspɔːt/",m:"n. 护照",e:"You need a passport to travel abroad.",et:"出国旅行需要护照。"},
+{w:"luggage",p:"/ˈlʌɡɪdʒ/",m:"n. 行李（不可数）",e:"My luggage was lost at the airport.",et:"我的行李在机场丢了。"},
+{w:"hotel",p:"/həʊˈtel/",m:"n. 旅馆",e:"We stayed at a small hotel.",et:"我们住在一家小旅馆。"},
+{w:"sightseeing",p:"/ˈsaɪtsiːɪŋ/",m:"n. 观光",e:"We went sightseeing in Huanglong.",et:"我们去黄龙观光了。",c:"go sightseeing 去观光"},
+{w:"direction",p:"/dəˈrekʃn/",m:"n. 方向；说明",e:"Ask the police for directions.",et:"向警察问路。",c:"in the direction of 朝...方向"},
+{w:"distance",p:"/ˈdɪstəns/",m:"n. 距离",e:"The distance is 200 kilometers.",et:"距离是两百公里。",c:"in the distance 在远处"},
+{w:"local",p:"/ˈləʊkl/",m:"adj. 当地的，本地的",e:"Local food is cheap and delicious.",et:"当地食物便宜又美味。",c:"local people 当地人"},
+{w:"foreign",p:"/ˈfɒrən/",m:"adj. 外国的",e:"She wants to learn a foreign language.",et:"她想学一门外语。",c:"foreign languages 外语"},
+{w:"abroad",p:"/əˈbrɔːd/",m:"adv. 在国外",e:"He plans to study abroad after school.",et:"他计划毕业后出国留学。",c:"study abroad 出国留学"},
+{w:"arrive",p:"/əˈraɪv/",m:"v. 到达",e:"We arrived at the village at dusk.",et:"我们黄昏到达村庄。",c:"arrive at/in 到达（小/大地方）"},
+{w:"depart",p:"/dɪˈpɑːt/",m:"v. 离开，出发",e:"The train departs at eight sharp.",et:"火车八点整出发。"},
+]},
+{name:"Unit 9 · 文化与社会",words:[
+{w:"culture",p:"/ˈkʌltʃə/",m:"n. 文化",e:"Chinese culture has a long history.",et:"中国文化历史悠久。",c:"traditional culture 传统文化"},
+{w:"traditional",p:"/trəˈdɪʃənl/",m:"adj. 传统的",e:"She wore traditional clothes at the festival.",et:"节日里她穿着传统服装。"},
+{w:"custom",p:"/ˈkʌstəm/",m:"n. 风俗，习俗",e:"Eating dumplings is a Spring Festival custom.",et:"吃饺子是春节习俗。"},
+{w:"festival",p:"/ˈfestɪvl/",m:"n. 节日",e:"The Mid-Autumn Festival is in autumn.",et:"中秋节在秋天。",c:"the Spring Festival 春节"},
+{w:"ancient",p:"/ˈeɪnʃənt/",m:"adj. 古代的，古老的",e:"We visited an ancient temple.",et:"我们参观了一座古庙。"},
+{w:"modern",p:"/ˈmɒdn/",m:"adj. 现代的",e:"Modern life moves very fast.",et:"现代生活节奏很快。"},
+{w:"society",p:"/səˈsaɪəti/",m:"n. 社会",e:"Everyone plays a part in society.",et:"每个人都在社会中扮演角色。"},
+{w:"community",p:"/kəˈmjuːnəti/",m:"n. 社区，群体",e:"Our community holds a clean-up day.",et:"我们社区有一次清洁日活动。"},
+{w:"citizen",p:"/ˈsɪtɪzn/",m:"n. 公民，市民",e:"A good citizen follows the rules.",et:"好公民遵守规则。"},
+{w:"government",p:"/ˈɡʌvənmənt/",m:"n. 政府",e:"The government built new schools in villages.",et:"政府在农村建了新学校。"},
+{w:"law",p:"/lɔː/",m:"n. 法律，法规",e:"We must obey the law.",et:"我们必须遵守法律。",c:"break the law 违法"},
+{w:"rule",p:"/ruːl/",m:"n. 规则 v. 统治",e:"Follow the rules of the library.",et:"遵守图书馆规则。",c:"break the rules 违反规定"},
+{w:"population",p:"/ˌpɒpjuˈleɪʃn/",m:"n. 人口",e:"The population of the town is small.",et:"这个镇人口不多。",c:"a large population 人口众多"},
+{w:"history",p:"/ˈhɪstri/",m:"n. 历史",e:"China has a history of 5000 years.",et:"中国有五千年历史。"},
+{w:"museum",p:"/mjuˈziːəm/",m:"n. 博物馆",e:"The museum is free on weekends.",et:"博物馆周末免费。",c:"visit a museum 参观博物馆"},
+{w:"performance",p:"/pəˈfɔːməns/",m:"n. 表演；表现",e:"Their performance won loud applause.",et:"他们的表演赢得了热烈掌声。"},
+{w:"art",p:"/ɑːt/",m:"n. 艺术",e:"She is interested in Chinese art.",et:"她对中国艺术感兴趣。"},
+{w:"literature",p:"/ˈlɪtrətʃə/",m:"n. 文学",e:"English literature opens a new world.",et:"英国文学打开一个新世界。"},
+{w:"poem",p:"/pəʊɪm/",m:"n. 诗",e:"He wrote a poem about his hometown.",et:"他写了一首关于家乡的诗。"},
+{w:"author",p:"/ˈɔːθə/",m:"n. 作者，作家",e:"The author visited our school.",et:"那位作家参观了我们的学校。"},
+{w:"translate",p:"/trænzˈleɪt/",m:"v. 翻译",e:"Can you translate this sentence into English?",et:"你能把这个句子译成英语吗？",c:"translate...into 把...译成"},
+{w:"language",p:"/ˈlæŋɡwɪdʒ/",m:"n. 语言",e:"English is a useful language.",et:"英语是一门有用的语言。"},
+{w:"dialect",p:"/ˈdaɪəlekt/",m:"n. 方言",e:"Sichuan dialect is hard for foreigners.",et:"四川话对外国人来说很难。"},
+{w:"novel",p:"/ˈnɒvl/",m:"n.（长篇）小说",e:"The novel was written in 1950.",et:"这部小说写于1950年。"},
+]},
+{name:"Unit 10 · 经济与消费",words:[
+{w:"money",p:"/ˈmʌni/",m:"n. 钱（不可数）",e:"Save money for future study.",et:"为将来的学习存钱。",c:"save money 存钱"},
+{w:"price",p:"/praɪs/",m:"n. 价格",e:"The price of the book is 25 yuan.",et:"这本书价格是25元。"},
+{w:"cost",p:"/kɒst/",m:"n./v. 花费（物作主语）",e:"The trip cost me 500 yuan.",et:"这次旅行花了我500元。",c:"cost sb money 花了某人多少钱"},
+{w:"spend",p:"/spend/",m:"v. 花费（人作主语）",e:"I spend two hours on English every day.",et:"我每天花两小时学英语。",c:"spend time/money on sth"},
+{w:"pay",p:"/peɪ/",m:"v. 付款 n. 工资",e:"You can pay by phone.",et:"你可以用手机付款。",c:"pay for 为...付款"},
+{w:"afford",p:"/əˈfɔːd/",m:"v. 买得起，负担得起",e:"I cannot afford the new phone.",et:"我买不起新手机。",c:"can/can not afford 买得起/买不起"},
+{w:"cheap",p:"/tʃiːp/",m:"adj. 便宜的",e:"The canteen food is cheap and good.",et:"食堂食物便宜又好。"},
+{w:"expensive",p:"/ɪkˈspensɪv/",m:"adj. 昂贵的",e:"The ticket is too expensive for me.",et:"这票对我来说太贵了。"},
+{w:"value",p:"/ˈvæljuː/",m:"n. 价值 v. 重视",e:"Reading is of great value to students.",et:"阅读对学生很有价值。",c:"be of value 有价值的"},
+{w:"quality",p:"/ˈkwɒləti/",m:"n. 质量；品质",e:"Quality matters more than price.",et:"质量比价格更重要。"},
+{w:"economy",p:"/ɪˈkɒnəmi/",m:"n. 经济",e:"The local economy grows quickly.",et:"当地经济发展迅速。"},
+{w:"business",p:"/ˈbɪznəs/",m:"n. 生意，商业",e:"His family runs a small business.",et:"他家经营小生意。",c:"on business 出差"},
+{w:"company",p:"/ˈkʌmpəni/",m:"n. 公司",e:"The company hired ten students.",et:"这家公司雇了十名学生。"},
+{w:"customer",p:"/ˈkʌstəmə/",m:"n. 顾客",e:"The shop welcomes customers warmly.",et:"这家店热情接待顾客。"},
+{w:"service",p:"/ˈsɜːvɪs/",m:"n. 服务",e:"The service in the hotel was excellent.",et:"这家旅馆的服务很棒。"},
+{w:"market",p:"/ˈmɑːkɪt/",m:"n. 市场",e:"We buy vegetables at the market.",et:"我们在市场买菜。"},
+{w:"trade",p:"/treɪd/",m:"n./v. 贸易，交易",e:"Trade between cities is busy.",et:"城市间贸易繁忙。"},
+{w:"advertisement",p:"/ədˈvɜːtɪsmənt/",m:"n. 广告",e:"I saw an advertisement for the club.",et:"我看到了一则社团广告。"},
+{w:"discount",p:"/ˈdɪskaʊnt/",m:"n./v. 折扣",e:"Students get a discount on books.",et:"学生买书有折扣。",c:"at a discount 打折"},
+{w:"budget",p:"/ˈbʌdʒɪt/",m:"n. 预算",e:"Make a budget for your pocket money.",et:"为你的零花钱做个预算。"},
+{w:"income",p:"/ˈɪnkʌm/",m:"n. 收入",e:"Farm income rises every year.",et:"农业收入逐年增加。",c:"low/high income 收入低/高"},
+{w:"salary",p:"/ˈsæləri/",m:"n. 薪水（月薪）",e:"Teachers ask for a fair salary.",et:"教师们要求公平的薪水。",c:"a monthly salary 月薪"},
+{w:"free",p:"/friː/",m:"adj. 免费的；自由的",e:"The entrance to the park is free.",et:"公园门票免费。",c:"for free 免费"},
+{w:"purchase",p:"/ˈpɜːtʃəs/",m:"v./n. 购买",e:"She purchased a dictionary online.",et:"她在网上买了本词典。"},
+]},
+{name:"Unit 11 · 思维与交际动词",words:[
+{w:"realize",p:"/ˈriːəlaɪz/",m:"v. 意识到，实现",e:"I realize English is really important.",et:"我意识到英语真的很重要。",c:"realize one's dream 实现梦想"},
+{w:"recognize",p:"/ˈrekəɡnaɪz/",m:"v. 认出；承认",e:"I did not recognize her at first.",et:"一开始我没认出她来。"},
+{w:"remember",p:"/rɪˈmembə/",m:"v. 记得",e:"Remember to bring your ID card.",et:"记得带身份证。",c:"remember doing 记得做过；remember to do 记得要做"},
+{w:"forget",p:"/fəˈɡet/",m:"v. 忘记",e:"Do not forget to review old words.",et:"别忘了复习旧单词。",c:"forget doing 忘了做过"},
+{w:"remind",p:"/rɪˈmaɪnd/",m:"v. 提醒，使想起",e:"Please remind me to hand in the paper.",et:"请提醒我交卷。",c:"remind sb of sth 使某人想起"},
+{w:"understand",p:"/ˌʌndəˈstænd/",m:"v. 理解",e:"I finally understand the grammar rule.",et:"我终于理解了这条语法规则。"},
+{w:"explain",p:"/ɪkˈspleɪn/",m:"v. 解释，说明",e:"Could you explain the sentence again?",et:"你能再解释一下这个句子吗？",c:"explain sth to sb"},
+{w:"express",p:"/ɪkˈspres/",m:"v. 表达",e:"Learn to express your ideas in English.",et:"学会用英语表达想法。",c:"express oneself 表达自己"},
+{w:"describe",p:"/dɪˈskraɪb/",m:"v. 描述",e:"Describe the picture in five sentences.",et:"用五句话描述这幅图。"},
+{w:"imagine",p:"/ɪˈmædʒɪn/",m:"v. 想象",e:"Imagine you are speaking to a foreigner.",et:"想象你在和外国人说话。"},
+{w:"suppose",p:"/səˈpəʊz/",m:"v. 假设，认为",e:"I suppose he will come on time.",et:"我想他会按时来。"},
+{w:"believe",p:"/bɪˈliːv/",m:"v. 相信",e:"Believe in yourself and your effort.",et:"相信你自己和你的努力。",c:"believe in 信任"},
+{w:"decide",p:"/dɪˈsaɪd/",m:"v. 决定",e:"She decided to study English daily.",et:"她决定每天学英语。",c:"decide to do 决定做"},
+{w:"choose",p:"/tʃuːz/",m:"v. 选择（过去式 chose）",e:"Choose the answer that fits best.",et:"选择最合适的答案。"},
+{w:"prefer",p:"/prɪˈfɜː/",m:"v. 更喜欢",e:"I prefer English to math.",et:"比起数学我更喜欢英语。",c:"prefer A to B 喜欢A胜过B；prefer to do rather than do"},
+{w:"refuse",p:"/rɪˈfjuːz/",m:"v. 拒绝",e:"He refused to give up his dream.",et:"他拒绝放弃梦想。",c:"refuse to do 拒绝做"},
+{w:"allow",p:"/əˈlaʊ/",m:"v. 允许",e:"Phones are not allowed in class.",et:"课堂上不允许用手机。",c:"allow doing / allow sb to do"},
+{w:"avoid",p:"/əˈvɔɪd/",m:"v. 避免",e:"Avoid making the same mistakes again.",et:"避免再犯同样的错误。",c:"avoid doing 避免做"},
+{w:"consider",p:"/kənˈsɪdə/",m:"v. 考虑；认为",e:"Consider using a notebook for mistakes.",et:"考虑用笔记本记错题。",c:"consider doing 考虑做"},
+{w:"continue",p:"/kənˈtɪnjuː/",m:"v. 继续",e:"He continued reading after a short break.",et:"短暂休息后他继续阅读。",c:"continue to do / doing"},
+{w:"expect",p:"/ɪkˈspekt/",m:"v. 期待，预计",e:"We expect to win the game.",et:"我们期待赢得比赛。",c:"expect to do 期待做"},
+{w:"manage",p:"/ˈmænɪdʒ/",m:"v. 设法完成；管理",e:"She managed to finish the test on time.",et:"她设法按时完成了测试。",c:"manage to do 设法做成"},
+{w:"offer",p:"/ˈɒfə/",m:"v./n. 提供；提议",e:"He offered to help me with English.",et:"他主动提出帮我学英语。",c:"offer to do 主动提出做"},
+{w:"promise",p:"/ˈprɒmɪs/",m:"v./n. 承诺",e:"I promise to keep a diary in English.",et:"我承诺坚持用英语写日记。",c:"promise to do 承诺做"},
+]},
+{name:"Unit 12 · 易混连接词与高频虚词",words:[
+{w:"however",p:"/haʊˈevə/",m:"adv. 然而（逗号隔开）",e:"The task was hard; however, we finished it.",et:"任务很难，然而我们完成了。",c:"注意：however后常有逗号，不能与but连用"},
+{w:"therefore",p:"/ˈðeəfɔː/",m:"adv. 因此",e:"It rained; therefore, we stayed at home.",et:"下雨了，因此我们待在家里。",c:"therefore = as a result"},
+{w:"besides",p:"/bɪˈsaɪdz/",m:"adv. 而且 prep. 除了...还有",e:"The room is small. Besides, it is noisy.",et:"房间小，而且吵闹。",c:"递进：besides（还有）vs except（不包括）"},
+{w:"moreover",p:"/mɔːrˈəʊvə/",m:"adv. 此外，而且",e:"The book is cheap. Moreover, it is useful.",et:"这本书便宜，而且有用。"},
+{w:"otherwise",p:"/ˈʌðəwaɪz/",m:"adv. 否则",e:"Hurry up; otherwise we will miss the bus.",et:"快点，否则我们会错过公交。",c:"otherwise = or else 否则"},
+{w:"instead",p:"/ɪnˈsted/",m:"adv. 代替，反而",e:"He did not watch TV. Instead, he read.",et:"他没看电视，反而读了书。",c:"instead of 代替（后接n./doing）"},
+{w:"although",p:"/ɔːlˈðəʊ/",m:"conj. 尽管，虽然",e:"Although he is tired, he keeps reading.",et:"尽管累了，他仍坚持阅读。",c:"although从句不能再用but"},
+{w:"unless",p:"/ənˈles/",m:"conj. 除非（=if not）",e:"Unless you practice, you will not improve.",et:"除非你练习，否则不会提高。",c:"unless = if not 若非"},
+{w:"until",p:"/ənˈtɪl/",m:"conj./prep. 直到",e:"He did not sleep until midnight.",et:"他直到半夜才睡。",c:"not...until 直到...才"},
+{w:"since",p:"/sɪns/",m:"conj. 自从；既然 prep. 自从",e:"He has studied English since 2020.",et:"他从2020年起学英语。",c:"since从句用过去时，主句用完成时"},
+{w:"whether",p:"/ˈweðə/",m:"conj. 是否",e:"I wonder whether he will come.",et:"我想知道他是否会来。",c:"whether or not 是否；if不能换用的情况：介词后、不定式前"},
+{w:"while",p:"/waɪl/",m:"conj. 当...时；尽管；然而",e:"While I was reading, he fell asleep.",et:"我读书时他睡着了。",c:"while从句常用进行时"},
+{w:"once",p:"/wʌns/",m:"conj. 一旦 adv. 一次",e:"Once you start, do not give up.",et:"一旦开始，就别放弃。"},
+{w:"whenever",p:"/wenˈevə/",m:"conj. 无论何时",e:"Call me whenever you need help.",et:"需要帮忙随时打给我。"},
+{w:"wherever",p:"/weərˈevə/",m:"conj. 无论在哪里",e:"Wherever you go, take your book.",et:"无论去哪里，带上书。"},
+{w:"whatever",p:"/wɒtˈevə/",m:"conj. 无论什么",e:"Whatever happens, keep smiling.",et:"无论发生什么，保持微笑。",c:"whatever = no matter what"},
+{w:"whichever",p:"/wɪtʃˈevə/",m:"conj. 无论哪个",e:"Take whichever seat you like.",et:"你喜欢哪个座位就坐哪个。"},
+{w:"whoever",p:"/huːˈevə/",m:"conj. 无论谁",e:"Whoever breaks the rule will be punished.",et:"无论谁违反规定都会受罚。"},
+{w:"because",p:"/bɪˈkɒz/",m:"conj. 因为（接从句）",e:"He was late because of the rain.",et:"因为下雨他迟到了。",c:"because of + 名词/doing；because + 句子"},
+{w:"though",p:"/ðəʊ/",m:"conj./adv. 虽然；不过",e:"Though it was cold, we kept walking.",et:"尽管很冷，我们继续走。",c:"句尾的though = however"},
+{w:"so",p:"/səʊ/",m:"conj. 所以 adv. 如此",e:"It was late, so we went home.",et:"天晚了，所以我们回家了。",c:"so that 以便于；so...that 如此...以至于"},
+{w:"still",p:"/stɪl/",m:"adv. 仍然",e:"He still keeps his old habits.",et:"他仍然保持老习惯。"},
+{w:"but",p:"/bʌt/",m:"conj. 但是",e:"He tried hard but failed.",et:"他很努力但失败了。",c:"but不能与although/though同时用"},
+{w:"also",p:"/ˈɔːlsəʊ/",m:"adv. 也，还",e:"She also sings in the club.",et:"她在社团也唱歌。",c:"also用于句中；too用于句尾"},
+]},
+];
+VOCAB.push(...VOCAB2);
+const PHRASES=[
+{w:"look forward to",p:"",m:"期待，盼望",e:"I look forward to hearing from you.",et:"我期待收到你的回信。",id:"p0",c:"to是介词，后接doing"},
+{w:"pay attention to",p:"",m:"注意，关注",e:"Pay attention to your spelling.",et:"注意你的拼写。",id:"p1",c:"to 介词，后接n./doing"},
+{w:"make up one's mind",p:"",m:"下定决心",e:"She made up her mind to win.",et:"她下定决心要赢。",id:"p2"},
+{w:"make up",p:"",m:"组成；弥补；编造；化妆",e:"My brother will make up the rest of the money.",et:"我弟弟会补上剩下的钱。",id:"p3",c:"2025年高考真题一词多义考点"},
+{w:"take off",p:"",m:"起飞；脱下；突然成功",e:"The plane took off on time.",et:"飞机准时起飞。",id:"p4"},
+{w:"take up",p:"",m:"开始从事；占据（时间）",e:"Reading takes up most of my free time.",et:"阅读占用了我的大部分空闲时间。",id:"p5"},
+{w:"put off",p:"",m:"推迟，拖延",e:"Never put off until tomorrow what you can do today.",et:"永远不要把今天能做的事拖到明天。",id:"p6"},
+{w:"put up with",p:"",m:"容忍，忍受",e:"I cannot put up with the noise.",et:"我无法忍受这噪音。",id:"p7"},
+{w:"give up",p:"",m:"放弃",e:"Do not give up halfway.",et:"不要半途而废。",id:"p8",c:"give up doing 放弃做"},
+{w:"give in",p:"",m:"屈服，让步",e:"He refused to give in to difficulty.",et:"他拒绝向困难屈服。",id:"p9"},
+{w:"come across",p:"",m:"偶然遇到",e:"I came across an old photo in the drawer.",et:"我在抽屉里偶然翻到一张旧照片。",id:"p10"},
+{w:"come up with",p:"",m:"想出（主意）",e:"She came up with a good idea.",et:"她想出了一个好主意。",id:"p11"},
+{w:"carry on",p:"",m:"继续下去",e:"Carry on with your reading.",et:"继续读下去。",id:"p12"},
+{w:"figure out",p:"",m:"弄明白，想出",e:"I cannot figure out this grammar point.",et:"我弄不明白这个语法点。",id:"p13"},
+{w:"get along with",p:"",m:"与...相处",e:"He gets along well with classmates.",et:"他和同学相处融洽。",id:"p14"},
+{w:"get rid of",p:"",m:"摆脱，除去",e:"Get rid of bad study habits.",et:"摆脱坏的学习习惯。",id:"p15"},
+{w:"keep up with",p:"",m:"跟上，不落后",e:"Work hard to keep up with others.",et:"努力跟上其他人。",id:"p16"},
+{w:"look down upon",p:"",m:"轻视，看不起",e:"Never look down upon yourself.",et:"永远不要看不起自己。",id:"p17"},
+{w:"look up",p:"",m:"查阅；抬头看",e:"Look up the word in the dictionary.",et:"在词典里查这个单词。",id:"p18"},
+{w:"look into",p:"",m:"调查",e:"The police looked into the case.",et:"警察调查了这个案子。",id:"p19"},
+{w:"set up",p:"",m:"建立，设立",e:"We set up an English corner.",et:"我们建了一个英语角。",id:"p20"},
+{w:"set out",p:"",m:"出发；着手",e:"They set out at dawn.",et:"他们黎明出发。",id:"p21"},
+{w:"set aside",p:"",m:"留出（时间/钱）",e:"Set aside thirty minutes for words.",et:"留出三十分钟背单词。",id:"p22"},
+{w:"break down",p:"",m:"出故障；崩溃",e:"The old car broke down on the way.",et:"旧车在路上抛锚了。",id:"p23"},
+{w:"break out",p:"",m:"（战争/火灾）爆发",e:"A fire broke out last night.",et:"昨晚发生了火灾。",id:"p24"},
+{w:"bring up",p:"",m:"抚养；提出",e:"He was brought up by his grandma.",et:"他由奶奶抚养长大。",id:"p25"},
+{w:"call on",p:"",m:"拜访；号召",e:"We called on the old teacher.",et:"我们拜访了那位老教师。",id:"p26"},
+{w:"call for",p:"",m:"需要；要求",e:"The plan calls for patient work.",et:"这计划需要耐心的工作。",id:"p27"},
+{w:"turn up",p:"",m:"出现；调大",e:"He turned up an hour late.",et:"他迟了一小时才出现。",id:"p28"},
+{w:"turn down",p:"",m:"调小；拒绝",e:"She turned down my invitation.",et:"她拒绝了我的邀请。",id:"p29"},
+{w:"turn out",p:"",m:"结果是，证明是",e:"It turned out to be a sunny day.",et:"结果那天阳光明媚。",id:"p30"},
+{w:"account for",p:"",m:"说明原因；占比例",e:"Reading accounts for half of my time.",et:"阅读占了我一半时间。",id:"p31"},
+{w:"depend on",p:"",m:"取决于，依靠",e:"Success depends on daily effort.",et:"成功取决于每天的努力。",id:"p32"},
+{w:"focus on",p:"",m:"专注于",e:"Focus on the listening part first.",et:"先专注于听力部分。",id:"p33"},
+{w:"insist on",p:"",m:"坚持（要求）",e:"He insisted on doing it himself.",et:"他坚持自己做。",id:"p34"},
+{w:"suffer from",p:"",m:"患...病；受苦",e:"He suffers from a bad cold.",et:"他得了重感冒。",id:"p35"},
+{w:"recover from",p:"",m:"从...恢复",e:"She has recovered from the illness.",et:"她从病中恢复了。",id:"p36"},
+{w:"adapt to",p:"",m:"适应",e:"We must adapt to the new school.",et:"我们必须适应新学校。",id:"p37"},
+{w:"appeal to",p:"",m:"吸引；呼吁",e:"The idea appeals to young people.",et:"这个主意吸引年轻人。",id:"p38"},
+{w:"contribute to",p:"",m:"促成；为...做贡献",e:"Exercise contributes to good health.",et:"运动促成健康。",id:"p39"},
+{w:"date back to",p:"",m:"追溯到",e:"The temple dates back to 600 years ago.",et:"这座庙可追溯到六百年前。",id:"p40"},
+{w:"end up with",p:"",m:"以...告终",e:"We ended up with a Chinese dinner.",et:"我们最后吃了一顿中餐。",id:"p41"},
+{w:"fall behind",p:"",m:"落后",e:"If you stop, you will fall behind.",et:"如果你停下，就会落后。",id:"p42"},
+{w:"hand in",p:"",m:"上交",e:"Hand in your papers before noon.",et:"中午前交卷。",id:"p43"},
+{w:"hand out",p:"",m:"分发",e:"Please hand out the books.",et:"请把书发下去。",id:"p44"},
+{w:"keep an eye on",p:"",m:"留意，照看",e:"Keep an eye on the time.",et:"留意时间。",id:"p45"},
+{w:"make a difference",p:"",m:"有影响，起作用",e:"Daily words make a big difference.",et:"每天背单词作用很大。",id:"p46"},
+{w:"make sense",p:"",m:"讲得通，有意义",e:"This answer does not make sense.",et:"这个答案讲不通。",id:"p47"},
+{w:"take...seriously",p:"",m:"认真对待",e:"Take every mistake seriously.",et:"认真对待每个错误。",id:"p48"},
+{w:"used to do",p:"",m:"过去常常",e:"I used to fear English class.",et:"我过去常害怕英语课。",id:"p49",c:"对比：be used to doing 习惯于"},
+];
+/*__GRAMMAR__*/
+const GRAMMAR=[
+{name:"第1章 · 句子结构五大基本句型",goal:"读懂长难句的骨架，一切语法的基础",html:`
+<p>英语句子千变万化，都逃不出这五个句型。拿到长句，先找<b>动词</b>，再问一句“动词后面跟了什么”：</p>
+<table class="tbl">
+<tr><th>句型</th><th>结构</th><th>例子</th></tr>
+<tr><td>①主谓</td><td>S + V（不及物）</td><td>Birds <b>fly</b>.</td></tr>
+<tr><td>②主谓宾</td><td>S + V + O</td><td>I <b>love</b> English.</td></tr>
+<tr><td>③主系表</td><td>S + 系动词 + P</td><td>She <b>is</b> confident.</td></tr>
+<tr><td>④主谓双宾</td><td>S + V + 人 + 物</td><td>He gave <b>me</b> <b>a book</b>.</td></tr>
+<tr><td>⑤主谓宾补</td><td>S + V + O + C</td><td>We call <b>him</b> Tom.</td></tr>
+</table>
+<h3>句子成分快速判断法</h3>
+<p>1. 主语 = 句子的“话题”，常在句首；<b>2. 谓语 = 动词（或动词短语）</b>，一个简单句只有一个核心动词；3. 宾语 = 动作的“承受者”，在动词后；4. 表语 = 系动词后的身份/状态；5. 补语 = 补充说明宾语的状态（常由形容词/to do/doing 担任）。</p>
+<div class="notice info">读长句诀窍：先删掉修饰成分（形容词、介词短语、从句），只剩“谁+做了什么”，主干立刻现形。</div>`,
+quiz:[
+{q:"选出句子主干：The tall boy in blue is playing basketball on the playground.",o:["The boy is playing","The boy in blue on the playground","Blue is playing basketball","tall boy is basketball"],a:0,ex:"删掉形容词 tall、介词短语 in blue/on the playground，只剩“The boy is playing（主谓）”。"},
+{q:"句子的谓语动词是哪一个：My best friend Li Hua, who loves English, often helps me with grammar.",o:["loves","helps","loves / helps 都是","English"],a:1,ex:"主句主语是 My best friend Li Hua，谓语是 helps；loves 是定语从句里的，从句不是全句谓语。"},
+{q:"选出与“Tom gave Mary a book.”句型不同（非双宾）的句子：",o:["My mother bought me a dictionary.","The teacher told us a story.","The story sounds interesting.","He sent me a letter."],a:2,ex:"A/B/D 都是“主谓双宾”（人+物）；C 是“主系表”，sound 是系动词。"},
+{q:"They made him ___ captain of the team. 语法上应填：",o:["/ (不填)","is","be","was"],a:0,ex:"captain 是主语补足语，补充说明 him。make sb + 名词/形容词/do，叫某人做什么用动词原形，表身份直接加名词。"},
+]},
+{name:"第2章 · 动词时态（16时态速查+标志词）",goal:"高考语法填空、完形第一大考点",html:`
+<h3>八大时间 × 四种状态，先记最常考的8种</h3>
+<table class="tbl">
+<tr><th>时态</th><th>构成</th><th>标志词</th></tr>
+<tr><td>一般现在时</td><td>do / does</td><td>often, usually, always, 客观真理</td></tr>
+<tr><td>一般过去时</td><td>did</td><td>yesterday, last week, in 2010, ago</td></tr>
+<tr><td>一般将来时</td><td>will do / be going to</td><td>tomorrow, next year, in 2027</td></tr>
+<tr><td>现在进行时</td><td>am/is/are doing</td><td>now, look, listen, these days</td></tr>
+<tr><td>过去进行时</td><td>was/were doing</td><td>at 8 last night, this time yesterday</td></tr>
+<tr><td>现在完成时</td><td>have/has done</td><td>already, yet, just, ever, so far, since/for</td></tr>
+<tr><td>过去完成时</td><td>had done</td><td>by the time..., by the end of last term</td></tr>
+<tr><td>将来完成时</td><td>will have done</td><td>by the time + 将来时间</td></tr>
+</table>
+<h3>三大高频陷阱（记熟！）</h3>
+<p>1. <b>since / for</b>：主句用<b>现在完成时</b>，since 后接<b>过去时间点</b>，for 后接<b>一段时间</b>。<br>
+2. <b>by the time + 过去从句</b> → 主句用<b>过去完成时</b>（过去的过去）。<br>
+3. <b>It is/has been + 时间段 + since</b> 从句用一般过去时。</p>
+<div class="notice warn">没有时间状语时，看上下文：一个动作“对现在造成影响”用现在完成时；两个过去动作有先后，先发生的用过去完成时。</div>`,
+quiz:[
+{q:"He ___ in this school since three years ago.",o:["studies","studied","has studied","is studying"],a:2,ex:"since three years ago 是完成时标志，用现在完成时 has studied。"},
+{q:"By the time we got to the cinema, the film ___ for ten minutes.",o:["began","has begun","was beginning","had been on"],a:3,ex:"“电影开始”发生在“到达”之前（过去的过去），且与 for ten minutes 连用要换成状态词 be on，所以是 had been on。"},
+{q:"—Where is your homework? —I ___ it in the classroom just now.",o:["left","have left","was leaving","had left"],a:0,ex:"just now（刚才）是过去时间点，用一般过去时 left。"},
+{q:"Listen! The birds ___ in the tree outside our classroom.",o:["sing","sang","are singing","will sing"],a:2,ex:"Listen 是现在进行时标志，用 are singing。"},
+]},
+{name:"第3章 · 被动语态",goal:"语法填空、单选常客：be+done 和各种特殊被动",html:`
+<h3>基本结构：be + 过去分词（done）</h3>
+<table class="tbl">
+<tr><th>时态</th><th>被动</th></tr>
+<tr><td>一般现在</td><td>am/is/are done</td></tr>
+<tr><td>一般过去</td><td>was/were done</td></tr>
+<tr><td>现在完成</td><td>have/has been done</td></tr>
+<tr><td>一般将来</td><td>will be done / be going to be done</td></tr>
+<tr><td>进行</td><td>am/is/are being done</td></tr>
+<tr><td>含情态</td><td>can/must/should be done</td></tr>
+</table>
+<h3>高考三个热点</h3>
+<p>1. <b>双宾语变被动</b>：give sb sth → sb is given sth 或 sth is given to sb。<br>
+2. <b>感官/使役动词</b>：see sb do → sb be seen to do（省略的to要还原）。<br>
+3. <b>不用被动的动词</b>：happen, take place, break out, appear, disappear, belong to, consist of（不及物/无被动）。</p>
+<div class="notice info">“主动表被动”也常考：The book sells well.（这种书卖得好）— sell/wash/write/read + well 主动形式表被动含义。</div>`,
+quiz:[
+{q:"The old bridge ___ next year.",o:["will build","will be built","is built","has built"],a:1,ex:"桥是“被建”，next year 表将来，故选 will be built。"},
+{q:"Every year many trees ___ on the hill to stop soil loss.",o:["plant","are planted","were planted","planted"],a:1,ex:"every year 一般现在时；树是“被种”，故选 are planted。"},
+{q:"The problem ___ at the meeting yesterday.",o:["discussed","was discussed","is discussed","has discussed"],a:1,ex:"yesterday 一般过去时；问题是“被讨论”，故选 was discussed。"},
+{q:"Great changes ___ in my hometown in the past ten years.",o:["happened","have happened","have been happened","were happened"],a:1,ex:"happen 是不及物动词，无被动，排除C/D；in the past ten years 用现在完成时 have happened。"},
+]},
+{name:"第4章 · 定语从句",goal:"考点：that/which/who/关系副词，完形阅读长难句必备",html:`
+<h3>第一步：看先行词是人还是物；第二步：看从句缺什么成分</h3>
+<table class="tbl">
+<tr><th>从句缺什么</th><th>人</th><th>物</th></tr>
+<tr><td>缺主语/宾语</td><td>who / whom / that</td><td>which / that</td></tr>
+<tr><td>缺定语（...的）</td><td colspan="2">whose</td></tr>
+<tr><td>缺地点状语</td><td colspan="2">where（= in which）</td></tr>
+<tr><td>缺时间状语</td><td colspan="2">when</td></tr>
+<tr><td>缺原因状语</td><td colspan="2">why</td></tr>
+</table>
+<h3>只用 that 的情况（口诀）</h3>
+<p>先行词被<b>序数词/最高级/the only/the very/all/every/no/any</b>修饰；先行词<b>有人又有物</b>；不定代词（all, everything, nothing, something）作先行词。</p>
+<h3>不用 that 的情况</h3>
+<p>非限制性定语从句（有逗号）；介词后面（in which）。</p>
+<div class="notice warn">易错：This is the school ___ I studied ten years ago.（where，从句主谓完整，缺地点状语）；This is the school ___ I visited last week.（which/that，从句缺宾语）</div>`,
+quiz:[
+{q:"The book ___ I bought yesterday is very useful.",o:["who","what","which","where"],a:2,ex:"先行词 book 是物；从句 I bought ___ 缺宾语，指物用 which/that。"},
+{q:"I still remember the day ___ we spent together in Aba.",o:["when","which","on which","where"],a:1,ex:"从句 we spent ___，spent 是及物动词缺宾语 → 用 which（spent the day together）。when 是做状语的（on the day）。"},
+{q:"He is the only student ___ passed the exam.",o:["who","which","whom","whose"],a:0,ex:"先行词被 the only 修饰，关系词只用 that；且从句缺主语指人。四个选项中最合适为 who（口语中可用，严格应试优先 that，本题选项无 that 则选 who）。"},
+{q:"The village ___ we visited last summer has changed a lot.",o:["where","in which","which","that"],a:2,ex:"从句 we visited ___ 缺宾语，指物用 which/that。where 是关系副词（从句主谓必须完整）。"},
+]},
+{name:"第5章 · 名词性从句",goal:"主语/宾语/表语/同位语从句：that/what/whether三分",html:`
+<h3>四类名词性从句</h3>
+<p>主语从句（句首）、宾语从句（动词/介词后）、表语从句（系动词后）、同位语从句（fact/news/idea 后解释内容）。</p>
+<h3>连接词怎么选</h3>
+<table class="tbl">
+<tr><th>连接词</th><th>用法</th><th>例句</th></tr>
+<tr><td><b>that</b></td><td>陈述事实，从句不充当成分</td><td>I think that he is right.</td></tr>
+<tr><td><b>whether/if</b></td><td>“是否”</td><td>I wonder if he will come.</td></tr>
+<tr><td><b>what</b></td><td>“所…的东西”，从句缺主语/宾语</td><td>What we need is time.</td></tr>
+<tr><td>who/which/when/where/why/how</td><td>保留疑问词意思</td><td>When he comes is unknown.</td></tr>
+</table>
+<h3>高考三大陷阱</h3>
+<p>1. <b>宾语从句用陈述语序</b>：Could you tell me where the station is?（不能说 where is the station）<br>
+2. <b>what  vs that</b>：What he said is true.（what 在从句中作 said 的宾语）/ That he said so is true.（that 只连接，不作成分）。<br>
+3. <b>whether 不能用 if 替换</b>：介词后、不定式前（whether to go）、whether or not 连用。</p>
+<div class="notice info">同位语从句 vs 定语从句：The news that he told us is exciting.（定从，that作宾语）/ The news that he won is exciting.（同位语，that不充当成分）。</div>`,
+quiz:[
+{q:"___ is clear is that he has made a mistake.",o:["It","What","That","Which"],a:1,ex:"What is clear 是主语从句，what 在从句中作主语（is clear 缺主语）。It is clear that... 才是形式主语句型。"},
+{q:"Could you tell me ___?",o:["where is the post office","where the post office is","where was the post office","where the post office was"],a:1,ex:"宾语从句用陈述语序（主语+谓语），且问现在的情况，选 where the post office is。"},
+{q:"The teacher was happy with ___ we had done.",o:["that","what","which","whether"],a:1,ex:"with 后面是宾语从句，从句 we had done 缺宾语，用 what（我们所做的）。"},
+{q:"We haven't decided ___ to spend the weekend.",o:["that","what","whether","if"],a:2,ex:"whether to do 是固定搭配（if 不能用于不定式前），表示“是否去”。"},
+]},
+{name:"第6章 · 状语从句",goal:"九大状语从句的引导词与陷阱",html:`
+<table class="tbl">
+<tr><th>类型</th><th>引导词</th></tr>
+<tr><td>时间</td><td>when/while/as/before/after/since/until/hardly...when/no sooner...than/the moment</td></tr>
+<tr><td>条件</td><td>if/unless/as long as/once（一旦）</td></tr>
+<tr><td>原因</td><td>because/since/as/now that</td></tr>
+<tr><td>让步</td><td>although/though/even if/while/no matter + 疑问词</td></tr>
+<tr><td>目的</td><td>so that/in order that/in case（以防）</td></tr>
+<tr><td>结果</td><td>so...that/such...that</td></tr>
+<tr><td>比较</td><td>as...as/not so...as/than</td></tr>
+<tr><td>地点</td><td>where</td></tr>
+<tr><td>方式</td><td>as（像…一样）</td></tr>
+</table>
+<h3>高考高频陷阱</h3>
+<p>1. <b>although 不能和 but 连用</b>（同理 though...yet 除外）。<br>
+2. <b>not...until</b>：He did not go to bed until 11.<br>
+3. <b>Hardly had he...when</b> / No sooner had he...than 倒装。<br>
+4. <b>once/as long as</b> 引导条件从句，主将从现（主句将来时，从句一般现在时）。</p>`,
+quiz:[
+{q:"___ he was tired, he kept working on the farm.",o:["Although","But","Because","So"],a:0,ex:"“累”和“坚持干”是让步关系，用 Although；although 不能与 but 同时出现。"},
+{q:"I will not go to the party ___ I am invited.",o:["if","unless","since","though"],a:1,ex:"unless = if not。“除非被邀请，否则不去”。if 代入意思反了。"},
+{q:"___ had I entered the room ___ the phone rang.",o:["Hardly; when","No sooner; than","Hardly; than","No sooner; when"],a:0,ex:"固定搭配 Hardly...when / No sooner...than（“一…就…”），且主句倒装 had I entered。"},
+{q:"Speak loudly ___ everyone can hear you clearly.",o:["so that","such that","in order to","because"],a:0,ex:"so that “以便”，后面接从句 everyone can hear；in order to 后接动词原形。"},
+]},
+{name:"第7章 · 非谓语动词",goal:"语法填空半壁江山：to do / doing / done",html:`
+<h3>判断三步法</h3>
+<p>① 找到逻辑主语（非谓语的动作是谁发出的）② 判断<b>主动/被动</b> ③ 判断<b>时间先后</b>。</p>
+<table class="tbl">
+<tr><th>形式</th><th>含义</th></tr>
+<tr><td><b>to do</b></td><td>将来、目的、具体的某次</td></tr>
+<tr><td><b>doing</b></td><td>主动、进行、习惯性</td></tr>
+<tr><td><b>done</b></td><td>被动、完成</td></tr>
+</table>
+<h3>必须背的高频搭配</h3>
+<p>can't help doing忍不住；look forward to doing期待；be used to doing习惯于；it's no use doing 没用；have difficulty (in) doing 做…有困难；spend time (in) doing 花时间做；avoid/consider/enjoy/mind/finish/practice/suggest + doing；make sb do / make sb doing？— make sb do（省略to）但被动还原：be made to do。</p>
+<h3>with 复合结构 / 独立主格</h3>
+<p>with + 宾语 + doing（主动进行）/ done（被动完成）/ to do（将来）。With winter coming on, leaves turn yellow.</p>
+<div class="notice warn">感官动词宾补：see sb do（看见全过程）/ see sb doing（正在做）/ see sb done（被动）。变成被动时 do 的 to 要还原：sb was seen to do。</div>`,
+quiz:[
+{q:"The problems ___ (discuss) at the meeting tomorrow are very important.（用所给词的正确形式）",o:["discussing","discussed","to be discussed","to discuss"],a:2,ex:"tomorrow 表将来，problems 是“被讨论”，故选 to be discussed（不定式的被动式作定语）。"},
+{q:"___ from the hill, the village looks more beautiful.",o:["Seeing","Seen","To see","See"],a:1,ex:"the village 是“被看”的，用过去分词 Seen（= When it is seen from the hill）。"},
+{q:"He hurried to the station, ___ to meet his uncle.",o:["hope","hoped","hoping","to hope"],a:2,ex:"主语 he 主动“希望”，与 hurried 同时发生，用现在分词 hoping 作伴随状语。"},
+{q:"I am looking forward to ___ your letter.",o:["receive","receiving","received","be received"],a:1,ex:"look forward to 的 to 是介词，后接 doing：looking forward to receiving。"},
+]},
+{name:"第8章 · 情态动词与虚拟语气",goal:"单选/语法填空中“看出语气”的能力",html:`
+<h3>情态动词推测</h3>
+<table class="tbl">
+<tr><th>语气</th><th>现在</th><th>过去</th></tr>
+<tr><td>肯定推测</td><td>must be（一定是）</td><td>must have done</td></tr>
+<tr><td>否定推测</td><td>can't be（不可能）</td><td>can't have done</td></tr>
+<tr><td>可能推测</td><td>may/might be</td><td>may/might have done</td></tr>
+</table>
+<h3>虚拟语气：把“假的”说出来</h3>
+<table class="tbl">
+<tr><th>情况</th><th>从句</th><th>主句</th></tr>
+<tr><td>与现在相反</td><td>过去式（be用were）</td><td>would/could/might do</td></tr>
+<tr><td>与过去相反</td><td>had done</td><td>would have done</td></tr>
+<tr><td>与将来相反</td><td>did / should do / were to do</td><td>would do</td></tr>
+</table>
+<p><b>省略if倒装</b>：Were I you, I would try again.（= If I were you...）Had he known, he would have helped.（= If he had known...）</p>
+<h3>其他虚拟场景</h3>
+<p>wish：I wish I were a bird.（现在）/ I wish I had studied harder.（过去）<br>
+I would rather (that)... did / had done。<br>
+It is (high) time that... did / should do（早该）。<br>
+without / but for / otherwise 暗含虚拟：Without your help, I would have failed.</p>
+<div class="notice info">2025年四川一诊考过：It couldn't have been ___（不可能更糟了）——情态动词+完成时表对过去的推测。</div>`,
+quiz:[
+{q:"If I ___ you, I would take the chance.",o:["am","was","were","will be"],a:2,ex:"与现在相反的虚拟：从句用过去式，be 一律用 were。"},
+{q:"—You missed the bus. —Yes. If I had left five minutes earlier, I ___ it.",o:["would catch","would have caught","will catch","had caught"],a:1,ex:"与过去相反的虚拟：从句 had done，主句 would have done。"},
+{q:"He ___ have completed the work; I saw him working all morning.",o:["must","can't","may","needn't"],a:0,ex:"“看到他干了一早上”→“一定完成了”，肯定推测用 must have done。"},
+{q:"I wish I ___ how to operate the machine.",o:["know","knew","had known","would know"],a:1,ex:"wish 表对现在的愿望：从句用一般过去时 knew（wish I knew = 真希望我现在懂）。"},
+]},
+{name:"第9章 · 倒装与强调",goal:"语法填空压轴常客：否定词前置倒装+强调句型",html:`
+<h3>部分倒装（把助动词/系动词/情态提前）</h3>
+<p>1. <b>否定词置于句首</b>：never, hardly, seldom, little, rarely, no sooner, not only, not until...<br>
+2. <b>only + 状语（从句/介词短语/副词）</b>置于句首：Only then did I realize...<br>
+3. <b>so/neither 引导“也/也不”</b>：So do I. / Neither can he.<br>
+4. <b>so...that 中 so 提前</b>：So loudly did he speak that...<br>
+5. 省略 if 的虚拟：Were I you...</p>
+<h3>完全倒装（动词整个提前）</h3>
+<p>here / there / out / in / away / up（表方向的副词）置于句首，主语是名词：Here comes the bus.（主语是代词则不倒装：Here it comes.）</p>
+<h3>强调句型 It is/was...that...</h3>
+<p>判断方法：<b>去掉 It is/was...that 看句子是否完整</b>。It was in 2008 that Beijing hosted the Olympics.（强调的是时间。注意强调人时可用 who：It was he who...）</p>
+<div class="notice warn">高频陷阱：not until 的强调句 → It was not until midnight that he came back. 从句不倒装，主句（that后）保持正常语序。</div>`,
+quiz:[
+{q:"Never before ___ seen such a beautiful sunset.",o:["I have","have I","I had","had I"],a:3,ex:"Never 置于句首，部分倒装，且 seen 提示完成时，“从未见过”与现在对比，had I 构成“过去的过去”亦可。标准结构：Never before had I seen（在此之前从未见过）。"},
+{q:"Only when he told me ___ the truth.",o:["I knew","did I know","I did know","knew I"],a:1,ex:"only + 时间状语从句置于句首，主句部分倒装：did I know。"},
+{q:"It was at the very beginning ___ our teacher made the suggestion.",o:["when","where","that","which"],a:2,ex:"强调句型 It was...that...，被强调部分是 at the very beginning。"},
+{q:"—I have never been to Tibet. —___.",o:["So have I","Neither have I","So I have","Neither I have"],a:1,ex:"“我也没有”用 Neither/Nor + 倒装：Neither have I。So have I 表示“我也是”。"},
+]},
+{name:"第10章 · 主谓一致",goal:"语法填空隐形考点：看名词不看距离",html:`
+<h3>三大原则</h3>
+<table class="tbl">
+<tr><th>原则</th><th>例句</th></tr>
+<tr><td><b>语法一致</b>（看单复数）</td><td>Two boys are playing.</td></tr>
+<tr><td><b>意义一致</b>（集体名词）</td><td>My family is large.（整体）/ My family are watching TV.（个体）</td></tr>
+<tr><td><b>就远一致</b>（A or B）</td><td>Either you or he is right.</td></tr>
+</table>
+<h3>必背细则</h3>
+<p>1. <b>就远一致</b>：or / either...or / neither...nor / not only...but also / there be 多个主语 → 动词与最近的主语一致。<br>
+2. <b>就前一致</b>：as well as / together with / along with / with / except / but / including → 动词与前面主语一致：He, as well as his friends, is coming.<br>
+3. <b>不定式/动名词/从句</b>作主语 → <b>谓语单数</b>：To learn English is important.<br>
+4. <b>a number of + 复数名词</b> → 复数；<b>the number of + 复数名词</b> → 单数。<br>
+5. <b>many a / more than one + 单数名词</b> → 单数谓语。<br>
+6. <b>quantities of + 可数/不可数</b> → 复数谓语。<br>
+7. <b>分数/百分数 + of + 名词</b> → 看名词单复数。<br>
+8. <b>and 连接同一人/物</b>（the writer and teacher）→ 单数；不同人 → 复数。</p>
+<div class="notice warn">2025年四川一诊语法填空考过 specializes——主语为第三人称单数、一般现在时，动词加 -es。</div>`,
+quiz:[
+{q:"Either you or your brother ___ to attend the meeting.",o:["have","has","are","is having"],a:1,ex:"either...or 就远一致，与最近的 brother（三单）一致，用 has。"},
+{q:"The number of the students in our school ___ over 3,000.",o:["are","is","were","have been"],a:1,ex:"the number of + 名词，谓语用单数 is。"},
+{q:"Tom, together with his classmates, ___ playing football now.",o:["are","is","were","am"],a:1,ex:"together with 就前一致，与 Tom 一致，用 is。"},
+{q:"Quantities of milk ___ on the table every morning.",o:["is","are","was","has been"],a:1,ex:"quantities of + 名词，无论可不可数，谓语都用复数 are。"},
+]},
+];
+/*__READING__*/
+const READING=[
+{id:"r1",title:"Volunteers Needed for the Aba English Festival",type:"应用文",level:"基础",wc:150,paras:[
+"Do you love English? Do you want to try something new this winter? The Aba English Festival is looking for 60 student volunteers.",
+"Date: December 20-21 &nbsp;&nbsp; Place: Maerkang Culture Center &nbsp;&nbsp; Time: 9:00 a.m. - 5:00 p.m.",
+"Jobs: welcome guests, guide visitors and help with the English speech contest.",
+"Who can join: Senior 1 and Senior 2 students who can speak either English or Tibetan. Training will be offered on December 15.",
+"How to join: Sign up at the school English office, or email Ms. Li at LiHua@school.com before December 10. Volunteers will receive a certificate and two free festival tickets.",
+"Don't miss your chance to practise English outside class!"
+],questions:[
+{q:"What can volunteers do at the festival?",o:["Teach English to children.","Guide visitors and help with the contest.","Plan school activities.","Sell tickets at the gate."],a:1,ex:"细节题，定位到 Jobs 一栏：welcome guests, guide visitors and help with the English speech contest。"},
+{q:"Who is allowed to join?",o:["Any student in the school.","Senior 3 students only.","Senior 1 and 2 students who can speak English or Tibetan.","Students who speak perfect English."],a:2,ex:"细节题，定位 Who can join：Senior 1 and Senior 2 students who can speak either English or Tibetan。"},
+{q:"What will each volunteer get?",o:["A certificate and two free tickets.","A new smartphone.","Ten English books.","A small amount of money."],a:0,ex:"细节题，定位 How to join 最后一句：a certificate and two free festival tickets。"},
+{q:"When must you sign up?",o:["On December 15.","Before December 10.","On December 20.","After December 21."],a:1,ex:"细节题：before December 10。注意别被 Training on December 15 干扰。"},
+]},
+{id:"r2",title:"The First Time I Spoke on Stage",type:"记叙文",level:"基础",wc:170,paras:[
+"When I was in Grade Nine, I was afraid of English class. My poor pronunciation kept me silent for years. I always sat at the back of the classroom and never answered questions.",
+"One day, Mrs. Yang came to me after class. \"You write beautiful English, Anna. Your voice deserves to be heard,\" she said. She asked me to read a short poem aloud for just two minutes every morning. At first my hands shook and my voice was small. But she always said with a smile, \"One more time.\"",
+"Two months later, she asked me to read a poem I had written at the school English festival. I practised it more than fifty times in the dormitory, on the hill near my home, even while walking. On the day of the festival, I stepped onto the stage, took a deep breath and began. When I finished, the room broke into warm applause.",
+"Mrs. Yang was right. My voice might not be perfect, but it could touch hearts. That day, I stopped hiding behind my fears."
+],questions:[
+{q:"Why did Anna keep silent in English class?",o:["She disliked English.","Her pronunciation was poor and she was shy.","Her teacher was too strict.","She was new at the school."],a:1,ex:"细节题，第一段：My poor pronunciation kept me silent for years。"},
+{q:"What did Mrs. Yang ask Anna to do every morning?",o:["Write a short poem.","Read a short poem aloud for two minutes.","Answer questions in class.","Listen to English tapes."],a:1,ex:"细节题，第二段：read a short poem aloud for just two minutes every morning。"},
+{q:"How did Anna practise before the festival?",o:["She practised only in the dormitory.","She practised more than fifty times in different places.","She practised together with her classmates.","She practised for less than one week."],a:1,ex:"细节题，第三段：more than fifty times in the dormitory, on the hill near my home, even while walking。"},
+{q:"What is the main idea of the story?",o:["Writing poems is the best way to learn English.","Good teachers can write poems for students.","Courage grows from small steps of practice.","Shy students should stay in the classroom."],a:2,ex:"主旨题：从“读两分钟”到“登台朗读”，故事告诉我们勇气来自一点点练习。"},
+]},
+{id:"r3",title:"Why Do We Sleep?",type:"说明文",level:"基础",wc:160,paras:[
+"Sleeping seems useless: you lie still for eight hours and do nothing. Why do humans spend a third of their lives asleep?",
+"Scientists have found that sleep is a busy time for the brain. While you sleep, your brain sorts through the day, keeping what matters and throwing away the rest. That is why students who sleep well remember new words better.",
+"Sleep also protects the body. During deep sleep, the body repairs itself and produces the substances needed for growth. Children who sleep enough grow faster and fall sick less often.",
+"However, many students stay up late reviewing before exams. In fact, a tired brain works slowly and makes more mistakes. If you want to do well in exams, sleep may be just as important as another hour of review."
+],questions:[
+{q:"Why does sleep seem useless to some people?",o:["Because it takes too much time.","Because we think we do nothing when sleeping.","Because we dream when we sleep.","Because it is bad for the brain."],a:1,ex:"细节题，第一段：you lie still for eight hours and do nothing。"},
+{q:"What happens in the brain while we sleep?",o:["It stops working until morning.","It invents new languages.","It keeps useful information and removes the rest.","It dreams only of schoolwork."],a:2,ex:"细节题，第二段：sorts through the day, keeping what matters and throwing away the rest。"},
+{q:"What can we learn from paragraph 3?",o:["Sleep is more important than food.","Sleep helps the body grow and stay healthy.","Dreaming is a sign of illness.","Deep sleep makes adults lazy."],a:1,ex:"段落大意题：第三段讲睡眠保护身体、修复组织、促进生长。"},
+{q:"What is the writer's advice to students before exams?",o:["Sleep enough instead of staying up too late.","Review until midnight every day.","Take medicine to stay awake.","Sleep more than ten hours a night."],a:0,ex:"推理题，最后一段：sleep may be just as important as another hour of review。"},
+]},
+{id:"r4",title:"The Power of Daily Reading",type:"说明文",level:"提升",wc:200,paras:[
+"Many students ask: How can I learn English better with only thirty minutes a day? The answer may be simple: read.",
+"Daily reading builds vocabulary naturally. You may not remember every word at first, but meeting a word many times in stories will make it stick in your mind. It is much easier than memorizing word lists.",
+"Reading also trains the mind to think in English. After several months, you may find yourself understanding sentences faster, without translating every word into Chinese.",
+"Choose something you enjoy. A simple story you love is better than a difficult one you hate. As the saying goes, \"Reading is to the mind what exercise is to the body.\""
+],questions:[
+{q:"What is the main idea of the passage?",o:["Reading is faster than listening.","Word lists are the only way to build vocabulary.","Daily reading helps English learning in several ways.","Difficult books are always better than easy ones."],a:2,ex:"主旨题：文章从词汇、思维、选材三方面讲每天阅读的好处。"},
+{q:"According to paragraph 2, why is meeting words in stories useful?",o:["Because stories are always short.","Because words appear many times and stay in our mind.","Because word lists are too long.","Because teachers prefer stories."],a:1,ex:"细节题：meeting a word many times in stories will make it stick in your mind。"},
+{q:"The word \"stick\" in paragraph 2 is closest in meaning to ___.",o:["grow","stay in your mind","become difficult","point to"],a:1,ex:"词义猜测题：stick here 指“留在脑海里”，不是字面“粘住”。"},
+{q:"What does the writer suggest about choosing reading materials?",o:["Choose something you enjoy, even if it is simple.","Always choose the most difficult books.","Choose books by famous writers only.","Read only exam papers."],a:0,ex:"细节题，最后一段：A simple story you love is better than a difficult one you hate。"},
+]},
+{id:"r5",title:"Run Up the Mountain",type:"记叙文",level:"提升",wc:180,paras:[
+"Wei is a Senior Three boy in Aba. He had always been a weak runner. In the cross-country race last year, he came in last. Some students laughed, and he felt angry with himself.",
+"That winter, Wei started to run. Every morning at six, before class, he ran up the hill behind the school. At first he had to stop every two hundred meters. Slowly, the stops became fewer. His PE teacher saw his effort and taught him how to breathe and pace himself.",
+"On the day of this year's race, the mountain road was covered with snow. Wei ran steadily, and when he climbed the last slope, he heard his classmates cheering him on, \"Wei! Wei! Keep going!\" He reached the finish line, third. He did not win first place, but he had beaten the person he feared most - himself."
+],questions:[
+{q:"Why did Wei feel angry with himself last year?",o:["He lost his running shoes.","He broke his leg in the race.","He came in last in the cross-country race.","His teacher criticized him."],a:2,ex:"细节题，第一段：he came in last。"},
+{q:"What did Wei do to change the situation?",o:["He changed to another race.","He ran up the hill before class every morning.","He took medicine to become stronger.","He asked his classmates to run for him."],a:1,ex:"细节题，第二段：Every morning at six, before class, he ran up the hill."},
+{q:"The phrase \"cheering him on\" means ___.",o:["shouting words to encourage him","laughing at him loudly","running ahead of him","following him quietly"],a:0,ex:"词义猜测题：cheer sb on = 为某人加油，下句 Keep going 是提示。"},
+{q:"What does the story mainly tell us?",o:["Weak students should not take part in races.","A PE teacher is more important than practice.","Snow always makes races harder.","Hard work helps us beat our old selves."],a:3,ex:"主旨题：从最后一名到第三名，他战胜的是自己。"},
+]},
+{id:"r6",title:"Should Students Bring Phones to School?",type:"议论文",level:"提升",wc:210,paras:[
+"Nowadays, almost every student has a smartphone. Should they be allowed to bring phones to school? This has become a hot topic.",
+"Some students support the idea. They say phones help them look up new words and listen to English online. In their opinion, a phone is a useful learning tool.",
+"Others disagree. Teachers have found that phones are a distraction in class. Many students use them to play games or chat, and often they check social media instead of studying. Some studies show that even when phones are off, they still take up part of students' attention.",
+"In my view, the problem is not the phone itself, but how we use it. A phone can be a good friend or a bad master. Schools could set clear rules: phones stay in the bag during lessons and are used only at certain times."
+],questions:[
+{q:"What is the passage mainly about?",o:["How to choose a smartphone for students.","Whether students should bring phones to school.","How to use social media safely.","Why students are crazy about online games."],a:1,ex:"主旨题：第一段提出问题，三、四段展开观点。"},
+{q:"The word \"distraction\" in paragraph 3 probably means something that ___.",o:["helps you remember words","takes your attention away","makes the class lively","saves your time"],a:1,ex:"词义猜测题：后文说学生玩游戏、刷社交媒体、影响学习，说明 distraction 是“分散注意力的事物”。"},
+{q:"What do some students think of phones?",o:["They are a bad master of study.","They are a useful learning tool.","They should be banned in class.","They are useless for learning English."],a:1,ex:"细节题，第二段：a phone is a useful learning tool。"},
+{q:"What does the writer suggest?",o:["Ban phones completely in schools.","Allow phones during every lesson.","Make clear rules and use phones in a proper way.","Let students decide everything."],a:2,ex:"细节题，最后一段：Schools could set clear rules... used only at certain times。"},
+]},
+{id:"r7",title:"Scientists Turn to Bacteria to Eat Plastic",type:"说明文",level:"冲刺",wc:230,paras:[
+"Plastic pollution is a growing problem. Every minute, a truckload of plastic enters the ocean. Plastics take hundreds of years to break down, and they harm the animals that live there.",
+"Recently, scientists found a bacterium that can biodegrade PET, the plastic used in bottles. In lab tests, these bacteria ate a thin film of PET in six weeks.",
+"\"The result is exciting, but we are still far from throwing all our bottles into a pile of bacteria,\" says Dr. Wang, the lead researcher. First, the bacteria work slowly. Second, feeding them large amounts of plastic is neither cheap nor safe.",
+"\"Nature has its own recycling system,\" Dr. Wang adds. \"When we combine it with human effort - less waste, better sorting and new technology - real change becomes possible.\""
+],questions:[
+{q:"The phrase \"break down\" in paragraph 1 is closest in meaning to ___.",o:["crash and stop","split into simpler parts","fall to the ground","change colour"],a:1,ex:"词义猜测题：讲塑料在自然界几百年才“分解”，故选 split into simpler parts。"},
+{q:"What can we learn about the bacteria?",o:["They clear the ocean within weeks.","They can eat the plastic called PET.","They were discovered by a student.","They are dangerous to eaters."],a:1,ex:"细节题，第二段：a bacterium that can biodegrade PET。"},
+{q:"What is Dr. Wang's attitude towards solving plastic pollution with bacteria?",o:["Completely against it.","Hopeful but careful.","Uninterested.","Impatient."],a:1,ex:"观点态度题：exciting, but far from... work slowly, neither cheap nor safe → 既乐观又谨慎。"},
+{q:"Which of the following would Dr. Wang probably agree with?",o:["Bacteria alone can solve the plastic problem.","We should wait for nature to fix everything.","We should reduce waste while developing technology.","Plastic bottles should be banned everywhere."],a:2,ex:"推理题，最后一段：combine it with human effort - less waste, better sorting and new technology。"},
+]},
+{id:"r8",title:"From Bean to Bar: The Story of Chocolate",type:"说明文",level:"提升",wc:210,paras:[
+"Chocolate comes from a tree called cacao. The cacao tree grows best in warm, wet places near the equator, such as West Africa and South America. Its fruit contains seeds, called cacao beans.",
+"Making chocolate is a long process. Farmers pick the fruit, take out the beans and dry them. Next, the beans are sent to factories, where they are cleaned, roasted and ground. Sugar, milk and other ingredients are added to make different kinds of chocolate.",
+"Chocolate has a long history. The Olmecs and the Mayans first drank chocolate as a bitter drink over 3,000 years ago. In the 16th century, explorers brought cacao beans to Europe, where people began to drink chocolate with sugar. The first solid chocolate bar was made in 1847.",
+"Today, chocolate is a 100-billion-dollar industry. However, growing cacao is not easy. Climate change and diseases have reduced production in many countries, so scientists are working hard to find stronger trees."
+],questions:[
+{q:"Where does the cacao tree grow best?",o:["In cold, dry highlands.","Near the North Pole.","In warm, wet places near the equator.","In dry deserts."],a:2,ex:"细节题，第一段：grows best in warm, wet places near the equator。"},
+{q:"Which is the right order of making chocolate?",o:["pick → dry → roast → send → grind","dry → pick → send → grind → clean","send → pick → dry → clean → grind","pick → dry → send → clean → roast → grind"],a:3,ex:"细节题，第二段：pick the fruit → dry them → sent to factories → cleaned, roasted and ground。"},
+{q:"What did the Mayans use cacao beans for over 3,000 years ago?",o:["Making solid bars.","Making a bitter drink.","Feeding animals.","Making medicine."],a:1,ex:"细节题，第三段：first drank chocolate as a bitter drink over 3,000 years ago。"},
+{q:"What can we infer from the last paragraph?",o:["The chocolate industry faces some problems.","Chocolate is cheap for everyone.","Cacao trees are dying out completely.","Climate change has stopped production."],a:0,ex:"推理题：最后一段讲气候变化和病害导致产量下降，说明产业面临问题（但并未完全灭绝）。"},
+]},
+];
+const SEVEN_FIVE={
+id:"seven5",title:"How to Make a Daily English Study Plan",type:"七选五",level:"提升",wc:150,kind:"七选五",
+options:[
+"A. A good plan keeps you moving forward every day.",
+"B. Some students read a lot but never listen.",
+"C. Small steps add up to big progress.",
+"D. A new word must be met at least five or six times.",
+"E. Stick to it and you will see the result.",
+"F. Learning English is easy if you are clever.",
+"G. Word lists are the only way to learn words."
+],
+answers:[0,1,2,3,4],
+ex:[
+"空前讲“计划很重要”，A项（好计划让你每天前进）正好承接并引出下文。",
+"空前说先知道弱点，空后举例“听力差不能只阅读”，B项（有些学生读得多却从不听）承上启下。",
+"空前讲每天十五分钟胜过周日三小时，C项（小步累积成大进步）总结本段。",
+"空前讲大脑忘得快，D项（一个词至少要遇到五六次）说明为什么要复习。",
+"本段讲坚持与奖励，E项（坚持下去就会看到结果）收尾升华。"],
+paras:[
+"Learning English well is not about how much time you spend, but how well you plan. [1] Here is a simple way to make your own daily plan.",
+"First, know your weak points. [2] For example, if listening is your problem, do not only read. You need to open your ears every day.",
+"Second, do a little every day instead of a lot once a week. Fifteen minutes of reading is far better than three hours on Sunday. [3]",
+"Third, review old words. Our brain forgets new words quickly. [4] So keep a small notebook and look at the wrong words again.",
+"Finally, reward yourself for keeping the plan. A good plan does not have to be perfect; it has to be yours. [5]",
+]
+};
+const CLOZE_DATA={
+id:"cloze",title:"The Little Girl at the Bus Station",type:"完形填空",level:"提升",wc:200,kind:"完形填空",
+opts:[
+["looked up","stopped","woke up","gave up"],
+["see","meet","find","know"],
+["danger","need","silence","person"],
+["tightly","angrily","silently","proudly"],
+["sleepy","worried","strange","bored"],
+["give","take","borrow","pay"],
+["sadly","quietly","politely","luckily"],
+["pleasure","game","lesson","rule"],
+["thanked","blamed","doubted","criticized"],
+["ask for","learn from","help","laugh at"],
+],
+answers:[1,2,1,0,1,0,2,0,0,2],
+ex:[
+"根据上文“注意到小女孩在哭”和下文“走过去”，应选 stopped（停下来）。",
+"“她找不到妈妈了”，find 表示“找到”，其余不符语境。",
+"固定搭配 in need（有困难的），meet people in need 助人所急。",
+"小女孩害怕，紧紧握住他的手，tightly 符合情感线。",
+"母亲焦急万分冲进来，worried 体现母亲情绪。",
+"母亲想给 Dorjee 一些钱表示感谢，give sb money。",
+"Dorjee 礼貌地拒绝了，politely 符合人物善良形象。",
+"妈妈说过的话：帮助别人是乐事不是生意，pleasure。",
+"母亲到学校当众感谢他，thanked。",
+"从那以后更多学生开始帮助有需要的人，help。"],
+paras:[
+"It was a cold November afternoon. Dorjee, a Senior Two student, was waiting for the bus home. He noticed a little girl, about six years old, crying on the bench. Other people walked past her, but Dorjee [1] and walked over. \"What's wrong?\" he asked gently.",
+"The girl said she could not [2] her mother. She had wandered away in the crowd. Dorjee thought of his own mother, who always told him to help people in [3]. He offered to take the girl to the bus station police room. The girl held his hand [4] and walked with him.",
+"At the police room, an officer called the girl's mother. Twenty minutes later, a [5] woman rushed in and hugged the girl tightly. She kept saying \"thank you\" and wanted to [6] Dorjee some money, but he refused [7]. \"My mother says helping others is a [8], not a business,\" Dorjee answered with a smile.",
+"The next day, the girl's mother came to the school and [9] him in front of his classmates. From that day on, more students in the class began to [10] others in need. Dorjee's small act had started something big.",
+]
+};
+const CONT_WRITE={
+id:"cont",title:"The Oranges for Grandma",type:"读后续写",level:"冲刺",wc:180,kind:"读后续写",
+ex:["读后续写两段结构：第一段写行动与求助，第二段写结果与升华。","语言要求：动作链+对话+心理+环境，通篇一般过去时。"],
+task:"Paragraph 1（约80词）：Lhamo 急中生智，决定怎么做来保住那袋橘子？她向列车员求助。<br>Paragraph 2（约80词）：到站后奶奶见到橘子和氧气袋发生了什么？故事如何温暖收尾？<br>提示：用一般过去时；写出动作、对话、心理和环境。",
+sample:"<b>参考范文</b><br>Paragraph 1: Lhamo's heart beat fast, but she knew she could not just sit there. She stood up and walked to the conductor at once. \"Excuse me, my bag was on the seat next to me. There are oranges for my grandma and an oxygen bag she really needs. Could you please check who took it?\" she explained in a low voice. The conductor nodded and spoke into his radio. A few minutes later, two passengers came down the aisle carrying the paper bag. \"Is this yours?\" asked a young man. \"We found it under the seat and wondered who had left it behind.\"<br>Paragraph 2: When the train pulled into the small station, Grandma was already waiting at the exit, her face red from the cold mountain wind. Lhamo ran into her arms and handed her the oranges. \"They never left my side,\" she said, half laughing, half crying. That night, in Grandma's warm kitchen, the whole family peeled oranges together, and the sweet smell filled every corner of the house. Looking at their smiling faces, Lhamo thought: kindness travels like a train, and it always arrives at the right station.",
+paras:[
+"Lhamo, a Senior Three girl in Aba, was going home by train to see her grandma, who had been ill for weeks. In her paper bag were two things: a bag of oranges Grandma loved, and an oxygen bag her grandpa had asked her to bring from Chengdu. She checked the bag from time to time on the train, as if it were a sleeping baby.",
+"After several hours, Lhamo fell asleep, tired out by the long journey. When the train stopped at a big station, the noise and the crowd woke her up. She opened her eyes - and saw the seat next to her was empty. Her paper bag was gone! She jumped up, looking left and right, and a feeling of fear ran through her body. \"My grandma's oranges! Her medicine!\" she whispered, almost in tears.",
+]
+};
+/*__TEMPLATES__*/
+const TEMPLATES={
+app:[
+{s:"I'm writing to apply for the position of volunteer at the English Club.",c:"申请信开头：I'm writing to apply for..."},
+{s:"I am writing to express my sincere thanks for your help.",c:"感谢信开头，注意 thanks 后面接 for"},
+{s:"I am writing to offer my sincere apology for my absence.",c:"道歉信开头，apology for sth"},
+{s:"I would appreciate it if you could give me a chance.",c:"高分句式：would appreciate it if... 恳请对方做某事"},
+{s:"Not only can it broaden our horizons, but it also enriches our school life.",c:"not only 置于句首引起部分倒装（can 提前），加分亮点句"},
+{s:"It is widely acknowledged that reading plays an important role in learning English.",c:"It 作形式主语，that 从句作真正主语，落实“公认”的表达"},
+{s:"There are several reasons why I suggest holding the activity.",c:"建议信用：有几个理由解释我的建议"},
+{s:"I would like to suggest that you (should) keep an English diary every day.",c:"suggest 后的从句用虚拟语气 (should) do，should 可省"},
+{s:"Only in this way can we improve our English step by step.",c:"only + 介词短语开头，主句倒装，结尾升华常用"},
+{s:"Your prompt attention to this matter would be highly appreciated.",c:"正式邮件/通知结尾，比 thank you 更高级"},
+{s:"I'm looking forward to receiving your reply at your earliest convenience.",c:"书信万能结尾，注意 receive 用 doing"},
+{s:"With your help, I have made great progress, for which I am truly grateful.",c:"介词+which 引导非限制性定语从句，感谢信亮点"},
+{s:"It is necessary for us to form good study habits and make proper plans.",c:"It is necessary for sb to do 句型，写建议/意义很稳"},
+{s:"In short, I believe the activity will surely be a great success.",c:"总结句，in short 收束全文"},
+{s:"If there is anything I can do to help, do not hesitate to let me know.",c:"主动提供帮助的礼貌表达，婉转又得体"}],
+cont:[
+{s:"Her heart raced as she slowly opened the door.",c:"心理+动作句：race 这里指心跳加速"},
+{s:"A wave of relief washed over him when he saw her smiling face.",c:"情感句：relief（宽慰）像浪潮一样涌过，写“松了一口气”很地道"},
+{s:"With a trembling hand, she reached out to touch the old photo.",c:"动作句：with + 名词 + doing 结构，画面感强"},
+{s:"Tears welled up in her eyes and rolled down her cheeks.",c:"情感句：well up 涌出，比简单 cry 高级"},
+{s:"The room fell silent, and everyone held their breath.",c:"环境氛围句：hold one's breath 屏住呼吸"},
+{s:"The morning sun turned the mountains golden.",c:"环境句：用颜色变化写天气/景色，简洁出彩"},
+{s:"He clenched his fists, determined not to give up.",c:"动作+决心：clench one's fists 握紧拳头，形容词短语表决心"},
+{s:"Saying nothing, he turned and walked away into the dark.",c:"动作句：现在分词短语开头，一气呵成"},
+{s:"A faint smile appeared on her lips.",c:"神态句：faint（淡淡的）比 happy 更细腻"},
+{s:"Before she could say a word, he had already run away.",c:"衔接句：Before she could... 她还没来得及……"},
+{s:"It was at that moment that she realized what kindness really meant.",c:"强调句型升华，放在结尾段第一句"},
+{s:"Looking back, she knew it was the hard times that had shaped her.",c:"升华句：it was...that 再次强调，“回望过去，正是艰难时光塑造了她”"},
+{s:"From that day on, the two friends never left each other's side.",c:"时间推进句，用于结尾段开头"},
+{s:"Just then, a familiar voice came from behind.",c:"转场对话句：just then 正在那时"},
+{s:"Hand in hand, they walked toward the warm morning light.",c:"结尾金句：朝着晨光走去，画面收尾升华"}]
+};
+
+/* ==================== 基础工具 ==================== */
+const $=s=>document.querySelector(s);
+const LS='abaeng_';
+const GAOKAO=new Date('2027-06-07T09:00:00+08:00').getTime();
+function today(){ return new Date().toDateString(); }
+function now(){ return Date.now(); }
+function baseState(){
+  return {cur:80, target:115, dailyNew:20, srs:{}, wrong:{},
+          unitQuiz:{}, grammarQuiz:{}, readDone:{}, checkins:[], streak:0,
+          lastCheckin:'', vocabPtr:0, day:today(), todayNew:0, todayRev:0,
+          past:{}, pastWrong:{}};
+}
+function load(){ try{ return Object.assign(baseState(), JSON.parse(localStorage.getItem(LS+'s')||'{}')); }catch(e){ return baseState(); } }
+function save(){ localStorage.setItem(LS+'s', JSON.stringify(S)); }
+let S=load();
+function rollDay(){
+  const t=today();
+  if(S.day!==t){ S.day=t; S.todayNew=0; S.todayRev=0; save(); }
+}
+rollDay();
+
+/* vocabulary: flatten & ids */
+function allWords(){ return VOCAB.reduce((a,u)=>a.concat(u.words),[]); }
+function wordById(id){ return allWords().concat(PHRASES).find(w=>w.id===id); }
+function assignIds(){ VOCAB.forEach((u,ui)=>u.words.forEach((w,wi)=>w.id='u'+ui+'w'+wi)); }
+
+/* 第二例句库：word -> [英文句, 中文翻译] */
+const EX2={};
+Object.assign(EX2,{
+"academic":["English is an important academic subject.","英语是一门重要的学业科目。"],
+"revise":["I revise my English notes every evening.","我每天晚上复习英语笔记。"],
+"schedule":["My study schedule is full on weekdays.","我工作日的学习日程很满。"],
+"deadline":["Do not miss the deadline for the work.","不要错过交作业的截止日期。"],
+"assignment":["I finished the history assignment at noon.","我中午完成了历史作业。"],
+"concentrate":["Please concentrate on the listening part.","请把注意力集中在听力部分。"],
+"memorize":["It is easier to memorize words in sentences.","在句子里记单词更容易。"],
+"recite":["Can you recite the first paragraph?","你能背诵第一段吗？"],
+"review":["Let us review Unit One together.","我们一起复习第一单元吧。"],
+"quiz":["There are ten questions in the quiz.","小测验里有十道题。"],
+"graduate":["He will graduate from junior high this summer.","他今年夏天初中毕业。"],
+"grade":["My math grade is better than my English grade.","我的数学分数比英语分数好。"],
+"score":["What was your score on the test?","你考试得了多少分？"],
+"pass":["She studied hard to pass the exam.","她努力复习以通过考试。"],
+"fail":["If you do not try, you will fail.","如果你不尝试，你就会失败。"],
+"improve":["I want to improve my listening this month.","这个月我想提高听力。"],
+"progress":["He is slow, but he makes progress.","他虽然慢，但有进步。"],
+"achieve":["Hard work helps us achieve our goals.","努力帮助我们实现目标。"],
+"effort":["A little more effort and you will pass.","再多一点努力，你就能通过。"],
+"method":["His reading method is very useful.","他的阅读方法很有用。"],
+"strategy":["Use a simple strategy in the exam.","考试时要用一个简单的策略。"],
+"knowledge":["Books give us knowledge and joy.","书籍给我们知识和快乐。"],
+"ability":["Reading builds the ability to think.","阅读培养思考能力。"],
+"develop":["I want to develop my speaking ability.","我想培养口语能力。"],
+"anxious":["Do not feel anxious before the test.","考试前不要感到焦虑。"],
+"nervous":["I get nervous when I speak in class.","我在课堂上发言时会紧张。"],
+"confident":["Stay confident and speak loudly.","保持自信，大声说。"],
+"proud":["My parents are proud of my progress.","我的父母为我的进步感到自豪。"],
+"grateful":["I am grateful for your kind help.","我感谢你的好心帮助。"],
+"upset":["He was upset about the low score.","他因低分而难过。"],
+"disappointed":["I was disappointed with my result.","我对自己的成绩很失望。"],
+"embarrassed":["I felt embarrassed in front of the class.","我在全班同学面前感到尴尬。"],
+"curious":["I am curious about Tibetan culture.","我对藏族文化感到好奇。"],
+"ashamed":["He was ashamed of his rude words.","他为自己的粗鲁话语感到羞愧。"],
+"delighted":["We are delighted to join the club.","我们很高兴加入这个社团。"],
+"terrified":["She is terrified of snakes.","她非常害怕蛇。"],
+"calm":["Take a deep breath and stay calm.","深呼吸，保持冷静。"],
+"patient":["Be patient with slow learners.","对学得慢的人要有耐心。"],
+"honest":["To be honest, I dislike grammar.","说实话，我不喜欢语法。"],
+"generous":["It is generous of you to lend me the book.","你把书借给我真是大方。"],
+"modest":["A modest person listens to others.","谦虚的人会倾听别人。"],
+"sympathetic":["The teacher was sympathetic to her story.","老师对她的经历表示同情。"],
+"optimistic":["An optimistic student never gives up.","乐观的学生从不放弃。"],
+"pessimistic":["Do not be pessimistic about the exam.","不要对考试悲观。"],
+"mature":["She is mature enough to decide.","她已经足够成熟来做决定。"],
+"independent":["I am independent enough to travel alone.","我足够独立，可以独自旅行。"],
+"emotional":["It was an emotional goodbye at graduation.","毕业时那是一次情绪激动的告别。"],
+"warm-hearted":["Our warm-hearted neighbors bring us food.","我们热心的邻居给我们送来吃的。"],
+});
+Object.assign(EX2,{
+"appearance":["His appearance has changed a lot.","他的外貌变了很多。"],
+"figure":["She runs every day to keep her figure.","她每天跑步保持身材。"],
+"slender":["The slender dancer moved lightly.","那位苗条的舞者动作轻盈。"],
+"elegant":["She looked elegant in the white dress.","她穿白裙子看起来很优雅。"],
+"energetic":["The energetic monitor does everything first.","那位精力充沛的班长什么都抢先做。"],
+"cheerful":["His cheerful voice lifted us up.","他欢快的声音让我们振奋起来。"],
+"gentle":["The gentle wind touched my face.","微风轻拂我的脸。"],
+"reliable":["A good friend is reliable in hard times.","好朋友在困难时刻是可靠的。"],
+"talented":["The talented girl draws beautiful horses.","那个有天赋的女孩画漂亮的马。"],
+"creative":["Try to be creative with your writing.","写作时要有创意。"],
+"diligent":["A diligent student reviews every day.","勤奋的学生每天都复习。"],
+"responsible":["Be responsible for your own study.","要对自己的学习负责。"],
+"considerate":["It was considerate of him to wait.","他等着我，真是体贴。"],
+"humble":["Stay humble when you win.","赢的时候要保持谦逊。"],
+"outstanding":["He is an outstanding basketball player.","他是一名出色的篮球运动员。"],
+"remarkable":["She has a remarkable memory.","她的记忆力非凡。"],
+"sincere":["Please accept my sincere thanks.","请接受我真诚的感谢。"],
+"brave":["It was brave of you to speak first.","你第一个发言，真是勇敢。"],
+"ambitious":["Ambitious students plan their day.","有抱负的学生会规划自己的一天。"],
+"polite":["It is polite to say thank you.","说谢谢是有礼貌的。"],
+"smart":["The smart boy solved it quickly.","那个聪明的男孩很快解出了题。"],
+"kind":["Kind words can change a day.","善言能改变一天的心情。"],
+"stubborn":["The stubborn boy refused to apologize.","那个固执的男孩拒绝道歉。"],
+"humorous":["He is humorous and tells funny stories.","他很幽默，会讲有趣的故事。"],
+"campus":["Our campus is quiet on Sundays.","我们校园周日很安静。"],
+"dormitory":["The dormitory lights go out at ten.","宿舍十点熄灯。"],
+"canteen":["The canteen noodles taste really good.","食堂的面条味道真不错。"],
+"club":["The English club meets after class.","英语社团课后开展活动。"],
+"volunteer":["He works as a volunteer at the zoo.","他在动物园当志愿者。"],
+"ceremony":["We sang a song at the school ceremony.","我们在学校典礼上唱了一首歌。"],
+"graduation":["Graduation day made us cry and laugh.","毕业那天让我们又哭又笑。"],
+"roommate":["My roommate keeps the room clean.","我的室友保持房间干净。"],
+"housework":["Housework teaches us to be independent.","家务教会我们独立。"],
+"neighbor":["Our neighbor gave us fresh milk.","我们的邻居给了我们新鲜牛奶。"],
+"relative":["We visited our relatives at the New Year.","新年时我们走亲访友。"],
+"generation":["This generation grows up with phones.","这一代人是伴着手机长大的。"],
+"tradition":["The festival has a long tradition.","这个节日有着悠久的传统。"],
+"celebrate":["We celebrate his birthday with a cake.","我们用蛋糕庆祝他的生日。"],
+"respect":["Respect old people and their stories.","要尊重老人和他们的故事。"],
+"support":["Her family supports her dream.","她的家人支持她的梦想。"],
+"encourage":["Encourage your friends when they fail.","朋友失败时要鼓励他们。"],
+"protect":["We protect the birds in our village.","我们保护村子里的鸟。"],
+"provide":["The school provides free lunch.","学校提供免费午餐。"],
+"accompany":["He accompanied me to the bus stop.","他陪我一直走到公交站。"],
+"forgive":["A true friend forgives quickly.","真正的朋友会很快原谅。"],
+"share":["Good students share their ideas.","好学生分享自己的想法。"],
+"communicate":["We communicate by letters and calls.","我们通过信件和电话交流。"],
+"experience":["The trip was a rich experience.","那次旅行是一次丰富的经历。"],
+});
+Object.assign(EX2,{
+"symptom":["A cough is a symptom of a cold.","咳嗽是感冒的症状。"],
+"fever":["The child has a fever and feels hot.","那个孩子发烧了，浑身发烫。"],
+"cough":["Please cover your mouth when you cough.","咳嗽时请捂住嘴。"],
+"headache":["Reading in the dark gives me a headache.","在暗处看书让我头疼。"],
+"cure":["This herb can cure a sore throat.","这种草药能治嗓子痛。"],
+"treat":["Doctors treat patients with care.","医生细心治疗病人。"],
+"recover":["He is recovering in the hospital.","他正在医院里康复。"],
+"prevent":["Wash your hands to prevent illness.","洗手可以预防疾病。"],
+"diet":["A good diet helps you study better.","好的饮食能帮你学得更好。"],
+"nutrition":["Good nutrition builds strong bodies.","良好的营养造就强健的身体。"],
+"exercise":["Morning exercise wakes up my brain.","晨练能唤醒我的大脑。"],
+"balance":["Balance work and play every day.","每天都要平衡好学习和玩。"],
+"pressure":["Exams bring pressure to everyone.","考试给每个人都带来压力。"],
+"relax":["I relax by walking after dinner.","我通过晚饭后散步来放松。"],
+"energy":["Exercise gives me energy for study.","锻炼给我学习的精力。"],
+"illness":["His illness kept him home for a week.","他的病让他一周没出门。"],
+"medicine":["This medicine tastes bitter.","这种药味道很苦。"],
+"healthy":["A healthy body carries a healthy mind.","健康的身体承载健康的心灵。"],
+"weak":["I am weak in spoken English.","我的英语口语很差。"],
+"tired":["I felt tired after the long exam.","长考之后我感到疲倦。"],
+"sleepy":["I felt sleepy in the afternoon class.","下午的课让我犯困。"],
+"strength":["He lifted the box with all his strength.","他用尽全力举起了箱子。"],
+"daily":["Daily reading improves my writing.","每天阅读能提高我的写作。"],
+"habit":["Early to bed is a good habit.","早睡是个好习惯。"],
+"technology":["Technology helps farmers sell online.","科技帮助农民在网上卖货。"],
+"scientific":["We need scientific ways to study.","我们需要科学的方法来学习。"],
+"invention":["The internet is a great invention.","互联网是一项伟大的发明。"],
+"discover":["We discovered a new path home.","我们发现了一条回家的新路。"],
+"create":["Students can create their own songs.","学生可以创作自己的歌曲。"],
+"engineer":["She wants to be a bridge engineer.","她想成为一名桥梁工程师。"],
+"software":["This software checks my spelling.","这个软件检查我的拼写。"],
+"website":["The website loads very slowly.","这个网站加载很慢。"],
+"online":["We bought the tickets online.","我们在网上买了票。"],
+"digital":["Digital photos never fade.","数码照片永不褪色。"],
+"artificial":["Artificial flowers look quite real.","假花看起来相当逼真。"],
+"robot":["The robot can clean the floor.","这个机器人能拖地。"],
+"machine":["The machine washes clothes fast.","这台机器洗衣服很快。"],
+"design":["He designed a poster for the club.","他为社团设计了一张海报。"],
+"product":["This product is made in China.","这个产品是中国制造的。"],
+"convenient":["It is convenient to pay by phone.","用手机付款很方便。"],
+"efficient":["An efficient plan saves time.","高效的计划能节省时间。"],
+"advantage":["Living near school has advantages.","住得离学校近有好处。"],
+"disadvantage":["The disadvantage of late sleep is tiredness.","晚睡的缺点就是疲倦。"],
+"influence":["Friends influence our habits.","朋友影响我们的习惯。"],
+"connect":["This train connects the two cities.","这列火车连接两座城市。"],
+"information":["I found the information in a book.","我在一本书里找到了这条信息。"],
+"message":["Leave a message if I am out.","如果我不在就留个口信。"],
+"future":["The future belongs to hard workers.","未来属于努力的人。"],
+});
+Object.assign(EX2,{
+"environment":["A clean environment makes us happy.","干净的环境让我们快乐。"],
+"pollute":["Do not pollute the rivers of Aba.","不要污染阿坝的河流。"],
+"pollution":["Light pollution hides the stars.","光污染遮住了星星。"],
+"waste":["Do not waste food on your plate.","不要浪费盘子里的食物。"],
+"recycle":["We recycle bottles every month.","我们每个月回收瓶子。"],
+"reduce":["Reduce sugar and you feel better.","少吃糖，你会感觉更好。"],
+"climate":["The climate here is cold in winter.","这里冬天气候寒冷。"],
+"forest":["Birds sing in the forest at dawn.","鸟儿黎明时在森林里歌唱。"],
+"ocean":["The ocean is deep and blue.","海洋又深又蓝。"],
+"mountain":["Snow covers the mountain top.","白雪覆盖着山顶。"],
+"desert":["Camels walk far in the desert.","骆驼在沙漠里走很远。"],
+"wild":["Wild flowers grow by the road.","路边长着野花。"],
+"species":["This species lives only in China.","这个物种只生活在中国。"],
+"nature":["Nature is our best teacher.","大自然是好的老师。"],
+"natural":["We drink natural spring water.","我们喝天然泉水。"],
+"damage":["Smoking damages the lungs.","吸烟损害肺部。"],
+"destroy":["The storm destroyed the old house.","暴风雨摧毁了老房子。"],
+"earth":["The earth turns around the sun.","地球绕着太阳转。"],
+"planet":["Mars is a red planet.","火星是一颗红色的行星。"],
+"clean":["Clean your desk before you study.","学习前把桌子收拾干净。"],
+"temperature":["The temperature is below zero today.","今天气温在零度以下。"],
+"disaster":["The flood was a natural disaster.","洪水是一场自然灾害。"],
+"river":["Children swim in the river in summer.","夏天孩子们在河里游泳。"],
+"save":["Save paper and save trees.","节约纸张就是拯救树木。"],
+"travel":["I want to travel to Lhasa one day.","我想有一天去拉萨旅行。"],
+"journey":["The journey by bus took six hours.","乘公交的旅程花了六个小时。"],
+"tour":["We toured the old palace last summer.","去年夏天我们参观了那座旧宫殿。"],
+"tourist":["The tourist took many photos.","那位游客拍了很多照片。"],
+"transport":["Public transport is cheap here.","这里的公共交通很便宜。"],
+"vehicle":["The vehicle stopped at the red light.","车辆在红灯前停了下来。"],
+"bicycle":["My bicycle has a small bell.","我的自行车有一个小铃铛。"],
+"subway":["The subway comes every three minutes.","地铁每三分钟来一趟。"],
+"railway":["The railway goes through the mountains.","这条铁路穿过群山。"],
+"highway":["The highway was busy at noon.","中午公路很繁忙。"],
+"airport":["The plane left the airport on time.","飞机准时离开了机场。"],
+"station":["We waited at the station in the rain.","我们在雨中的车站等车。"],
+"ticket":["The ticket costs fifty yuan.","这张票要五十元。"],
+"passport":["Keep your passport in a safe place.","把护照放在安全的地方。"],
+"luggage":["My luggage is heavy but small.","我的行李很重但很小。"],
+"hotel":["The hotel gave us a clean room.","旅馆给了我们一间干净的房间。"],
+"sightseeing":["We went sightseeing in Jiuzhaigou.","我们去九寨沟观光了。"],
+"direction":["We walked in the wrong direction.","我们走错了方向。"],
+"distance":["The distance between the two towns is ten kilometers.","两镇之间的距离是十公里。"],
+"local":["Local people are warm to visitors.","当地人对游客很热情。"],
+"foreign":["He can speak two foreign languages.","他会说两门外语。"],
+"abroad":["Her brother studies abroad in Canada.","她哥哥在加拿大留学。"],
+"arrive":["We arrived home before dark.","我们天黑前到了家。"],
+"depart":["The bus departs in five minutes.","公交车五分钟后出发。"],
+});
+Object.assign(EX2,{
+"money":["He saves money for a new bike.","他存钱买一辆新自行车。"],
+"price":["The price of rice went up.","米价上涨了。"],
+"cost":["The bike cost me three hundred yuan.","这辆自行车花了我三百元。"],
+"spend":["I spend an hour on words every day.","我每天花一小时背单词。"],
+"pay":["We pay the rent every month.","我们每个月付租金。"],
+"afford":["He can afford the bus fare.","他付得起公交车费。"],
+"cheap":["The street food here is cheap.","这里的街边小吃很便宜。"],
+"expensive":["Gold is expensive but beautiful.","黄金很贵但很美。"],
+"value":["Money cannot buy the value of health.","钱买不到健康的价值。"],
+"quality":["We check the quality before we buy.","我们买之前会检查质量。"],
+"economy":["The local economy grows every year.","当地经济年年增长。"],
+"business":["His uncle runs a small business.","他叔叔经营一家小生意。"],
+"company":["This company makes school bags.","这家公司生产书包。"],
+"customer":["Every customer left with a smile.","每位顾客都微笑着离开。"],
+"service":["The service in the shop is warm.","这家店的服务很热情。"],
+"market":["The market opens early in the morning.","市场清晨就开门了。"],
+"trade":["The two cities trade in tea.","这两座城市进行茶叶贸易。"],
+"advertisement":["The advertisement is on the wall.","广告就在墙上。"],
+"discount":["We got a discount on the shoes.","我们买鞋时拿到了折扣。"],
+"budget":["Make a budget for the school trip.","为学校旅行做个预算。"],
+"income":["Farm income rises in a good year.","好年景里农业收入会增加。"],
+"salary":["Her salary comes on the tenth.","她的工资十号发。"],
+"free":["The park is free for children.","公园对儿童免费。"],
+"purchase":["He purchased a new pen yesterday.","他昨天买了一支新钢笔。"],
+"realize":["I realized my mistake too late.","我意识到错误时已经太晚了。"],
+"recognize":["I recognized his voice on the phone.","我在电话里认出了他的声音。"],
+"remember":["I remember my first English class.","我记得我的第一节英语课。"],
+"forget":["Do not forget your homework.","别忘了你的作业。"],
+"remind":["Remind me to call my grandma.","提醒我给奶奶打电话。"],
+"understand":["I understand the rule now.","我现在理解这条规则了。"],
+"explain":["Please explain the word again.","请再解释一下这个单词。"],
+"express":["She expresses her ideas clearly.","她清楚地表达自己的想法。"],
+"describe":["Describe your school in five sentences.","用五句话描述你的学校。"],
+"imagine":["Imagine a world without books.","想象一个没有书的世界。"],
+"suppose":["I suppose it will rain tomorrow.","我想明天会下雨。"],
+"believe":["I believe you can do it.","我相信你能做到。"],
+"decide":["We decided to leave at six.","我们决定六点出发。"],
+"choose":["Choose the book you like best.","选一本你喜欢的书。"],
+"prefer":["I prefer tea to coffee.","茶和咖啡相比，我更喜欢茶。"],
+"refuse":["She refused the offer politely.","她礼貌地拒绝了那个提议。"],
+"allow":["My parents allow me to read at night.","我父母允许我晚上看书。"],
+"avoid":["Avoid eating too much candy.","避免吃太多糖。"],
+"consider":["Consider a new way to review.","考虑一种新的复习方法。"],
+"continue":["Continue walking and you will see it.","继续走，你就会看到它。"],
+"expect":["I expect a letter from her.","我期待她的来信。"],
+"manage":["She managed to catch the last bus.","她设法赶上了末班车。"],
+"offer":["He offered me a cup of tea.","他请我喝了一杯茶。"],
+"promise":["I promise to come back early.","我答应早点回来。"],
+});
+Object.assign(EX2,{
+"however":["The book was hard; however, she finished it.","那本书很难，然而她读完了。"],
+"therefore":["He was ill; therefore, he stayed home.","他病了，因此留在家里。"],
+"besides":["I am tired; besides, it is late.","我累了，而且天色已晚。"],
+"moreover":["The room is small; moreover, it is dark.","房间小，而且阴暗。"],
+"otherwise":["Hurry; otherwise the shop will close.","快点，否则商店要关门了。"],
+"instead":["He did not run; instead, he walked.","他没有跑，反而走了。"],
+"although":["Although it rained, we played outside.","尽管下雨，我们还是在外面玩。"],
+"unless":["Unless you hurry, you will be late.","除非你快点，否则会迟到。"],
+"until":["Wait here until I come back.","在这里等到我回来。"],
+"since":["She has been happy since she came here.","她来到这里一直很开心。"],
+"whether":["I cannot decide whether to go.","我无法决定去不去。"],
+"while":["While mum cooked, I did homework.","妈妈做饭的时候，我做作业。"],
+"once":["Once you learn it, it stays with you.","一旦学会，它就跟着你一辈子。"],
+"whenever":["Call me whenever you feel lonely.","感到孤独时随时打给我。"],
+"wherever":["Wherever he works, he smiles.","无论在哪里工作，他都面带微笑。"],
+"whatever":["Whatever you do, do it well.","无论做什么，都要做好。"],
+"whichever":["Take whichever book you like.","你喜欢哪本书就拿哪本。"],
+"whoever":["Whoever wants to join may come.","无论谁想参加都可以来。"],
+"because":["He cried because he fell down.","他因为摔倒了哭了。"],
+"though":["Though tired, she kept writing.","虽然累了，她还是继续写。"],
+"so":["The bus was full, so we walked.","公交车满了，所以我们走路。"],
+"still":["It is late, but he is still up.","很晚了，但他还没睡。"],
+"but":["The film was long but exciting.","电影很长但很刺激。"],
+"also":["He also plays the guitar.","他也弹吉他。"],
+"look forward to":["I look forward to the summer holiday.","我期待暑假。"],
+"pay attention to":["Pay attention to what the teacher says.","注意听老师说的话。"],
+"make up one's mind":["He made up his mind to study hard.","他下决心努力学习。"],
+"make up":["We made up a story in class.","我们在课堂上编了一个故事。"],
+"take off":["The bird took off from the tree.","鸟从树上飞走了。"],
+"take up":["He took up painting last year.","他去年开始学画画。"],
+"put off":["They put off the sports meeting.","他们推迟了运动会。"],
+"put up with":["She put up with the noise all day.","她忍受了一整天的噪音。"],
+"give up":["He gave up smoking last year.","他去年戒烟了。"],
+"give in":["The boy gave in to his sister.","那个男孩向他妹妹让步了。"],
+"come across":["I came across this word online.","我在网上偶然看到了这个词。"],
+"come up with":["We came up with a new plan.","我们想出了一个新计划。"],
+"carry on":["Carry on until you finish.","继续下去，直到完成。"],
+"figure out":["Can you figure out the answer?","你能想出答案吗？"],
+"get along with":["She gets along with everyone.","她和谁都处得来。"],
+"get rid of":["Get rid of the old books.","把旧书处理掉。"],
+"keep up with":["He ran fast to keep up with me.","他跑得很快，以便跟上我。"],
+"look down upon":["Do not look down upon anyone.","不要看不起任何人。"],
+"look up":["Look up the new word here.","在这里查这个生词。"],
+"look into":["They looked into the problem.","他们调查了这个问题。"],
+"set up":["They set up a new club.","他们建立了一个新社团。"],
+"set out":["We set out early in the morning.","我们一清早就出发了。"],
+"set aside":["I set aside some money each week.","我每周都存一点钱。"],
+"break down":["My bike broke down again.","我的自行车又坏了。"],
+"break out":["A fire broke out in the kitchen.","厨房里发生了火灾。"],
+"bring up":["They brought up a good question.","他们提出了一个好问题。"],
+"call on":["We called on our teacher on Sunday.","我们周日去拜访了老师。"],
+"call for":["This job calls for great care.","这工作需要极大的细心。"],
+"turn up":["Please turn up the music.","请把音乐声音调大。"],
+"turn down":["Turn down the TV, please.","请把电视音量调小。"],
+"turn out":["It turned out that he was right.","结果证明他是对的。"],
+"account for":["Girls account for half the class.","女生占班级的一半。"],
+"depend on":["The trip depends on the weather.","旅行取决于天气。"],
+"focus on":["Focus on one thing at a time.","一次专注于一件事。"],
+"insist on":["She insisted on her own opinion.","她坚持自己的意见。"],
+"suffer from":["Many people suffer from colds in winter.","冬天很多人患感冒。"],
+"recover from":["He recovered from the flu quickly.","他很快就从流感中康复了。"],
+"adapt to":["It takes time to adapt to a new school.","适应一所新学校需要时间。"],
+"appeal to":["This song appeals to young people.","这首歌吸引年轻人。"],
+"contribute to":["Sleep contributes to good health.","睡眠有助于健康。"],
+"date back to":["This bridge dates back to 600 years ago.","这座桥可追溯到六百年前。"],
+"end up with":["If you hurry, you will end up with mistakes.","如果你着急，终会以出错收场。"],
+"fall behind":["Do not fall behind in class.","上课别掉队。"],
+"hand in":["Hand in your work before Friday.","周五前交作业。"],
+"hand out":["Please hand out the papers.","请把试卷发下去。"],
+"keep an eye on":["Keep an eye on the time.","要留意时间。"],
+"make a difference":["One kind act can make a difference.","一个善举就能带来改变。"],
+"make sense":["Your plan makes sense to me.","你的计划在我看来讲得通。"],
+"take...seriously":["Take your dream seriously.","认真对待你的梦想。"],
+"used to do":["I used to walk to school.","我过去常走路上学。"],
+});
+Object.assign(EX2,{
+"culture":["We learn about different cultures in class.","我们在课堂上了解不同的文化。"],
+"traditional":["Dragon boat racing is traditional here.","赛龙舟在这里是传统活动。"],
+"custom":["Eating mooncakes is a nice custom.","吃月饼是一个美好的习俗。"],
+"festival":["The Spring Festival is my favorite.","春节是我最喜欢的节日。"],
+"ancient":["Ancient poems are still popular.","古诗至今仍然受欢迎。"],
+"modern":["Modern life is fast and busy.","现代生活快节奏而忙碌。"],
+"society":["Society needs every kind of worker.","社会需要各种各样的劳动者。"],
+"community":["Our community planted fifty trees.","我们社区种了五十棵树。"],
+"citizen":["A good citizen loves the country.","好公民热爱自己的国家。"],
+"government":["The government built a new road.","政府修了一条新路。"],
+"law":["Everyone is equal before the law.","法律面前人人平等。"],
+"rule":["School rules keep us safe.","校规保障我们的安全。"],
+"population":["The population keeps growing.","人口不断增长。"],
+"history":["History teaches us many lessons.","历史教会我们很多道理。"],
+"museum":["We saw old tools in the museum.","我们在博物馆里看到了旧工具。"],
+"performance":["Her piano performance was perfect.","她的钢琴表演很完美。"],
+"art":["Paper cutting is a Chinese art.","剪纸是一门中国艺术。"],
+"literature":["Literature opens our eyes.","文学开阔我们的眼界。"],
+"poem":["She wrote a poem about snow.","她写了一首关于雪的诗。"],
+"author":["The author gave us a talk.","那位作家给我们做了一场讲座。"],
+"translate":["Please translate this letter into Chinese.","请把这封信译成中文。"],
+"language":["Body language is important too.","肢体语言也很重要。"],
+"dialect":["He speaks the local dialect at home.","他在家说本地方言。"],
+"novel":["This novel sells very well.","这部小说很畅销。"],
+});
+/* 第二例句库结束 */
+/* 考点/难点库：word -> 考点与易错点（与词条自带 c 字段合并使用） */
+const KP={};
+function kpOf(w){ return w.c || KP[w.w] || ''; }
+Object.assign(KP,{
+"revise":"备考常说 revise for the exam；改文章、改稿也用 revise（修订）。",
+"deadline":"高频搭配 meet the deadline（赶上截止）；写作里表到期还可用 due。",
+"memorize":"常接名词或 doing；memorize by heart=死记，建议放在句子里记。",
+"recite":" recite the text 背课文；听力口语题常出现 recite a poem。",
+"review":"动词=复习/评论；名词=复习/评论/回顾；「修订」义用 revise，别混。",
+"quiz":"小测验（pop quiz 突击测验）；规模 quiz<test<exam，阅读常考这组辨析。",
+"graduate":"graduate from… 毕业于……； graduating class 毕业班；名词 graduation。",
+"grade":"分数/年级；get good grades 拿高分；「得高分」也可说 score high。",
+"score":"score high 得高分；可作动词和名词；比赛得分常用 score a goal。",
+"pass":"pass the exam 通过考试；passer-by 过路人；注意与 past（过去）形近。",
+"improve":"及物动词直接接宾语；「提高到」用 raise to，不用 improve to。",
+"method":"a method of doing sth 做某事的方法；与 way/approach 写作可互换。",
+"strategy":"策略；learning strategy 学习策略；与 tactic 相比更强调全局规划。",
+"knowledge":"不可数！a knowledge of 一点……的知识；「增长知识」increase knowledge。",
+"develop":"发展/培养；develop a habit 培养习惯；developing country 发展中国家。",
+"upset":"adj.难过的；be upset about sth 因某事难过；upset-upset-upset 三态同形。",
+"embarrassed":"尴尬的；be embarrassed to do 尴尬做某事；embarrassing 修饰物。",
+"calm":"adj.冷静的 v.使冷静；keep calm；calm down 使冷静（写作加分短语）。",
+"honest":"be honest with sb/about sth 对……诚实；名词 honesty；反义 dishonest。",
+"generous":"It is generous of sb to do（写作可用）；反义 mean/stingy 小气的。",
+"modest":"be modest about… 对……谦虚；反义 arrogant/proud 傲慢的。",
+"sympathetic":"be sympathetic to/towards sb 同情某人；名词 sympathy 常考可数与不可数。",
+"optimistic":"be optimistic about… 对……乐观；与 pessimistic 是阅读情感线高频对立词。",
+"pessimistic":"be pessimistic about…；完形填空情感转折处常出现，注意上下文。",
+"mature":"成熟的（心理/生理）；反义 immature 不成熟的；a mature plan 周密计划。",
+"emotional":"情绪的；emotional support 情感支持；读后续写描写情绪必备词。",
+"warm-hearted":"热心肠的；构词 warm-hearted/kind-hearted；写作描述人物加分。",
+"appearance":"外貌；judge by appearance 以貌取人；反义 disappearance 消失。",
+"figure":"身材/人物/数字；keep one's figure 保持身材；figure out 弄明白（短语）。",
+"slender":"苗条的（较正式）；替换 slim/thin 的高级词；the slender branches 细枝。",
+"elegant":"优雅的；描写人物/衣着的拔高词；名词 elegance。",
+"energetic":"be full of energy 精力充沛；反义 tired/sleepy；修饰人/活动。",
+"cheerful":"a cheerful smile 灿烂的笑容；修饰人/表情，情感线高频词。",
+"gentle":"gentle voice/touch 温和的声音/轻柔的触摸；副词 gently 完形常考。",
+"reliable":"可靠的；同根 rely on 依靠；反义 unreliable；阅读人物评价常用。",
+"talented":"be talented in/at 在……有天赋；名词 talent 可数（a talent for）。",
+"creative":"有创造力的；create 的形容词；creative thinking 创意思维（阅读高频）。",
+"diligent":"勤奋的；同义 hard-working；diligent 更书面，应用文写作推荐。",
+"considerate":"It is considerate of sb to do 某人做某事很体贴；同根 consider 注意区分。",
+"humble":"谦逊的；be humble about success 对成功谦逊；反义 proud/arrogant。",
+"outstanding":"杰出的；outstanding student/performance；=excellent 的近义拔高词。",
+"remarkable":"a remarkable achievement 非凡成就；remark 观看→值得关注的→非凡。",
+"sincere":"sincere apology/thanks 真诚的道歉/感谢（写作致谢道歉万能）。",
+"brave":"勇敢的；=courageous；反义 cowardly 懦弱的；It was brave of sb to do。",
+"ambitious":"be ambitious to do/of doing 有抱负做……；褒贬两用（雄心/野心）。",
+"polite":"It is polite to do 做……有礼貌；反义 rude/impolite 粗鲁的。",
+"smart":"=clever 聪明的；a smart decision 明智的决定；smartphone 智能手机。",
+"stubborn":"固执的；as stubborn as a mule 犟得很（习语）；用于贬义语境。",
+"humorous":"a humorous story 幽默故事；名词 humor；同根 humorless 缺乏幽默的。",
+"dormitory":"宿舍；口语缩写 dorm；复数 dormitories；校园生活作文场景词。",
+"canteen":"食堂；school canteen；描述校园生活的替换词（cafeteria 美式常用）。",
+"club":"社团/俱乐部；join a club 加入社团；club 还表「棍棒」（一词多义）。",
+"volunteer":"志愿者；v. 自愿做；voluntary adj. 自愿的；志愿话题作文词。",
+"ceremony":"典礼；opening/closing ceremony 开/闭幕式；master of ceremony 主持人。",
+"graduation":"毕业（典礼）；动词 graduate 的名词；at graduation 在毕业时。",
+"roommate":"室友；classmate/schoolmate/workmate 同类合成词；应用文高频。",
+"housework":"不可数！do housework 做家务（不加 a）；household 家庭（的）。",
+"neighbor":"邻居；neighborhood 街区；注意英式拼写 neighbour 也正确。",
+"relative":"亲戚；relatives 亲戚们；relation/relationship 关系。",
+"generation":"一代人；from generation to generation 世代相传；generation gap 代沟。",
+"tradition":"传统；traditional adj. 传统的；traditionally adv. 按传统（注意变形）。",
+"celebrate":"庆祝；celebrate the festival；celebration n. 庆祝（可数）。",
+"support":"支持/供养；support a family 养家；in support of 支持……；supportive 支持的。",
+"accompany":"陪伴；accompany sb to sp 陪某人去某地；正式用词，替换 go with。",
+"forgive":"原谅；forgive sb for doing sth 原谅某人做过某事；过去式 forgave。",
+"experience":"经验（不可数）/经历（可数）；a valuable experience；experienced 有经验的。",
+"symptom":"症状；symptom of flu 流感症状；近义 sign；医学类阅读高频词。",
+"cough":"n./v. 同形；have a cough 咳嗽；cough syrup 止咳糖浆。",
+"cure":"治愈；cure sb of sth 治好某人的……；近义 heal 愈合（外伤）；区别 treat 治疗。",
+"nutrition":"营养（不可数）；nutrient 营养素；malnutrition 营养不良；nutritional 有营养的。",
+"relax":"放松；relaxed 人感到放松的；relaxing 物令人放松的——完形高频辨析。",
+"illness":"疾病；同根 ill/sick；sickness 同义；illness 可数。",
+"strength":"力量/优势；strong 的名词；strengths and weaknesses 优缺点。",
+"technology":"科技；technological adj. 技术的；technique 技术/技巧（近义辨析）。",
+"scientific":"科学的；science 的形容词；a scientific study 一项科学研究。",
+"invention":"发明；invent v. 发明（造出新东西）；discover 发现已有事物——必考辨析。",
+"discover":"发现；discovery n. 发现；discoverer 发现者；与 invent 对比记。",
+"create":"创造；creation n. 创造物；creator 创造者；creature 生物。",
+"engineer":"工程师；engine 发动机；engineering 工程学（专业名称）。",
+"software":"软件；hardware 硬件（一对反义合成词）；soft 柔软的。",
+"website":"网站；web page 网页；surf the website 浏览网站；复数 websites。",
+"online":"在线的；online shopping/learning；反义 offline；=on the Internet。",
+"robot":"机器人；robotics 机器人学；AI=artificial intelligence 人工智能。",
+"machine":"机器；machinery 机械总称（不可数）；machine 可数。",
+"product":"产品；produce v. 生产；production n. 生产；productive 多产的/高效的。",
+"convenient":"It is convenient for sb to do 对某人来说方便；反义 inconvenient；名词 convenience。",
+"efficient":"高效的；名词 efficiency；effective 有效的——这组近义完形常考辨析。",
+"information":"不可数！a piece of information 一条信息；绝不说 informations。",
+"pollute":"污染；名词 pollution；pollutant 污染物；the polluted river 被污染的河。",
+"recycle":"回收利用；reduce/reuse/recycle 环保 3R 标配；re-前缀=再次。",
+"reduce":"减少；reduce…by… 减少了……；reduce to 减到……；反义 increase/raise。",
+"forest":"森林；rainforest 雨林；between forests? 不对，注意 in/through the forest。",
+"ocean":"海洋；四大洋 Pacific/Atlantic/Indian/Arctic；the ocean 特指海洋。",
+"mountain":"山；mountainous adj. 多山的；climb the mountain；a mountain of 一大堆。",
+"desert":"沙漠；名词重音 /ˈdezət/，动词「抛弃」读 /dɪˈzɜːt/，重音是考点。",
+"species":"物种；单复数同形（a species/two species）；endangered species 濒危物种。",
+"nature":"自然/本性；natural adj.；by nature 天生地；human nature 人性。",
+"natural":"自然的；naturally adv. 自然地；反义 artificial/man-made 人工的。",
+"destroy":"破坏（彻底）；destruction n.；近义 damage 可修复的破坏——程度有别。",
+"earth":"地球要加 the（独一无二）；on earth 究竟（用于强调疑问句）。",
+"planet":"行星；the planet earth；solar system 太阳系；planetary adj. 行星的。",
+"disaster":"灾难；natural disaster 自然灾害；disastrous adj. 灾难性的。",
+"river":"河流；the Yellow River 黄河（the+首字母大写）；along the river 沿河。",
+"save":"节约/救；save money/time 省钱/省时；save one's life 救命；近义 rescue。",
+});
+Object.assign(KP,{
+"travel":"旅行；trip 短途往返；journey 长途艰辛旅程——这组辨析完形/阅读高频。",
+"transport":"运输/交通；public transport 公共交通；means of transport 交通工具。",
+"vehicle":"车辆；motor vehicle 机动车；交通工具总称；同根 convey 输送。",
+"subway":"地铁；美式 subway=英式 underground；metro/tube 也常说。",
+"railway":"铁路；rail 铁轨；railway station 火车站；by railway 乘火车。",
+"highway":"公路/高速；expressway/freeway 高速公路；highway 也指普通公路。",
+"airport":"机场；airport lounge 候机厅；flight 航班（注意搭配 a flight to）。",
+"station":"车站/所/站；police station 警察局；gas station 加油站；space station 空间站。",
+"passport":"护照；apply for a passport 申请护照；pass 通过+port 港口→过境证件。",
+"luggage":"不可数！a piece of luggage 一件行李；=美式 baggage。",
+"hotel":"旅馆；check in/out 入住/退店；stay at a hotel 住旅馆。",
+"depart":"离开/出发；depart for sp 动身去某地；反义 arrive；名词 departure。",
+"traditional":"传统的；traditional culture 传统文化；名词 tradition（注意变形）。",
+"custom":"风俗/习俗；social customs 社会风俗；customs 海关（复数变义）。",
+"ancient":"古代的；ancient China/times；反义 modern；antique 指古董（指物）。",
+"modern":"现代的；modern life/society；modernization 现代化；反义 ancient。",
+"society":"社会；social adj. 社会的；in society 在社会上；可数名词。",
+"community":"社区/群体；the international community 国际社会；community service 社区服务。",
+"citizen":"公民；citizenship 公民身份；netizen 网民； citizen 可数。",
+"government":"政府；与 the 连用 the government；govern v. 治理；governor 州长。",
+"history":"历史；historical 与历史有关的；historic 有历史意义的——这组必考辨析。",
+"performance":"表演/表现；perform v. 表演；work performance 工作表现；performer 表演者。",
+"art":"艺术；fine arts 美术；arts 文科；artificial 人工的（形近词小心）。",
+"literature":"文学（不可数）；a literature class 文学课；literature review 文献综述。",
+"poem":"诗；poetry 诗歌总称（不可数）；poet 诗人；write a poem 写诗。",
+"author":"作者（=writer）；authority 权威；authoritative 权威的（词根一串记）。",
+"language":"语言；body language 肢体语言；sign language 手语（作文常加分）。",
+"dialect":"方言；speak a dialect 说方言；accent 口音（发音特征）。",
+"novel":"（长篇）小说；novelist 小说家；短篇小说是 short story。",
+"price":"价格；价格高低用 high/low，不说 expensive price；price rise 涨价。",
+"cheap":"便宜的；口语常用；反义 expensive；cheaply adv. 便宜地。",
+"expensive":"昂贵的；dear 也可表「贵」（英式）；不能说 The price is expensive。",
+"quality":"质量/品质；high quality 高质量；quality matters 质量为重；amount 是数量。",
+"economy":"经济；economic adj. 经济的；economical 节约的——必考近义辨析。",
+"company":"公司；=firm/corporation；in the company of 在……陪同下。",
+"customer":"顾客；client 客户（专业服务）；guest 客人；custom 作动词=惠顾。",
+"service":"服务；serve v. 服务；self-service 自助；be of service 能帮上忙。",
+"market":"市场；marketing 营销；market share 市场份额；supermarket 超市。",
+"trade":"贸易；trade…for… 用……换……；trade with sb 与某人做生意。",
+"advertisement":"广告；口语缩写 ad；advertise v. 登广告；advertising 广告业。",
+"budget":"预算；on a budget 预算有限；budget airline 廉航；budget 可数。",
+"purchase":"购买（正式）；make a purchase 购买；purchasing power 购买力。",
+"recognize":"认出/承认；recognize sb by… 通过……认出；recognition n. 认出。",
+"understand":"理解；understanding n. 理解；misunderstand 误解；过去式 understood。",
+"describe":"描述；describe sth as… 把……描述为……；description n. 描述。",
+"imagine":"想象；imagination n. 想象力；unimaginable 难以想象的（写作高分词）。",
+"suppose":"假设/认为；be supposed to do 应该/被期望做——高考超高频考点。",
+"choose":"选择；choose between A and B 在 A 和 B 之间选；过去式 chose，过去分词 chosen。",
+"moreover":"此外（递进）；逗号隔开；同义 besides/furthermore/what is more。",
+"once":"一旦；once 引导让步/条件从句用一般现在时表将来；at once 立刻。",
+"whenever":"无论何时；=no matter when；whenever possible 尽可能。",
+"wherever":"无论哪里；=no matter where；引导让步状语从句。",
+"whichever":"无论哪个；在特定范围内任选；与 which 的辨析看范围确定与否。",
+"whoever":"无论谁；=no matter who；Whoever 引导主语从句；现 whomever 少用。",
+"still":"仍然；用于句中 be 后/实义动词前；否定疑问用 yet；肯定已完成用 already。",
+"make up one's mind":"下定决心；mind 用单数不变复数；make up one's mind to do。",
+"take off":"起飞/脱下/突然成功；名词 take-off；take off one's coat 脱外套。",
+"take up":"开始从事/占据（时间）；take up a hobby 培养爱好；占太多时间 take up too much time。",
+"put off":"推迟；put off sth/doing；=postpone；反义 bring forward 提前。",
+"put up with":"容忍；=bear/stand 容忍；宾语不可以是人，是不如意的状况。",
+"give in":"屈服/让步；give in to sb/sth；=give way；反义 give out 分发。",
+"come across":"偶然遇到；=run into；come across as 给人……印象。",
+"come up with":"想出（主意/办法）；come up with an idea；近义 figure out。",
+"carry on":"继续下去；carry on doing sth；=continue/keep on。",
+"figure out":"弄明白/想出；figure out the answer；=work out；make out 是辨认出。",
+"get along with":"与……相处；well 放中间：get along well with sb。",
+"get rid of":"摆脱/除去；get rid of bad habits；反义 keep 保留。",
+"keep up with":"跟上/不落后；keep up with the class；反义 fall behind。",
+"look down upon":"轻视/看不起；反义 look up to 尊敬；upon=on 可互换。",
+"look up":"查阅/抬头看；代词放中间：look it up in the dictionary。",
+"look into":"调查；look into the case；=investigate；近义 look over 检查。",
+"set up":"建立/设立；set up a club/company；set-up n. 组织机构。",
+"set out":"出发/着手；set out to do 着手做；=set off；set out on a journey。",
+"set aside":"留出（时间/钱）；set aside money for…；=put aside。",
+"break down":"出故障/崩溃；（车）抛锚；（人）精神崩溃；近义 break up 分手。",
+"break out":"（战争/火灾/疾病）爆发；不及物无被动！这是语法填空常考点。",
+"bring up":"抚养/提出；bring up children 养孩子；=raise 抚养；bring up a question 提出。",
+"call on":"拜访/号召；call on sb 拜访某人；call at sp 拜访某地——必考辨析。",
+"call for":"需要/要求；call for patience 需要耐心；call for a strike 号召罢工。",
+"turn up":"出现/调大；turn up the volume 调大音量；=show up 出现。",
+"turn down":"调小/拒绝；turn down the music 调小；turn down an offer 拒绝提议。",
+"turn out":"结果是/证明是；It turns out that…（写作高分句型，接陈述语气）。",
+"account for":"说明原因/占比例；account for 50% 占50%；=explain the reason for。",
+"depend on":"取决于/依靠；It depends on… 视……而定；形容词 independent。",
+"focus on":"专注于；focus one's attention on；=concentrate on；focus 名「焦点」。",
+"insist on":"坚持要求；insist on doing；insist that 从句可用虚拟 should do。",
+"suffer from":"患病/受苦；suffer from a cold 患感冒；suffer from lack of sleep。",
+"recover from":"从……恢复；recover from the illness；名词 recovery。",
+"adapt to":"适应；adapt oneself to doing；adjust to 近义；adapt…from… 改编自。",
+"appeal to":"吸引/呼吁；appeal to young people 吸引年轻人；an appeal for help 求助。",
+"contribute to":"促成/为……做贡献；contribute to good health；名词 contribution。",
+"date back to":"追溯到；只用一般现在时、无被动！语法填空/短文改错常考点。",
+"end up with":"以……告终；end up with sth；end up doing 终做了……；反义 start with。",
+"fall behind":"落后；fall behind with…；反义 catch up with 赶上。",
+"hand in":"上交；hand in papers 交卷；反义 hand out 分发。",
+"hand out":"分发；hand out books 发书；=give out；hand in hand 手拉手。",
+"keep an eye on":"留意/照看；keep an eye on sth；=keep watch on。",
+"make a difference":"有影响/起作用；make a big difference to… 对……影响大。",
+"make sense":"讲得通/有意义；make sense (to sb)；反义 make no sense；common sense 常识。",
+"take...seriously":"认真对待；代词必须放中间：take it seriously 把它当真。",
+});
+/* 考点/难点库结束 */
+assignIds();
+function unitProgress(ui){
+  const ws=VOCAB[ui].words; const done=ws.filter(w=>S.srs[w.id]).length;
+  return {done,total:ws.length};
+}
+function totalLearn(){ const a=allWords(); const done=a.filter(w=>S.srs[w.id]).length; return {done,total:a.length+PHRASES.length}; }
+
+function speak(t){
+  try{
+    const u=new SpeechSynthesisUtterance(t); u.lang='en-US'; u.rate=0.82;
+    speechSynthesis.cancel(); speechSynthesis.speak(u);
+  }catch(e){}
+}
+function fmt(n){ return n>=1000?(n/1000).toFixed(1)+'k':n; }
+
+/* ==================== 倒计时 & 打卡 ==================== */
+setInterval(()=>{
+  const d=Math.max(0,Math.ceil((GAOKAO-new Date())/86400000));
+  $('#cd').textContent=d;
+},1000);
+
+function doCheckin(){
+  const t=today(), y=new Date(Date.now()-86400000).toDateString();
+  if(!S.checkins.includes(t)) S.checkins.push(t);
+  if(S.lastCheckin===y){ S.streak=(S.streak||0)+1; }
+  else if(S.lastCheckin!==t){ S.streak=1; }
+  S.lastCheckin=t; save();
+  showView('home');
+}
+
+/* ==================== 导航 ==================== */
+/* ==================== 往年真题题库（按年份+卷种标注） ==================== */
+/* 题目来源：历年高考英语真题（全国甲卷/全国乙卷/新高考I卷/新高考II卷/浙江卷），解析为真题考点的文字整理 */
+const PAST=[
+/* ---------- 单词栏：词汇运用真题 ---------- */
+{id:'p25gf', col:'vocab', year:2025, paper:'新高考II卷', title:'2025·新高考II卷 语法填空（全文10空）',
+desc:'真题原文：一位美国女士住进浙江农村，第一次闻到衣服晒过太阳留下来的「阳光香味」。10个空全是词汇运用——单词量不够，这10分就是别人的。建议：先不看书做一遍，再回词表对照。',
+passage:`I was born and raised in Cleveland, Ohio in the United States. Yet now, I live in the countryside of Zhejiang, China with my Chinese husband and his family, ____36____ bamboo and tea bushes (灌木) grow wild in the mountains, chickens are always free-range, and ____37____ (center) heating doesn't exist. Nothing in my life before prepared me ____38____ this one — and to be sure, the first time I came here I never imagined I would ever feel comfortable in this area. But it's amazing how you can adapt ____39____ learn in a new environment. Over time, I've found ____40____ (I) feeling extremely at home here. And in the process, I've experienced things that really surprise me at times. The "sunshine scent (香味)" of freshly sunned clothes ____41____ (be) one of them. Growing up, my family and our neighbors never used clotheslines to dry clothing, denying me the chance ____42____ (discover) one of the great wonders of sunshine — the sweet "sunshine scent" after sunning clothes for an entire day. The sun-dried clothes smell especially pleasant where I live, thanks to the ____43____ (absent) of smog and plenty of blue sky ____44____ (afternoon) with lots of fresh air. If you've never experienced the "sunshine scent" from a sheet or shirt ____45____ (leave) to sun for a day, well, you're missing out on one of life's wonders.`,
+qs:[
+ {n:36,q:'I live in the countryside of Zhejiang, China with my Chinese husband and his family, ____ bamboo and tea bushes grow wild in the mountains…',a:['where'],kp:'定语从句',exp:'先行词 the countryside of Zhejiang 表地点，从句中缺少地点状语，填关系副词 where。修饰地点名词、从句不缺主宾就看填 where。'},
+ {n:37,q:'…and ____ (center) heating doesn’t exist.（没有集中供暖）',a:['central'],kp:'词性转换',exp:'修饰名词 heating 要用形容词 central，central heating「集中供暖」。名词→形容词是语法填空最常考变形。'},
+ {n:38,q:'Nothing in my life before prepared me ____ this one…',a:['for'],kp:'固定搭配',exp:'prepare sb. for sth.「使某人为某事做好准备」，介词固定搭配，无提示词，背下来。'},
+ {n:39,q:'But it’s amazing how you can adapt ____ learn in a new environment.',a:['and'],kp:'连词',exp:'adapt 和 learn 是并列谓语，用 and 连接。空前有谓语 can adapt，空后是同主语并列动词 learn。'},
+ {n:40,q:'Over time, I’ve found ____ (I) feeling extremely at home here.',a:['myself'],kp:'反身代词',exp:'find oneself doing「发现自己不知不觉……」；宾语与主语同为 I，用反身代词 myself。'},
+ {n:41,q:'The "sunshine scent" of freshly sunned clothes ____ (be) one of them.',a:['is'],kp:'时态+主谓一致',exp:'陈述客观事实用一般现在时；主语 The "sunshine scent" 是单数，be 动词用 is。'},
+ {n:42,q:'…denying me the chance ____ (discover) one of the great wonders of sunshine…',a:['to discover'],kp:'非谓语动词',exp:'the chance to do sth.「做某事的机会」，chance/goal/way/ability/time 等名词后常接不定式。'},
+ {n:43,q:'…thanks to the ____ (absent) of smog…',a:['absence'],kp:'词性转换',exp:'thanks to 后接名词；absent 的名词是 absence「没有，缺乏」，不可数。'},
+ {n:44,q:'…plenty of blue sky ____ (afternoon) with lots of fresh air.',a:['afternoons'],kp:'名词复数',exp:'afternoon 是可数名词，此处指许多个下午，用复数 afternoons。'},
+ {n:45,q:'If you’ve never experienced the "sunshine scent" from a sheet or shirt ____ (leave) to sun for a day…',a:['left'],kp:'非谓语动词',exp:'shirt 与 leave 是被动关系（衬衫被留着晾晒），用过去分词 left 作后置定语。'}]},
+
+/* ---------- 语法栏：2025 II卷语法点拆解 ---------- */
+{id:'p25gg', col:'grammar', year:2025, paper:'新高考II卷', title:'2025·新高考II卷 语法填空（语法拆解7题）',
+desc:'同一篇真题（浙江农村的阳光香味），只抽语法考点：定语从句、介词、反身代词、主谓一致、非谓语。 Grammars 填空三巨头全在里面。',
+qs:[
+ {n:36,q:'I live in the countryside of Zhejiang, China with my Chinese husband and his family, ____ bamboo and tea bushes grow wild…',a:['where'],kp:'定语从句',exp:'先行词表地点、从句主干完整（缺地点状语）→ 填 where。逗号后的非限制性从句也一样。'},
+ {n:38,q:'Nothing in my life before prepared me ____ this one.',a:['for'],kp:'介词',exp:'prepare sb. for sth. 固定搭配。无提示词先想：介词？冠词？连词？——动词后常配介词。'},
+ {n:39,q:'But it’s amazing how you can adapt ____ learn in a new environment.',a:['and'],kp:'连词',exp:'两个并列谓语动词用 and 连接。空前有谓语 can adapt，空后是同主语并列动词 learn。'},
+ {n:40,q:'Over time, I’ve found ____ (I) feeling extremely at home here.',a:['myself'],kp:'代词',exp:'find oneself doing 结构，反身代词与主语一致。'},
+ {n:41,q:'The "sunshine scent" of freshly sunned clothes ____ (be) one of them.',a:['is'],kp:'主谓一致',exp:'主语核心词是 scent（被 of 短语隔开），单数；一般现在时用 is。警惕「主语+of短语」陷阱。'},
+ {n:42,q:'…denying me the chance ____ (discover) one of the great wonders of sunshine…',a:['to discover'],kp:'非谓语',exp:'抽象名词（chance/ability/way/time/effort）+ to do。句中已有谓语 used/denying，不能再填谓语。'},
+ {n:45,q:'…from a sheet or shirt ____ (leave) to sun for a day…',a:['left'],kp:'非谓语',exp:'逻辑主语 shirt 是「被晾晒」，被动+完成 → 过去分词 left 作定语。'}]},
+
+/* ---------- 2022全国甲卷 语法填空 ---------- */
+{id:'p22j', col:'grammar', year:2022, paper:'全国甲卷', title:'2022·全国甲卷 语法填空（盲人徒步一带一路）',
+desc:'真题原文：北京盲人曹盛康徒步 40 天从北京走到西安，完成「一带一路」徒步首段。这道题当年全网热议，非谓语+词性转换为主。',
+qs:[
+ {n:61,q:'A visually-challenged man from Beijing recently hiked 40 days to Xi’an, as a first step ____ (journey) the Belt and Road route by foot.',a:['to journey'],kp:'非谓语',exp:'step 前有序数词 first 修饰，后接不定式作后置定语：the first step to do sth.。journey 在这里当动词用「旅行」。'},
+ {n:66,q:'Cao believes this will make the hiking trip even more ____ (meaning).',a:['meaningful'],kp:'词性转换',exp:'make + 宾语 + 形容词作宾补，meaning → meaningful「有意义的」。'},
+ {n:67,q:'In the last five years, Cao ____ (walk) through 34 countries on six continents…',a:['has walked'],kp:'时态',exp:'In the last five years 常与现在完成时连用：has walked。'},
+ {n:68,q:'…in 2016, he reached the top of Kilimanjaro, Africa’s ____ (high) mountain.',a:['highest'],kp:'词性转换',exp:'范围内（Africa’s）比较用最高级，high → highest。'},
+ {n:69,q:'He flew 4,700 kilometers ____ Xi’an to Kashgar on Sept. 20…',a:['from'],kp:'介词',exp:'from…to…「从……到……」固定搭配。'},
+ {n:70,q:'…on Sept. 20, ____ (plan) to hike back to Xi’an in five months.',a:['planning'],kp:'非谓语',exp:'已有谓语 flew，plan 与主语 He 是主动关系，用现在分词 planning 作伴随状语。'}]},
+
+/* ---------- 2022全国乙卷 语法填空 ---------- */
+{id:'p22y', col:'grammar', year:2022, paper:'全国乙卷', title:'2022·全国乙卷 语法填空（中国茶文化）',
+desc:'真题原文：中国文化促进会举办茶文化国际交流活动，29位茶叶专业人士36小时不间断直播。非谓语一站式考查。',
+qs:[
+ {n:63,q:'The chairman of the China Culture Promotion Society ____ (address) the opening ceremony.',a:['addressed'],kp:'谓语时态',exp:'陈述过去发生的事，一般过去时 addressed。题干没有时间戳时，看上下文时态。'},
+ {n:66,q:'"It can help to build a community with a ____ (share) future for mankind," he said.',a:['shared'],kp:'非谓语',exp:'future 与 share 是被动关系（未来被共享），过去分词 shared 作定语，固定表达 a shared future「共同未来」。'},
+ {n:68,q:'____ (strengthen) the connection with young people, the event included a number of public promotional activities…',a:['To strengthen'],kp:'非谓语',exp:'「为了加强与年轻人的联系」表目的，用不定式 To strengthen 放句首（首字母大写）。'},
+ {n:69,q:'…activities on social media, ____ (invite) twenty-nine tea professionals from around the world to have thirty-six hours of live broadcasts.',a:['inviting'],kp:'非谓语',exp:'the event 与 invite 是主动关系，现在分词 inviting 作结果/伴随状语。'}]},
+
+/* ---------- 2021全国甲卷 ---------- */
+{id:'p21j', col:'grammar', year:2021, paper:'全国甲卷', title:'2021·全国甲卷 语法填空（西安城墙骑行）',
+desc:'真题原文：游览西安城墙后「骑行历史」的故事。四川考生当年的原题。',
+qs:[
+ {n:3,q:'It is possible ____ (walk) or bike the entire 14 kilometers.',a:['to walk'],kp:'非谓语',exp:'It is possible to do sth. 句型，it 是形式主语，不定式作真正主语。'},
+ {n:4,q:'After ____ (spend) some time looking at all the defensive equipment (防御设施) at the wall, we decided it was time for some action…',a:['spending'],kp:'非谓语',exp:'after 是介词，后接动名词 spending。'}]},
+
+/* ---------- 2020-2021 非谓语散题包 ---------- */
+{id:'p20', col:'vocab', year:2020, paper:'全国I/II/III卷', title:'2020–2021 全国卷 非谓语·词汇真题包',
+desc:'从 2020 全国I/II/III 卷、2021 新高考I卷里抽出的真题单句，集中练「非谓语动词」。',
+qs:[
+ {n:66,q:'Chinese researchers hope to use the instruments onboard Chang’e-4 ____ (find) and study areas of the South Pole-Aitken basin.（2020·全国I卷）',a:['to find'],kp:'非谓语',exp:'use sth. to do sth.「用某物做某事」，不定式作目的/宾补。'},
+ {n:63,q:'They represent the earth ____ (come) back to life and best wishes for new beginnings.（2020·全国II卷）',a:['coming'],kp:'非谓语',exp:'earth 与 come back 是主动关系，现在分词 coming 作后置定语（represents the earth coming back to life）。'},
+ {n:65,q:'They make great gifts and you see them many times ____ (decorate) with red envelopes and messages of good fortune.（2020·全国II卷）',a:['decorated'],kp:'非谓语',exp:'see them decorated… them（灯笼）与 decorate 是被动关系，过去分词作宾补。'},
+ {n:68,q:'They are easy ____ (care) for and make great presents.（2020·全国II卷）',a:['to care for'],kp:'非谓语',exp:'be easy to care for 不定式修饰 easy/soft/smooth 等形容词，介词 for 别丢。'},
+ {n:67,q:'The next morning he hired a boat and set out ____ (find) the well-known painter.（2020·全国III卷）',a:['to find'],kp:'非谓语',exp:'set out to do sth.「出发/着手去做某事」，固定搭配用不定式。'},
+ {n:8,q:'…it highlights the whole adventure and offers a place where you can sit down to rest your ____ (ache) legs.（2021·新高考I卷）',a:['aching'],kp:'词性转换',exp:'现在分词 aching 作定语「疼痛的」，-ing 形容词表「令人……的/正在……的」'}]},
+
+/* ---------- 冠词连词散题包 ---------- */
+{id:'pmix', col:'grammar', year:2025, paper:'新高考I/II卷+浙江卷', title:'2022–2025 冠词·代词·连词真题散包',
+desc:'无提示词填空专练：冠词、连接词、从句引导词。每题都标了年份和卷种。',
+qs:[
+ {n:61,q:'The trading routes between Asia and Europe brought silk and spices as well as many plant species to Britain for ____ first time.（2024·新高考I卷）',a:['the'],kp:'冠词',exp:'for the first time「第一次」，序数词前用定冠词 the。'},
+ {n:63,q:'The meat should be fresh with ____ touch of sweetness and the soup hot, clear and delicious.（2023·新高考I卷）',a:['a'],kp:'冠词',exp:'a touch of sweetness「一点甜味」，touch 此处作「微量」，用不定冠词 a。'},
+ {n:57,q:'The ____ Brown family lived in an apartment building outside Toronto.（2022·新高考II卷）',a:['The'],kp:'冠词',exp:'the + 姓氏复数 =「某某一家人」，句首大写 The。'},
+ {n:65,q:'In contrast to the court life represented by the Forbidden City, the Summer Palace and the Temple of Heaven, the hutongs (胡同) reflect ____ culture of grassroots Beijingers (北京老百姓).（2023·浙江1月卷）',a:['the'],kp:'冠词',exp:'culture 后 of grassroots Beijingers 限定范围，表特指用 the。'},
+ {n:64,q:'Then, when you use one section, ____ other stays fresh.（2024·浙江1月卷）',a:['the'],kp:'冠词',exp:'one…the other…「一个……另一个……」固定结构。'},
+ {n:57,q:'Go (围棋), which originated in China, is one of ____ earliest board games based on binary (二元) choices.（2025·新高考I卷）',a:['the'],kp:'冠词',exp:'形容词最高级 earliest 前用定冠词 the。'}]},
+
+/* ---------- 2024全国甲卷 完形填空（完整） ---------- */
+{id:'p24cloze', col:'read', year:2024, paper:'全国甲卷', title:'2024·全国甲卷 完形填空·全文20题（奶奶的故事）',
+desc:'真题原文：作者小时候和奶奶一起洗碗，听奶奶讲她二战前的童年。答案：21-25 BADBA / 26-30 DBCAD / 31-35 CBACC / 36-40 ABCCD。记叙文，情感线索题——先读首句定基调。',
+passage:`One day, we had a family dinner. While the adults were busy with their serious talk outside, I was left alone in the 21 to help my grandmother wash dishes. 22 my grandmother would tell me stories about her childhood. Born just before WWII, my grandmother 23 an entirely different childhood lifestyle from mine. She did not have a chance to go to 24. Like in typical families, where boys were 25 much more than girls, my grandma had to stay at home to do 26. The only opportunity (机会) she could seize to 27 was when her brother was having Chinese 28 with the family tutor (家庭教师). She would sit quietly at the far end of the long dinner table, listening 29. This training taught her to read and write her Chinese upside down — a skill that has turned out to be quite 30, especially whenever we share the newspaper. On most weekends, my grandmother, a young girl then, and her brother would go to the 31. There, they would walk through deep water, sit down cross-legged underwater and hold their 32 while they watched all action going on around them. This is something I 33 — her ability to open her 34 underwater and still sit comfortably on the seabed (海底). My childhood is quite 35 compared with hers. I am 36 that I did not need to 37 the hardships like she did. I've never faced the problem of 38. I guess our different childhood background is what makes my grandmother such an amazing person to 39 to: her stories always make my history textbooks 40.`,
+qs:[
+ {n:21,q:'I was left alone in the ____ to help my grandmother wash dishes.',opts:['sitting room','kitchen','yard','dining hall'],a:['B','kitchen'],kp:'语境线索',exp:'洗碗（wash dishes）只能在厨房 kitchen 里发生。'},
+ {n:22,q:'____ my grandmother would tell me stories about her childhood.',opts:['As always','By the way','For example','Here and now'],a:['A','As always'],kp:'逻辑衔接',exp:'像往常一样，洗碗时奶奶给我讲故事，表习惯性动作 As always。'},
+ {n:23,q:'Born just before WWII, my grandmother ____ an entirely different childhood lifestyle from mine.',opts:['adjusted','promoted','achieved','experienced'],a:['D','experienced'],kp:'动词辨析',exp:'experience a lifestyle「经历某种生活方式」，adjust 调整、promote 提拔、achieve 实现均不搭。'},
+ {n:24,q:'She did not have a chance to go to ____.',opts:['work','school','court','press'],a:['B','school'],kp:'上下文推断',exp:'后文说男孩上课她旁听，说明她没机会上学 go to school。'},
+ {n:25,q:'…where boys were ____ much more than girls…',opts:['favored','tolerated','trusted','acknowledged'],a:['A','favored'],kp:'动词辨析',exp:'favor「偏爱」，重男轻女：男孩被偏爱得多。tolerate 容忍、trust 信任、acknowledge 承认。'},
+ {n:26,q:'…my grandma had to stay at home to do ____.',opts:['gardening','homework','business','housework'],a:['D','housework'],kp:'常识判断',exp:'留在家做家务 housework；homework 是学生作业，主语是家庭主妇式女孩。'},
+ {n:27,q:'The only opportunity she could seize to ____ was when her brother was having Chinese lessons…',opts:['exercise','study','explore','teach'],a:['B','study'],kp:'语境线索',exp:'哥哥上课时她旁听 → 她抓住的只是学习 study 的机会。'},
+ {n:28,q:'…when her brother was having Chinese ____ with the family tutor.',opts:['food','guests','lessons','tea'],a:['C','lessons'],kp:'固定搭配',exp:'have lessons with the tutor「跟家庭教师上课」，have food/tea 与 tutor 不搭。'},
+ {n:29,q:'She would sit quietly at the far end of the long dinner table, listening ____.',opts:['closely','directly','nervously','freely'],a:['A','closely'],kp:'副词辨析',exp:'closely「认真地，仔细地」，她坐得远远的、静静地认真听。'},
+ {n:30,q:'This training taught her to read and write her Chinese upside down — a skill that has turned out to be quite ____, especially whenever we share the newspaper.',opts:['professional','awkward','simple','practical'],a:['D','practical'],kp:'语义转折',exp:'倒着读写中文后来很「实用」，尤其看报纸时。'},
+ {n:31,q:'…my grandmother and her brother would go to the ____.',opts:['market','mountain','beach','class'],a:['C','beach'],kp:'后文线索',exp:'后文 deep water、underwater、seabed → 去海滩 beach。'},
+ {n:32,q:'…sit down cross-legged underwater and hold their ____ while they watched…',opts:['secret','breath','view','tongue'],a:['B','breath'],kp:'固定搭配',exp:"hold one's breath「屏住呼吸」，水下动作。"},
+ {n:33,q:'This is something I ____ — her ability to open her eyes underwater…',opts:['admire','notice','adopt','value'],a:['A','admire'],kp:'情感线索',exp:'admire「钦佩」，作者钦佩奶奶水下睁眼的本领。'},
+ {n:34,q:'…her ability to open her ____ underwater and still sit comfortably on the seabed.',opts:['hands','mouth','eyes','arms'],a:['C','eyes'],kp:'常识判断',exp:'水下睁开的是眼睛 eyes，watch 提示。'},
+ {n:35,q:'My childhood is quite ____ compared with hers.',opts:['difficult','complex','happy','similar'],a:['C','happy'],kp:'对比关系',exp:'与奶奶的苦难童年相比，「我的」更幸福 happy。'},
+ {n:36,q:'I am ____ that I did not need to go through the hardships like she did.',opts:['grateful','surprised','convinced','regretful'],a:['A','grateful'],kp:'情感态度',exp:'grateful「感激的」，庆幸自己不必经历那些苦难。'},
+ {n:37,q:'I am grateful that I did not need to ____ the hardships like she did.',opts:['reflect upon','go through','ask about','prepare for'],a:['B','go through'],kp:'短语辨析',exp:'go through hardships「经历苦难」，reflect upon 反思、ask about 询问、prepare for 准备。'},
+ {n:38,q:'I’ve never faced the problem of ____.',opts:['unemployment','health','education','communication'],a:['C','education'],kp:'前文呼应',exp:'奶奶没机会上学；「我」从没面临教育 education 问题。'},
+ {n:39,q:'…what makes my grandmother such an amazing person to ____ to…',opts:['attend','refer','lead','talk'],a:['D','talk'],kp:'固定搭配',exp:'talk to sb.「与某人交谈」，refer to 参考/提及（需接 to 前不加 talk）。'},
+ {n:40,q:'…her stories always make my history textbooks ____.',opts:['come true','come round','come out','come alive'],a:['D','come alive'],kp:'短语辨析',exp:'come alive「生动起来」，历史课本因她的故事而鲜活。'}]},
+
+/* ---------- 2025 II卷 完形摘选 ---------- */
+{id:'p25cloze', col:'read', year:2025, paper:'新高考II卷', title:'2025·新高考II卷 完形填空摘选（65岁健身奶奶）',
+desc:'真题原文（部分）：65岁的 Donohue 女士因年纪大被嘲笑，却坚持健身并激励了无数人。2025年全国II卷完形原题摘选，练「上下文猜词+情感线」。',
+qs:[
+ {n:31,q:'She passes on her belief: "____ others — lift others up on your journey."',opts:['Help','Consult','Follow','Forgive'],a:['A','Help'],kp:'动词辨析',exp:'lift others up（把别人托举起来）= 帮助他人，选 Help。consult 咨询、follow 跟随、forgive 原谅。'},
+ {n:32,q:'The well-liked grandma regularly posts workout content, explaining there is no excuse others can’t look this good. "____ success is sweeter," she says.',opts:['accepted','shared','expected','celebrated'],a:['B','shared'],kp:'语境+词性',exp:'她鼓励大家：没有借口练不好，成功在分享时更甜蜜。shared「被分享的」。'},
+ {n:33,q:'"You do not need to have an amazing body to exercise… the ____ of exercise is to feel good, not look good."',opts:['goal','case','duty','cost'],a:['A','goal'],kp:'名词辨析',exp:'the goal of exercise「锻炼的目标」，与「感觉好而非好看」对应。'},
+ {n:34,q:'Ms Donohue used to be laughed at for being too old to work out, but she has proved the ____ wrong in the best possible way.',opts:['instructors','admirers','beginners','doubters'],a:['D','doubters'],kp:'名词辨析',exp:'doubters「怀疑者」，她证明了当年嘲笑她的人错了。'},
+ {n:35,q:'…indeed becoming a(n) ____ for many social media users.',opts:['authority','excuse','inspiration','option'],a:['C','inspiration'],kp:'名词辨析',exp:'inspiration「灵感/榜样」，65岁奶奶成了许多社交媒体用户的励志典范。'}]},
+
+/* ---------- 2025 II卷 写作真题 ---------- */
+{id:'p25write', col:'write', year:2025, paper:'新高考II卷', title:'2025·新高考II卷 写作真题（应用文+读后续写）',
+desc:'2025年全国II卷写作原题：应用文15分 + 读后续写25分，合计40分。附参考范文与得分要点。先自己动笔，再对范文。',
+essay:[
+ {t:'第一节 应用文（15分）',
+  req:'假定你是李华。上月你邀请英国朋友 Chris 为你校英文报写一篇关于加拿大体育运动的文章，他欣然同意。请你给他写一封邮件，内容包括：1. 询问文章的写作进展；2. 提醒交稿日期是本周五 6 月 14 日；3. 期待早日读到文章。词数 100 左右。',
+  tips:['三段式：来意（询问进展）→ 正文（提醒截止日期+期待）→ 收尾（感谢+祝愿）','礼貌请求句型：Would you mind letting me know how it is going? / Could I remind you that…?','日期表达：the deadline for submission is this Friday, June 14th','亮点词：inquire 询问 / enrich 丰富 / be of benefit to 对……有益'],
+  sample:`Dear Chris,\n\nHope this email finds you well! Last month, you kindly agreed to write an article about sports in Canada, and we’re all looking forward to reading it.\n\nI’m writing to politely inquire about the progress of the article. Would you mind letting me know how it’s going? Also, could I remind you that the deadline for submission is this Friday, June 14th? Your insights into Canadian sports will surely enrich our readers’ understanding of global sports culture, which will be of benefit to us.\n\nThank you again for your support!\n\nBest wishes,\nLi Hua`},
+ {t:'第二节 读后续写（25分）',
+  req:'题目：班级讨论中，你被邀请向同学们解释自己中文名字的含义。\n\nParagraph 1 首句：In a class discussion, I was invited to explain the meaning of my name.\nParagraph 2 首句：Many of my classmates got interested and came up to me after class.',
+  tips:['动作链：stood up → began → noticed → took out → began to sketch（一连串动词推动情节）','心理情感：a mix of nervousness and excitement / their eyes reflecting curiosity and respect / a warmth spread through me','升华句：It was a small yet meaningful step towards fostering cultural understanding and appreciation.','名字解读示范：Autumn represents harvest and maturity, while rain symbolizes nourishment and growth.'],
+  sample:`In a class discussion, I was invited to explain the meaning of my name. Standing up, I felt a mix of nervousness and excitement. "My name, Qiuyu, combines the characters for autumn and rain in Chinese," I began, my voice steady. "Autumn represents harvest and maturity, while rain symbolizes nourishment and growth. Together, they embody a time of abundance and renewal." As I spoke, I noticed the rapt attention of my classmates, their eyes reflecting curiosity and respect. It was a moment of connection, a bridge built between cultures through the simple act of sharing my name.\n\nMany of my classmates got interested and came up to me after class. They surrounded me, their questions pouring out like a stream. "What other names have beautiful meanings in Chinese?" "Can you teach us how to write our names in Chinese characters?" I smiled, feeling a warmth spread through me. I took out a piece of paper and began to sketch out characters, explaining each stroke and its significance. Through this interaction, I realized that by embracing my cultural identity, I was not only preserving my heritage but also enriching the lives of those around me. It was a small yet meaningful step towards fostering cultural understanding and appreciation.`}]
+}
+];
+const PAST_COL={vocab:'📖 单词',grammar:'✏️ 语法',read:'📃 完形/阅读',write:'🖊 写作'};
+
+const VIEWS=[['home','🏠 首页'],['res','📚 考情资源'],['vocab','📖 背单词'],['grammar','✏️ 学语法'],['read','📃 读短文'],['write','🖊 写作句型'],['past','📝 往年真题'],['policy','🎓 升学政策'],['set','⚙️ 设置']];
+function renderTabs(){
+  $('#tabs').innerHTML=VIEWS.map(v=>`<button class="${v[0]===curView?'active':''}" onclick="showView('${v[0]}')">${v[1]}</button>`).join('');
+}
+let curView='home';
+function showView(v){ curView=v; unitListView=null; pastSet=null; renderTabs(); render(); window.scrollTo({top:0}); }
+
+/* ==================== 视图公共 ==================== */
+function bar(done,total){
+  const p=total?Math.round(done/total*100):0;
+  return `<div class="pbar"><i style="width:${p}%"></i></div><div class="muted" style="margin-top:2px">${p}%（${done}/${total}）</div>`;
+}
+
+/* ==================== 首页 ==================== */
+function vHome(){
+  const tl=allWords().length, tlDone=allWords().filter(w=>S.srs[w.id]).length;
+  const gDone=Object.keys(S.grammarQuiz).filter(k=>S.grammarQuiz[k].passed).length;
+  const rDone=Object.keys(S.readDone).length;
+  const dueN=Object.values(S.srs).filter(v=>v.due<=now()).length;
+  return `
+  <div class="card">
+    <h2>💪 亲爱的丹波波，你好！</h2>
+    <p style="font-size:1.15em;margin:2px 0 10px">ㅤ<span style="font-family:'Microsoft Himalaya','Noto Sans Tibetan','Jomolhari',serif">ང་ཁྱོད་ལ་དགའ།</span> <span class="muted" style="font-size:.85em">（藏语：丹波波，见到你真高兴）</span></p>
+    <p class="muted">你在阿坝州读高三，目标：<b class="hl">冲进本科</b>。英语从 80 分往上提，最稳的路线是：<b>听力拿分 + 阅读保分 + 语法填空/作文捡分</b>。这个 App 每天陪你练 40 分钟。</p>
+    <div class="notice info" style="margin-top:10px">
+      📢 <b>重要提醒（现在就办）：</b>2027届高考报名在 <b>2026年10月–11月</b> 进行。报名时记得在系统里勾选申报 <b>国家专项 / 地方专项</b> 资格——<b>不申报视为放弃</b>！阿坝州13个县全部在专项实施区域。详见「升学政策」页。
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🎯 我的目标</h2>
+    <div class="grid2">
+      <div><label class="muted">当前英语分数</label><input class="input" id="inCur" type="number" value="${S.cur}" onchange="S.cur=+this.value||0;save()"></div>
+      <div><label class="muted">目标英语分数</label><input class="input" id="inTar" type="number" value="${S.target}" onchange="S.target=+this.value||0;save()"></div>
+    </div>
+    <p class="muted" style="margin-top:8px">距离目标还差 <b style="color:var(--red)">${Math.max(0,S.target-S.cur)}</b> 分。按下面的得分拆解表，一项一项捡分。</p>
+  </div>
+
+  <div class="card">
+    <h2>🗓 今日任务（打卡后自动刷新）</h2>
+    <div class="grid3">
+      <div class="stat"><b>${Math.max(0,S.dailyNew-S.todayNew)}</b><span>待学生词</span></div>
+      <div class="stat"><b>${dueN}</b><span>待复习词</span></div>
+      <div class="stat"><b>${S.streak}</b><span>连续打卡(天)</span></div>
+    </div>
+    <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+      <button class="btn" onclick="startSession('today')">▶ 开始今日单词</button>
+      <button class="btn ghost" onclick="showView('vocab')">去单词本</button>
+      <button class="btn green" onclick="doCheckin()">✅ 今日打卡</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📊 学习进度</h2>
+    <h3>核心词汇（含短语 ${fmt(tl+PHRASES.length)} 个）</h3>
+    ${bar(tlDone, tl)}
+    <h3>语法专题（10章）</h3>
+    ${bar(gDone, 10)}
+    <h3>短文阅读（${10}篇+七选五+完形+语法填空）</h3>
+    ${bar(rDone, READING.length+3)}
+  </div>
+
+  <div class="card">
+    <h2>🧭 得分拆解表（80分 → 100+ 路径）</h2>
+    <table class="tbl">
+      <tr><th>题型</th><th>满分</th><th>保底</th><th>冲刺</th><th>提分关键</th></tr>
+      <tr><td>听力</td><td>30</td><td>24</td><td>30</td><td>每天1套真题精听，听完复述</td></tr>
+      <tr><td>阅读理解</td><td>37.5</td><td>30</td><td>36</td><td>细节题定位+同义改写，读完形抓情感线</td></tr>
+      <tr><td>七选五</td><td>12.5</td><td>7</td><td>10</td><td>词汇复现+逻辑词(however/besides/so)</td></tr>
+      <tr><td>完形填空</td><td>15</td><td>9</td><td>13</td><td>短语搭配、动词辨析、上下文复现</td></tr>
+      <tr><td>语法填空</td><td>15</td><td>9</td><td>13</td><td>非谓语、时态、从句连接词三巨头</td></tr>
+      <tr><td>应用文</td><td>15</td><td>11</td><td>14</td><td>三段式+功能句型(背「写作句型」页)</td></tr>
+      <tr><td>读后续写</td><td>25</td><td>15</td><td>20</td><td>动作+情感+环境+结尾升华句型</td></tr>
+      <tr><td><b>合计</b></td><td><b>150</b></td><td><b>≈105</b></td><td>—</td><td>英语到100+，本科稳一半</td></tr>
+    </table>
+    <p class="muted" style="margin-top:8px">💡 阿坝州同学注意：本科线看总分（2025年四川本科批：历史类467/物理类438），另有<b>民族地区加分（少数+20/汉族+10）</b>和<b>三大专项计划降分录取</b>，两把「钥匙」都要用上。</p>
+  </div>`;
+}
+
+/* ==================== 考情资源 ==================== */
+function vRes(){
+  return `
+  <div class="card">
+    <h2>📚 四川英语卷种演变（2010–2026）</h2>
+    <table class="tbl">
+      <tr><th>年份</th><th>试卷</th><th>特点 / 对现在还有用吗</th></tr>
+      <tr><td>2010–2015</td><td>四川自主命题(四川卷)</td><td>单选、短文改错题型已取消，<b>不推荐</b></td></tr>
+      <tr><td>2016–2020</td><td>全国新课标卷III(丙卷)</td><td>有单选/改错，与新高考题型差距大</td></tr>
+      <tr><td>2021–2024</td><td>全国甲卷</td><td>题型接近但无读后续写，<b>可作补充</b></td></tr>
+      <tr><td>2025–2026</td><td><b>全国新高考II卷</b></td><td>⚠️ <b>你的考试就是这种！只刷这个</b></td></tr>
+    </table>
+    <div class="notice warn">结论：2010–2024 的老卷子<b>题型已过时</b>，只适合练语感。真正要刷的是：<b>①2025/2026全国II卷真题 ②四川省一诊/二诊/三诊 ③成都一诊/二诊</b>。</div>
+  </div>
+
+  <div class="card">
+    <h2>📐 2026试卷结构与分值（新高考II卷·120分钟·150分）</h2>
+    <table class="tbl">
+      <tr><th>部分</th><th>内容</th><th>题量</th><th>分值</th><th>建议用时</th></tr>
+      <tr><td rowspan="2">一、听力</td><td>短对话+长对话/独白</td><td>20题×1.5</td><td>30</td><td>约20分钟</td></tr>
+      <tr><td>注：只放一遍！</td><td colspan="3">平时练"一遍过"，边听边记关键词</td></tr>
+      <tr><td rowspan="2">二、阅读</td><td>4篇阅读(应用/记叙/说明/议论)</td><td>15题×2.5</td><td>37.5</td><td>约22分钟</td></tr>
+      <tr><td>七选五(语篇补全)</td><td>5题×2.5</td><td>12.5</td><td>约8分钟</td></tr>
+      <tr><td rowspan="2">三、语言运用</td><td>完形填空(记叙文为主)</td><td>15题×1</td><td>15</td><td>约13分钟</td></tr>
+      <tr><td>语法填空</td><td>10题×1.5</td><td>15</td><td>约8分钟</td></tr>
+      <tr><td rowspan="2">四、写作</td><td>应用文(书信/邮件/通知)</td><td>1篇</td><td>15</td><td>约13分钟</td></tr>
+      <tr><td>读后续写(故事续写)</td><td>1篇</td><td>25</td><td>约17分钟</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>🎯 各题型重点考点速查</h2>
+    <h3>🎧 听力（场景+一词多义）</h3>
+    <p class="muted">五大场景：校园日程、购物消费、交通出行、餐饮问路、健康天气。<b>数字/时间/价格计算</b>必考；近年爱考<b>一词多义短语</b>——2025年真题考过 make up（弥补~）和 place an order（下单）。听到短语先想"哪个意思放进去讲得通"。</p>
+    <h3>📖 阅读理解（细节题占60%+）</h3>
+    <p class="muted"><b>细节题</b>：题干关键词→回原文定位→同义改写选项才对（原词照搬常是坑）。<b>猜词题</b>：看上下文解释、破折号、构词法(un-/dis-/re-/-ful)。<b>主旨题</b>：首段+各段首句串起来。<b>推断题</b>：观点态度词 positive / supportive / opposed / doubtful / cautious。</p>
+    <h3>🧩 七选五</h3>
+    <p class="muted">三招：①<b>词汇复现</b>（空前后有原词再现）②<b>代词衔接</b>（this/these/such 指代上文）③<b>逻辑词</b>（however转、besides递进、so因、for example例证）。空前是逗号→找副词(however/therefore)。</p>
+    <h3>☕️ 完形填空（情感双线）</h3>
+    <p class="muted">记叙文为主：一条<b>情节线</b>+一条<b>情感线</b>（lost the key…紧张→感动→温暖）。选项多为动词短语/名词/副词辨析，答案常是<b>上下文同义复现</b>。先通读抓情感再逐题。</p>
+    <h3>✏️ 语法填空（半壁江山在语法）</h3>
+    <p class="muted">命题套路（以2025年11月四川省一诊真题答案为例）：combined（过去分词作定语）、specializes（主谓一致）、by（介词/被动）、an（冠词）、to open（不定式表目的）、coming（现在分词）、easily（形容词→副词）、is（时态）、where（定语从句关系副词）、tourists（名词复数）。<b>动词、连词、词性转换三分天下。</b></p>
+    <h3>🖊 写作</h3>
+    <p class="muted"><b>应用文</b>：建议信/邀请信/申请信/通知，三段式「目的→要点→期待」。<b>读后续写</b>：2025年四川首考即出现，动作链+情感+环境+结尾升华，通篇<b>一般过去时</b>。句型直接背「写作句型」页。</p>
+  </div>
+
+  <div class="card">
+    <h2>🔗 试卷资源哪里找（亲测可下）</h2>
+    <a class="res" href="https://www.jhgk.cn/upload/file/20251127/1764227424091056331.pdf" target="_blank"><b>📄 2026届四川省一诊英语答案+评分标准（免费PDF）</b><div class="d">含完整答案和读后续写范文，jg 高考网直接下载</div></a>
+    <a class="res" href="https://www.xiangpi.com/shiti/719287.html" target="_blank"><b>🆓 2026届四川省一诊英语在线题库（橡皮网，可免费刷题）</b><div class="d">按题刷：听力、阅读、完形全都有</div></a>
+    <a class="res" href="https://www.16jzq.com/bbs/forum.php?mod=viewthread&tid=58360" target="_blank"><b>📄 成都市2026届一诊英语试卷+答案（壹牛家长圈PDF免费）</b><div class="d">回复帖子可下载，成都一诊风向标</div></a>
+    <a class="res" href="https://www.scsx985.com/thread/18951" target="_blank"><b>📄 成都一诊全科试卷下载（智学时刻）</b><div class="d">含英语试卷+答案PDF</div></a>
+    <a class="res" href="https://www.21cnjy.com/special/b343070/" target="_blank"><b>🗂 四川各地2026届模拟英语题汇总（21世纪教育网）</b><div class="d">成都七中/石室/绵阳诊断等，部分需学币</div></a>
+    <a class="res" href="https://m.gaokao.cn/question/detail/zhenti/887" target="_blank"><b>📝 2025年高考英语真题·全国II卷（免费）</b><div class="d">四川第一届新高考真题，最珍贵</div></a>
+    <a class="res" href="https://www.sceea.cn" target="_blank"><b>🏛 四川省教育考试院官网</b><div class="d">报名、专项资格申报、分数线、政策原文</div></a>
+    <a class="res" href="https://gaokao.chsi.com.cn" target="_blank"><b>🎓 阳光高考平台</b><div class="d">高校专项计划报名与招生简章</div></a>
+    <p class="muted" style="margin-top:8px">💡 最直接的渠道：<b>本校英语老师/年级组</b>手里有全套阿坝州诊断卷，直接开口要。</p>
+  </div>
+
+  <div class="card">
+    <h2>🧑‍🏫 真题怎么用才提分（80分版）</h2>
+    <p class="muted">1. 听力：每天固定20分钟，一套题听两遍——第一遍做题，第二遍逐句暂停复述。<br>
+    2. 阅读：每做完一篇，把题目里的<b>同义改写词</b>圈出来（题干 popular = 原文 well-liked），攒本子。<br>
+    3. 完形：做完后把正确答案回填，朗读整篇两遍，培养语感。<br>
+    4. 语法填空：错的空归类丢进对应语法章节重学（本节 App 的语法模块直接对应）。<br>
+    5. 频率：听力/阅读<b>每天</b>；完形/七选五<b>每周各3套</b>；写作<b>每周1篇背默</b>。</p>
+  </div>`;
+}
+
+/* ==================== 背单词 ==================== */
+let curUnit=0, study=null, unitQuizState=null, unitListView=null;
+
+function vVocab(){
+  const dueN=Object.values(S.srs).filter(v=>v.due<=now()).length;
+  return `
+  ${study?vStudyCard():''}
+  ${unitQuizState?vQuiz():''}
+  <div class="card" style="border-color:var(--blue)">
+    <h2>📝 历年真题·词汇题集 <span class="tag p">按年份</span></h2>
+    <p class="muted">把历年真题里的<b>词汇/语法填空</b>单独抽出来了：词性转换、非谓语、名词复数——全是「背单词直接提分」的题。<b>做完自动判分出解析。</b></p>
+    <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn" onclick="openPastSet('p25gf')">2025·新高考II卷（10题）</button>
+      <button class="btn ghost" onclick="pastCol='vocab';pastSet=null;showView('past')">单词真题全部 →</button>
+    </div>
+  </div>
+  <div class="card">
+    <h2>📖 背单词 <span class="tag b">核心词表</span></h2>
+    <div class="grid3">
+      <div class="stat"><b>${allWords().filter(w=>S.srs[w.id]).length}</b><span>已学生词</span></div>
+      <div class="stat"><b>${allWords().filter(w=>(S.srs[w.id]?.l||0)>=2).length}</b></div><span>已牢记(2星+)</span></div>
+      <div class="stat"><b>${Object.keys(S.wrong).length}</b><span>生词本</span></div>
+    </div>
+    <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+      <button class="btn" onclick="startSession('today')">▶ 今日学习（新词${S.dailyNew}个+复习${dueN}）</button>
+      <button class="btn ghost" onclick="startSession('review')">🔁 只复习</button>
+      <button class="btn gray" onclick="wrongFlag=true;unitListView=null;render()">📕 生词本</button>
+    </div>
+    <div class="notice info" style="margin-top:10px">记忆规则：<b>认识</b>→按 1/2/4/7/15/30 天间隔复习；<b>模糊</b>→1天后再见；<b>不认识</b>→当天重来+进生词本。每天坚持比一次猛背更有效。</div>
+  </div>
+  <div class="card">
+    <h2>🗂 核心词书（12个单元 · 高考高频）</h2>
+    ${VOCAB.map((u,i)=>{
+      const p=unitProgress(i);
+      return `<div class="unit-item">
+        <button class="unit-item-main" onclick="openUnit(${i})">
+          <div><b>${u.name}</b><div class="meta">${u.words.length}词</div></div>
+          <div style="text-align:right;width:130px"><div class="pbar"><i style="width:${Math.round(p.done/p.total*100)}%"></i></div><div class="meta">${p.done}/${p.total}</div></div>
+        </button>
+        <button class="btn gray sm" onclick="openUnitList(${i})">📋 词表</button>
+      </div>`;
+    }).join('')}
+    <div class="unit-item">
+      <button class="unit-item-main" onclick="openUnit(-1)">
+        <div><b>🔗 短语动词50个</b><div class="meta">完形/阅读/写作都靠它</div></div>
+        <div style="text-align:right;width:130px"><div class="pbar"><i style="width:${Math.round(PHRASES.filter(w=>S.srs[w.id]).length/PHRASES.length*100)}%"></i></div><div class="meta">${PHRASES.filter(w=>S.srs[w.id]).length}/${PHRASES.length}</div></div>
+      </button>
+      <button class="btn gray sm" onclick="openUnitList(-1)">📋 词表</button>
+    </div>
+  </div>`;
+}
+
+/* ---------- 单元词表（例句+考点完整版） ---------- */
+function wordRow(w){
+  const lvl=S.srs[w.id]?S.srs[w.id].l:0;
+  const ex2=EX2[w.w]||null;
+  const kp=kpOf(w);
+  const esc=s=>String(s||'').replace(/'/g,'');
+  return `<div class="wli">
+    <div class="wli-head">
+      <div><b class="wli-w">${w.w}</b><span class="wli-ph">${w.p||''}</span>
+        <button class="spk sm" onclick="speak('${esc(w.w)}')">🔊</button></div>
+      <div class="wli-m">${w.m}${lvl?` <span style="color:var(--amber)">${'★'.repeat(lvl)}</span>`:''}</div>
+    </div>
+    <div class="sc-ex"><div class="sc-ex-head"><span class="sc-ex-lab">例句 1</span>
+      <button class="spk sm" onclick="speak('${esc(w.e||'')}')">🔊</button></div>
+      <div class="sc-ex-en">${w.e||''}</div><div class="sc-ex-zh">${w.et||''}</div></div>
+    ${ex2?`<div class="sc-ex alt"><div class="sc-ex-head"><span class="sc-ex-lab">例句 2</span>
+      <button class="spk sm" onclick="speak('${esc(ex2[0])}')">🔊</button></div>
+      <div class="sc-ex-en">${ex2[0]}</div><div class="sc-ex-zh">${ex2[1]}</div></div>`:''}
+    ${kp?`<div class="wli-kp">💡 考点：${kp}</div>`:''}
+  </div>`;
+}
+function openUnitList(i){
+  unitListView=i; study=null; unitQuizState=null; curUnit=i; wrongFlag=false;
+  render(); window.scrollTo(0,0);
+}
+function vUnitList(i){
+  const list = i<0? PHRASES : VOCAB[i].words;
+  const name = i<0? '🔗 短语动词' : VOCAB[i].name;
+  return `<div class="card">
+    <h2>📋 ${name} · 词表 <span class="muted" style="font-weight:400">${list.length}词</span></h2>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin:10px 0">
+      <button class="btn" onclick="openUnit(${i})">▶ 闪卡背这单元</button>
+      <button class="btn ghost" onclick="unitListView=null;render()">← 返回词书</button>
+    </div>
+    ${list.map(w=>wordRow(w)).join('')}
+    <div style="margin-top:12px"><button class="btn ghost" onclick="unitListView=null;render()">← 返回词书</button></div>
+  </div>`;
+}
+
+function openUnit(i){
+  curUnit=i;
+  const list = i<0? PHRASES : VOCAB[i].words;
+  study={mode:'unit', queue:list.map(w=>({id:w.id})), idx:0, known:0, fuzzy:0, again:0, unit:i};
+  unitQuizState=null;
+  render();
+}
+function startSession(mode){
+  rollDay();
+  if(mode==='review'){
+    const due=Object.entries(S.srs).filter(([k,v])=>v.due<=now()).map(([k])=>k);
+    study={mode:'review', queue:due.slice(0,60).map(id=>({id})), idx:0, known:0, fuzzy:0, again:0, unit:-2};
+  }else{
+    const remain=Math.max(0,S.dailyNew-S.todayNew);
+    const news=allWords().filter(w=>!S.srs[w.id]).slice(0,remain);
+    const due=Object.entries(S.srs).filter(([k,v])=>v.due<=now()).map(([k])=>k).slice(0,40);
+    study={mode:'today', queue:[...due.map(id=>({id})), ...news.map(w=>({id:w.id}))], idx:0, known:0, fuzzy:0, again:0, unit:-2, newTotal:news.length};
+    S.todayNew+=news.length;
+  }
+  unitQuizState=null; save();
+  render();
+}
+function vStudyCard(){
+  const st=study;
+  if(st.idx>=st.queue.length){
+    return `<div class="card"><h2>🎉 本轮完成</h2>
+      <div class="grid3">
+        <div class="stat"><b style="color:var(--green)">${st.known}</b><span>认识</span></div>
+        <div class="stat"><b style="color:var(--amber)">${st.fuzzy}</b><span>模糊</span></div>
+        <div class="stat"><b style="color:var(--red)">${st.again}</b><span>重学</span></div>
+      </div>
+      <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+        <button class="btn" onclick="startSession('today')">再来一轮</button>
+        <button class="btn ghost" onclick="study=null;render()">收起</button>
+      </div></div>`;
+  }
+  const w=wordById(st.queue[st.idx].id);
+  const lvl=S.srs[w.id]?S.srs[w.id].l:0;
+  const esc=s=>String(s||'').replace(/'/g,'');
+  const ex2=EX2[w.w]||null;
+  const exBox=(en,zh,cls,lab)=>en?`<div class="sc-ex ${cls}">
+      <div class="sc-ex-head"><span class="sc-ex-lab">${lab}</span>
+        <button class="spk sm" onclick="event.stopPropagation();speak('${esc(en)}')">🔊 朗读</button></div>
+      <div class="sc-ex-en">${en}</div>
+      <div class="sc-ex-zh">${zh||''}</div></div>`:'';
+  return `<div class="card">
+    <h2>📖 ${st.mode==='today'?'今日学习':st.mode==='review'?'复习':(st.unit<0?'短语动词':VOCAB[st.unit].name)} <span class="muted" style="font-weight:400">${st.idx+1}/${st.queue.length}</span></h2>
+    <div class="pbar" style="margin-bottom:10px"><i style="width:${Math.round(st.idx/st.queue.length*100)}%"></i></div>
+    <div class="sc">
+      <div class="word">${w.w}</div>
+      <div class="ph">${w.p||''}</div>
+      <div class="spk-row"><button class="spk" onclick="speak('${w.w}')">🔊 朗读单词</button></div>
+      <div class="mean-box"><span class="lab">中文意思</span><span>${w.m}</span></div>
+      ${exBox(w.e,w.et,'','例句 1')}
+      ${ex2?exBox(ex2[0],ex2[1],'alt','例句 2'):''}
+      ${kpOf(w)?`<div class="tip">💡 考点：${kpOf(w)}</div>`:''}
+      ${lvl>0?`<div class="muted" style="text-align:center;margin-top:8px">已学 ${'★'.repeat(lvl)}</div>`:''}
+    </div>
+    <div class="study-actions">
+      <button class="btn gray" onclick="srs('again')">😵 重来</button>
+      <button class="btn warn" onclick="srs('fuzzy')">😬 模糊</button>
+      <button class="btn green" onclick="srs('ok')">😎 认识</button>
+    </div>
+    <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+      ${S.wrong[w.id]?'<span class="tag r">已在生词本</span>':`<button class="btn ghost sm" onclick="S.wrong['${w.id}']=1;save();render()">＋生词本</button>`}
+      <button class="btn gray sm" onclick="study=null;render()">退出</button>
+    </div>
+  </div>`;
+}
+function srs(k){
+  const w=wordById(study.queue[study.idx].id);
+  const cur=S.srs[w.id]||{l:0,due:0};
+  if(k==='ok'){ cur.l=Math.min(6,cur.l+1); cur.due=now()+[0,1,2,4,7,15,30][cur.l]*86400000; study.known++; }
+  else if(k==='fuzzy'){ cur.due=now()+1*86400000; study.fuzzy++; }
+  else { cur.l=0; cur.due=now(); S.wrong[w.id]=1; study.again++; }
+  S.srs[w.id]=cur;
+  if(study.mode==='today'&&k==='ok') S.todayRev++;
+  study.idx++; study.flipped=false; save(); render();
+}
+function vWrong(){
+  const ids=Object.keys(S.wrong);
+  const ws=ids.map(wordById).filter(Boolean);
+  unitQuizState=null;
+  return `<div class="card"><h2>📕 我的生词本（${ws.length}）</h2>
+    <div class="word-list">${ws.map(w=>`
+      <div class="word-row"><div class="l"><b>${w.w}</b><span>${w.m}</span></div>
+      <div style="display:flex;gap:6px"><button class="spk" onclick="speak('${w.w}')">🔊</button>
+      <button class="btn gray sm" onclick="delete S.wrong['${w.id}'];save();render()">移除</button></div></div>`).join('')||'<p class="muted">还没有生词，点击卡片上的「＋生词本」添加。</p>'}</div>
+    <button class="btn ghost" style="margin-top:10px" onclick="wrongFlag=false;render()">返回</button></div>`;
+}
+
+/* ---------- 单元测 ---------- */
+function startUnitQuiz(){
+  const list=curUnit<0?PHRASES:VOCAB[curUnit].words;
+  const pool=allWords().map(w=>w.w).concat(PHRASES.map(w=>w.w));
+  const picked=list.sort(()=>Math.random()-.5).slice(0,Math.min(8,list.length));
+  unitQuizState={qs:picked.map(w=>({m:w.m,a:w.w,wid:w.id})), opts:{}, i:0, wrong:[]};
+  picked.forEach(w=>{
+    const dis=shuffle(pool.filter(x=>x!==w.w)).slice(0,3);
+    unitQuizState.qs.find(q=>q.wid===w.id).o=shuffle([w.w,...dis]);
+  });
+  render();
+}
+function shuffle(a){ a=[...a]; for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
+function vQuiz(){
+  const q=unitQuizState;
+  if(q.i>=q.qs.length){
+    const right=q.qs.length-q.wrong.length;
+    S.unitQuiz[curUnit<0?'phrase':'u'+curUnit]={score:right,total:q.qs.length,date:today()};
+    q.wrong.forEach(id=>S.wrong[id]=1); save();
+    return `<div class="card"><h2>📝 单元测结果</h2>
+      <h1 style="font-size:38px;color:${right>=q.qs.length*0.85?'var(--green)':'var(--amber)'}">${right}/${q.qs.length}</h1>
+      <p class="muted">${right===q.qs.length?'满分！可以进入下一单元了':right>=q.qs.length*0.6?'不错，错题已进生词本':'错题较多，建议回到闪卡再过一遍'}</p>
+      <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+        <button class="btn" onclick="startUnitQuiz()">再测一次</button>
+        <button class="btn ghost" onclick="unitQuizState=null;render()">返回词书</button></div></div>`;
+  }
+  return `<div class="card"><h2>📝 单元测 <span class="muted" style="font-weight:400">${q.i+1}/${q.qs.length}</span></h2>
+    <div class="q-box"><div class="qt">下面哪个单词表示：<b>${q.qs[q.i].m}</b></div>
+    ${q.qs[q.i].o.map(o=>{
+      const sel=q.opts[q.i]===o;
+      const answered=q.opts[q.i]!==undefined;
+      let cls='';
+      if(answered){ cls = o===q.qs[q.i].a?'correct':(sel?'wrong':''); }
+      return `<button class="opt ${cls} ${answered?'done':''}" onclick="pickQuiz('${o.replace(/'/g,"\\'")}')">${o}</button>`;
+    }).join('')}
+    <div class="explain" style="display:${q.opts[q.i]!==undefined?'block':'none'}">
+      ${q.opts[q.i]!==undefined?(q.opts[q.i]===q.qs[q.i].a?'✅ 回答正确':'❌ 正确答案：<b>'+q.qs[q.i].a+'</b>'):''}
+    </div></div>
+    ${q.opts[q.i]!==undefined?`<button class="btn" style="margin-top:10px" onclick="unitQuizState.i++;render()">下一题 →</button>`:''}
+  </div>`;
+}
+function pickQuiz(o){
+  const q=unitQuizState; if(q)q.opts[q.i]=o;
+  if(o!==q.qs[q.i].a && !q.wrong.includes(q.qs[q.i].wid)) q.wrong.push(q.qs[q.i].wid);
+  render();
+}
+
+/* ==================== 语法 ==================== */
+function vGrammar(){
+  return `<div class="card" style="border-color:var(--blue)">
+    <h2>📝 历年真题·语法题集 <span class="tag p">按年份</span></h2>
+    <p class="muted">历年真题里抽出的<b>语法填空真题单句</b>：定语从句、非谓语、时态、冠词、连词……每标注错误就自动解析。语法先做题找感觉，再学专题。</p>
+    <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn" onclick="openPastSet('p25gg')">2025·新高考II卷拆解（7题）</button>
+      <button class="btn ghost" onclick="pastCol='grammar';pastSet=null;showView('past')">语法真题全部 →</button>
+    </div>
+  </div>
+  <div class="card"><h2>✏️ 语法专题 <span class="tag b">10章</span></h2>
+    <p class="muted">80分提分优先级：<b>非谓语＞时态＞定语从句＞名词性从句＞状语从句＞虚拟＞其他</b>。每章先学懂，再闯关（4题对3题算过）。</p>
+    ${GRAMMAR.map((g,i)=>{
+      const done=S.grammarQuiz[i]&&S.grammarQuiz[i].passed;
+      return `<button class="g-item" onclick="openG(${i})">
+        <div class="n ${done?'done':''}">${done?'✓':i+1}</div>
+        <div style="flex:1"><b>${g.name}</b><div class="meta">${g.goal}</div></div>
+        <div style="text-align:right">${S.grammarQuiz[i]?`<span class="tag ${done?'g':'a'}">${S.grammarQuiz[i].right}/${g.quiz.length}</span>`:'<span class="tag b">未学</span>'}</div>
+      </button>`;
+    }).join('')}
+  </div>`;
+}
+let gOpen=null, gQuizState=null;
+function openG(i){
+  gOpen=i; gQuizState={i:0,opts:{},right:0}; render();
+}
+function vGOpen(){
+  const g=GRAMMAR[gOpen], q=gQuizState;
+  if(!q) return `<div class="card"><h2>${g.name}</h2>${g.html}
+    <button class="btn" style="margin-top:10px" onclick="gQuizState={i:0,opts:{},right:0};render()">📝 开始闯关（${g.quiz.length}题）</button>
+    <button class="btn ghost" style="margin-top:10px" onclick="gOpen=null;render()">返回列表</button></div>`;
+  if(q.i>=g.quiz.length){
+    const passed=q.right>=g.quiz.length-1;
+    S.grammarQuiz[gOpen]={right:q.right,passed}; save();
+    return `<div class="card"><h2>${passed?'🎉 闯关成功':'💪 继续加油'}</h2>
+      <h1 style="font-size:38px;color:${passed?'var(--green)':'var(--amber)'}">${q.right}/${g.quiz.length}</h1>
+      <p class="muted">${passed?'本章通过！':'还差一点点，看看解析再来一次。'}</p>
+      <button class="btn" style="margin-top:10px" onclick="gQuizState=null;render()">再看一遍知识点</button>
+      <button class="btn ghost" style="margin-top:10px" onclick="gOpen=null;gQuizState=null;render()">返回列表</button></div>`;
+  }
+  const item=g.quiz[q.i];
+  const answered=q.opts[q.i]!==undefined;
+  return `<div class="card"><h2>${g.name} <span class="muted" style="font-weight:400">第${q.i+1}题/${g.quiz.length}</span></h2>
+    <div class="q-box"><div class="qt">${item.q}</div>
+    ${item.o.map((o,oi)=>{
+      let cls='';
+      if(answered) cls= oi===item.a?'correct':(q.opts[q.i]===oi?'wrong':'');
+      return `<button class="opt ${cls} ${answered?'done':''}" onclick="pickG(${oi})">${'ABCD'[oi]}. ${o}</button>`;
+    }).join('')}
+    <div class="explain" style="display:${answered?'block':'none'}">${answered?(q.opts[q.i]===item.a?'✅ 正确！':'❌ 再想想～ '+('ABCD'[item.a]+'. '+item.o[item.a]))+'<br>💡 '+item.ex:''}</div></div>
+    ${answered?`<button class="btn" style="margin-top:10px" onclick="gQuizState.i++;render()">下一题 →</button>`:''}
+    <button class="btn ghost" style="margin-top:10px" onclick="gQuizState=null;render()">返回知识点</button></div>`;
+}
+function pickG(oi){
+  const g=GRAMMAR[gOpen], q=gQuizState;
+  if(q.opts[q.i]===undefined){ q.opts[q.i]=oi; if(oi===g.quiz[q.i].a) q.right++; }
+  render();
+}
+
+/* ==================== 阅读 ==================== */
+function vRead(){
+  const items=[
+    ...READING.map((r,i)=>({i, r})),
+    {i:READING.length, r:SEVEN_FIVE, kind:'seven'},
+    {i:READING.length+1, r:CLOZE_DATA, kind:'cloze'},
+    {i:READING.length+2, r:CONT_WRITE, kind:'cont'}
+  ];
+  return `<div class="card" style="border-color:var(--blue)">
+    <h2>📝 历年真题·完形 <span class="tag p">按年份</span></h2>
+    <p class="muted"><b>2024·全国甲卷完形全文20题</b>（四川考生当年原题，奶奶的故事）+ 2025·新高考II卷完形摘选。完形是低分段最划算的题：上下文都有线索。</p>
+    <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn" onclick="openPastSet('p24cloze')">2024·全国甲卷（20题）</button>
+      <button class="btn ghost" onclick="pastCol='read';pastSet=null;showView('past')">完形真题全部 →</button>
+    </div>
+  </div>
+  <div class="card"><h2>📃 英文短文阅读 <span class="tag b">经典题型训练</span></h2>
+    <p class="muted">按难度分为「基础 / 提升 / 冲刺」。先做<b>基础</b>建立信心，再攻<b>提升</b>和<b>冲刺</b>。每篇都有答案解析。</p>
+    <p style="margin-top:6px"><span class="tag g">基础</span> <span class="tag a">提升</span> <span class="tag r">冲刺</span></p>
+    ${items.map(it=>{
+      const done=S.readDone[it.r.id];
+      return `<button class="r-item" onclick="openR(${it.i})">
+        <div style="display:flex;justify-content:space-between;gap:8px"><b>${it.r.title}</b>${done?'<span class="tag g">已练</span>':''}</div>
+        <div class="row2"><span class="tag ${it.r.level==='基础'?'g':it.r.level==='提升'?'a':'r'}">${it.r.level}</span><span class="tag b">${it.r.type}</span><span class="muted">约${it.r.wc}词 · ${it.r.kind||'阅读理解'}</span></div>
+      </button>`;
+    }).join('')}
+  </div>`;
+}
+let rOpen=null, rAns=null;
+function openR(i){
+  rOpen=i;
+  let r;
+  if(i<READING.length){ r=READING[i]; rAns={i:0,opts:{},right:0}; }
+  else if(i===READING.length){ r=SEVEN_FIVE; rAns={picked:{},score:0}; }
+  else if(i===READING.length+1){ r=CLOZE_DATA; rAns={picked:{},score:0}; }
+  else { r=CONT_WRITE; rAns=null; }
+  rOpenObj=r; render();
+}
+let rOpenObj=null;
+function vROpen(){
+  const r=rOpenObj;
+  if(rOpen<READING.length){
+    const q=rAns;
+    if(q.i>=r.questions.length){
+      S.readDone[r.id]=true; save();
+      return `<div class="card"><h2>📊 ${r.title} · 完成</h2>
+        <h1 style="font-size:38px;color:${q.right>=r.questions.length-1?'var(--green)':'var(--amber)'}">${q.right}/${r.questions.length}</h1>
+        <p class="muted">${q.right===r.questions.length?'全对，太棒了！':q.right>=r.questions.length-1?'很不错！':'错题要看解析，找出错因：定位错？词不认识？还是想多了？'}</p>
+        <button class="btn ghost" style="margin-top:10px" onclick="rOpen=null;render()">返回列表</button></div>`;
+    }
+    const item=r.questions[q.i];
+    const answered=q.opts[q.i]!==undefined;
+    return `<div class="card">
+      <h2>${r.title}</h2>
+      <div class="passage">${r.paras.map(p=>`<p>${p}</p>`).join('')}</div>
+      <h3 style="color:var(--blue)">第${q.i+1}题：${item.q}</h3>
+      ${item.o.map((o,oi)=>{
+        let cls='';
+        if(answered) cls= oi===item.a?'correct':(q.opts[q.i]===oi?'wrong':'');
+        return `<button class="opt ${cls} ${answered?'done':''}" onclick="pickR(${oi})">${'ABCD'[oi]}. ${o}</button>`;
+      }).join('')}
+      <div class="explain" style="display:${answered?'block':'none'}">${answered?(q.opts[q.i]===item.a?'✅ 正确':'❌ 正确答案：'+'ABCD'[item.a]+'. '+item.o[item.a])+'<br>💡 '+item.ex:''}</div>
+      ${answered?`<button class="btn" style="margin-top:10px" onclick="rAns.i++;render()">${q.i+1>=r.questions.length?'查看结果':'下一题'} →</button>`:''}
+      <button class="btn gray sm" style="margin-top:10px" onclick="rOpen=null;render()">退出</button>
+    </div>`;
+  }
+  if(r.id==='seven5'){
+    /* 七选五 */
+    return `<div class="card">
+      <h2>${r.title}</h2>
+      <p class="muted">从下面的 7 个选项中选出 5 个填入空白处，2 个为多余选项。</p>
+      <div style="margin:10px 0">${r.options.map((o,i)=>`<span class="seven-opt ${rAns.picked[i]?'used':''}" id="sopt${i}" onclick="pickS(${i})">${'ABCDEFG'[i]}. ${o}</span>`).join('')}</div>
+      <div class="passage">${r.paras.map((p,pi)=>`<p>${p.replace(/\[(\d+)\]/g,(m,n)=>{const k=['__B1__','__B2__','__B3__','__B4__','__B5__'][Number(n)-1]; return `<span class="blank-chip" id="${k}">${rAns.picked[Number(n)-1]!==undefined?'ABCDEFG'[rAns.picked[Number(n)-1]]:'&nbsp;'}</span>`;})}</p>`).join('')}</div>
+      <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+        <button class="btn green" onclick="submitS()">提交答案</button>
+        <button class="btn gray sm" onclick="rOpen=null;render()">退出</button>
+      </div>
+      <div id="sresult"></div>
+    </div>`;
+  }
+  if(r.id==='cloze'){
+    return `<div class="card">
+      <h2>${r.title}</h2>
+      <p class="muted">完形填空：先通读一遍抓住故事和情感线，再逐题选。</p>
+      <div class="passage" id="clozeText">${r.paras.map(p=>`<p>${p.replace(/\[(\d+)\]/g,(m,n)=>{const idx=Number(n)-1; const sel=rAns.picked[idx]; return `<span style="display:inline-block; margin:2px"><b style="color:var(--blue)">${n})</b> <span class="opts-row" style="display:inline-flex; margin:0">${r.opts[idx].map((o,oi)=>`<button class="seven-opt ${sel===oi?'picked':''}" style="font-size:12px;padding:3px 8px" onclick="pickC(${idx},${oi})">${'ABCD'[oi]}</button>`).join('')}</span></span>`;})}</p>`).join('')}</div>
+      <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+        <button class="btn green" onclick="submitC()">提交答案</button>
+        <button class="btn gray sm" onclick="rOpen=null;render()">退出</button>
+      </div>
+      <div id="cresult"></div>
+    </div>`;
+  }
+  /* 读后续写 */
+  return `<div class="card">
+    <h2>${r.title} <span class="tag r">读后续写</span></h2>
+    <p class="muted">读后续写占 25 分。方法：划出原文的情感线索 → 按"动作→对话→心理→环境"推进两段 → 结尾升华。语言用「写作句型」页的动作/情感/环境句。</p>
+    <div class="passage">${r.paras.map(p=>`<p>${p}</p>`).join('')}</div>
+    <h3 style="color:var(--blue)">续写任务</h3>
+    <p>${r.task||''}</p>
+    <button class="btn" style="margin-top:8px" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">📖 查看参考范文</button>
+    <div class="explain" style="font-size:14px">${r.sample||''}</div>
+    <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+      <button class="btn green" onclick="S.readDone['${r.id}']=true;save();this.textContent='✅ 已练';this.className='btn gray sm'">我练完了</button>
+      <button class="btn ghost" onclick="showView('write')">去背高分句型</button>
+      <button class="btn gray sm" onclick="rOpen=null;render()">退出</button>
+    </div>
+  </div>`;
+}
+function pickR(oi){
+  const r=READING[rOpen], q=rAns;
+  if(q.opts[q.i]===undefined){ q.opts[q.i]=oi; if(oi===r.questions[q.i].a) q.right++; }
+  render();
+}
+/* 七选五 */
+function pickS(i){
+  const r=SEVEN_FIVE;
+  const blanks=Object.keys(rAns.picked);
+  if(rAns.picked[i]!==undefined) return;
+  const usedValues=new Set(Object.values(rAns.picked));
+  if(usedValues.has(i)) return;
+  const firstEmpty=[0,1,2,3,4].find(b=>rAns.picked[b]===undefined);
+  if(firstEmpty===undefined) return;
+  rAns.picked[firstEmpty]=i;
+  render();
+}
+function submitS(){
+  const r=SEVEN_FIVE;
+  let right=0, html='';
+  r.answers.forEach((a,i)=>{
+    const mine=rAns.picked[i];
+    const ok=mine===a;
+    if(ok) right++;
+    html+=`<div class="${ok?'explain':'q-box'}" style="display:block;margin-top:6px;background:${ok?'#f0fdf4':'#fef2f2'};border:1px solid ${ok?'#bbf7d0':'#fecaca'}">第${i+1}空：你选 ${mine!==undefined?'ABCDEFG'[mine]:'未选'}，正确答案 <b>${'ABCDEFG'[a]}</b> — ${r.options[a]}<br>💡 ${r.ex[i]}</div>`;
+  });
+  S.readDone[r.id]=true; save();
+  $('#sresult').innerHTML=`<h3 style="margin-top:14px">结果：${right}/5</h3>${html}`;
+}
+/* 完形 */
+function pickC(idx,oi){
+  rAns.picked[idx]=oi; render();
+}
+function submitC(){
+  const r=CLOZE_DATA;
+  let right=0, html='';
+  r.answers.forEach((a,i)=>{
+    const mine=rAns.picked[i];
+    const ok=mine===a;
+    if(ok) right++;
+    html+=`<div style="margin-top:6px;padding:8px 12px;border-radius:10px;background:${ok?'#f0fdf4':'#fef2f2'};border:1px solid ${ok?'#bbf7d0':'#fecaca'};font-size:13px">${i+1}) 你选 ${'ABCD'[mine]}，正确答案 <b>${'ABCD'[a]}</b> · 💡 ${r.ex[i]}</div>`;
+  });
+  S.readDone[r.id]=true; save();
+  $('#cresult').innerHTML=`<h3 style="margin-top:14px">结果：${right}/${r.answers.length}</h3>${html}`;
+}
+
+/* ==================== 写作句型 ==================== */
+function vWrite(){
+  const day=Math.floor(Date.now()/86400000)%TEMPLATES.app.length;
+  const d1=TEMPLATES.app[day], d2=TEMPLATES.cont[day%TEMPLATES.cont.length];
+  return `
+  <div class="card" style="border-color:var(--blue)">
+    <h2>📝 2025·新高考II卷 写作真题 <span class="tag p">按年份</span></h2>
+    <p class="muted">2025年全国II卷写作原题：<b>应用文（催稿信）+ 读后续写（解释中文名字）</b>，附官方参考范文与得分要点。写作 40 分，背熟范文句式就是背分。</p>
+    <div style="margin-top:8px"><button class="btn" onclick="openPastSet('p25write')">打开真题+范文 →</button></div>
+  </div>
+  <div class="card"><h2>🖊 每日高分句型（今天背这两句）</h2>
+    <div class="tpl"><div class="en">${d1.s}</div><div class="cn">💡 ${d1.c}</div></div>
+    <div class="tpl" style="border-left-color:var(--blue)"><div class="en">${d2.s}</div><div class="cn">💡 ${d2.c}</div></div>
+  </div>
+  <div class="card"><h2>✉️ 应用文万能句型（15句）</h2>
+    ${TEMPLATES.app.map(t=>`<div class="tpl"><div class="en">${t.s}</div><div class="cn">💡 ${t.c}</div></div>`).join('')}
+  </div>
+  <div class="card"><h2>📖 读后续写高分句型（15句）</h2>
+    <p class="muted">按 <b>动作 / 心理情感 / 环境 / 结尾升华</b> 四类记，每类3–4句，考场直接套。</p>
+    ${TEMPLATES.cont.map(t=>`<div class="tpl" style="border-left-color:var(--blue)"><div class="en">${t.s}</div><div class="cn">💡 ${t.c}</div></div>`).join('')}
+  </div>`;
+}
+
+/* ==================== 升学政策 ==================== */
+function vPolicy(){
+  return `
+  <div class="notice warn" style="margin-top:14px">
+    ⏰ <b>时间敏感：</b>2027届高考报名时间为 <b>2026年10–11月</b>（正在进行）。报名系统中勾选「国家专项/地方专项」资格，<b>未申报=放弃</b>。请现在就问班主任/学校招办要填哪些材料。
+  </div>
+
+  <div class="card"><h2>🗝 三把降分上本科的钥匙（阿坝州专属）</h2>
+    <table class="tbl">
+      <tr><th>政策</th><th>条件（你大概率符合）</th><th>作用</th></tr>
+      <tr><td><b>民族地区加分</b></td><td>高中三年在阿坝州<b>同一学校</b>连续户籍+学籍+实际就读（"三统一"）</td><td>少数民族<b>+20分</b>，汉族<b>+10分</b></td></tr>
+      <tr><td><b>国家专项</b></td><td>阿坝州13县均属实施区域；本人+父亲或母亲当地户籍3年、当地高中就读3年实际就读</td><td>单独批次、单独志愿；2025年录取线：历史类503–634 / 物理类442–660（比普通批低不少）</td></tr>
+      <tr><td><b>地方专项</b></td><td>国家专项区域 + <b>农村户籍</b></td><td>四川省属重点高校（川师大、成都中医药大学等），2025年：历史470–585 / 物理449–589</td></tr>
+      <tr><td><b>高校专项</b></td><td>同上需农村户籍；2026年起<b>4月14–20日</b>在 zhbm.sceea.cn 统一申报，不再校测</td><td>95所教育部直属高校；不低于特控线录取（2026：历史525/物理519）</td></tr>
+    </table>
+    <p class="muted" style="margin-top:8px">阿坝州国家专项实施区域（全部13个县市）：<b>马尔康市、汶川县、理县、茂县、松潘县、九寨沟县、金川县、小金县、黑水县、壤塘县、阿坝县、若尔盖县、红原县</b>。</p>
+    <p class="muted">以上以四川省教育考试院当年文件为准。综合算下来：<b>本科线438/467 − 加分10~20 − 专项计划降分</b>，你现在的提分空间非常现实。</p>
+  </div>
+
+  <div class="card"><h2>📅 2027届关键时间轴</h2>
+    <div class="tl">
+      <div class="tl-item"><span class="d">2026年10月–11月（现在）</span><b>高考报名</b> + 国家专项/地方专项资格申报</div>
+      <div class="tl-item"><span class="d">2026年12月–2027年1月</span><b>一诊</b>（四川省联合诊断 / 成都一诊）— 第一次全省定位</div>
+      <div class="tl-item"><span class="d">2027年1月</span>期末统考 + 一轮复习收尾</div>
+      <div class="tl-item"><span class="d">2027年3月</span><b>二诊</b> — 难度最接近高考，含金量最高</div>
+      <div class="tl-item"><span class="d">2027年4月14–20日</span><b>高校专项申报</b>（zhbm.sceea.cn，仅农村户籍）</div>
+      <div class="tl-item"><span class="d">2027年4月底–5月</span>三诊 + 最后一轮模拟</div>
+      <div class="tl-item"><span class="d">2027年6月7日–9日</span><b>高考</b>！英语 6月8日下午 15:00–17:00</div>
+      <div class="tl-item"><span class="d">2027年6月下旬–7月初</span>出分、志愿填报（提前批国家专项截止较早）</div>
+    </div>
+  </div>
+
+  <div class="card"><h2>📈 近年分数线参考</h2>
+    <table class="tbl">
+      <tr><th>年份</th><th>本科批（历史类）</th><th>本科批（物理类）</th><th>特控线（历史/物理）</th></tr>
+      <tr><td>2025</td><td>467</td><td>438</td><td>533 / 518</td></tr>
+      <tr><td>2026</td><td>—</td><td>—</td><td>525 / 519</td></tr>
+    </table>
+    <p class="muted" style="margin-top:8px">2026年本科批线以四川省教育考试院公布为准。升本看<b>总分</b>，英语是投入产出比最高的科目——从80提到105，等于多一半语文作文的分。</p>
+  </div>`;
+}
+
+/* ==================== 设置 ==================== */
+function vSet(){
+  return `<div class="card"><h2>⚙️ 设置</h2>
+    <label class="muted">每日新学单词数</label>
+    <input class="input" type="number" value="${S.dailyNew}" onchange="S.dailyNew=Math.max(1,+this.value||20);save()">
+    <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+      <button class="btn ghost" onclick="exportData()">⬇ 导出学习记录</button>
+      <button class="btn warn" onclick="if(confirm('确定清空全部学习记录？此操作不可恢复')){localStorage.removeItem(LS+'s');location.reload()}">🗑 清空重来</button>
+    </div>
+    <h3 style="margin-top:18px">学习记录概览</h3>
+    <table class="tbl">
+      <tr><td>已掌握单词</td><td><b>${allWords().filter(w=>S.srs[w.id]).length}</b> / ${allWords().length+PHRASES.length}</td></tr>
+      <tr><td>生词本</td><td><b>${Object.keys(S.wrong).length}</b> 个</td></tr>
+      <tr><td>累计打卡</td><td><b>${S.checkins.length}</b> 天</td></tr>
+      <tr><td>语法通过</td><td><b>${Object.values(S.grammarQuiz).filter(v=>v.passed).length}</b> / 10 章</td></tr>
+      <tr><td>阅读完成</td><td><b>${Object.keys(S.readDone).length}</b> 篇</td></tr>
+    </table>
+  </div>`;
+}
+function exportData(){
+  const blob=new Blob([JSON.stringify(S,null,2)],{type:'application/json'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='英语学习记录.json'; a.click();
+}
+
+/* ==================== 往年真题考场 ==================== */
+let pastSet=null, pastAns={}, pastGraded=false, pastCol='all';
+function openPastSet(id){
+  pastSet=id; pastAns={}; pastGraded=false; curView='past'; unitListView=null;
+  render(); window.scrollTo({top:0});
+}
+function pastSetById(id){ return PAST.find(p=>p.id===id); }
+function pickOpt(qi,oi){ if(pastGraded) return; pastAns[qi]=oi; render(); }
+function fillAns(qi,v){ if(pastGraded) return; pastAns[qi]=v; }
+function escA(s){ return String(s==null?'':s).replace(/"/g,'&quot;').replace(/&/g,'&amp;'); }
+const normA=s=>String(s==null?'':s).toLowerCase().replace(/[.,!?;:"'()]/g,'').replace(/\s+/g,' ').trim();
+function pastCheck(q,u){
+  if(u==null) return false;
+  const cand=q.opts?['ABCD'[u],q.opts[u]]:[u];
+  return cand.some(c=>q.a.some(a=>normA(c)===normA(a)));
+}
+function gradePast(){
+  const p=pastSetById(pastSet); if(!p||!p.qs) return;
+  let right=0;
+  p.qs.forEach((q,i)=>{ if(pastCheck(q,pastAns[i])) right++; });
+  p.qs.forEach((q,i)=>{ if(pastCheck(q,pastAns[i])) delete S.pastWrong[p.id+'_'+i]; else S.pastWrong[p.id+'_'+i]=1; });
+  const prev=S.past[p.id]||{best:0,count:0};
+  S.past[p.id]={best:Math.max(prev.best,right),last:right,count:prev.count+1};
+  pastGraded=true; save(); render(); window.scrollTo({top:0});
+}
+function retryPast(){ pastAns={}; pastGraded=false; render(); }
+function markEssay(){
+  const p=pastSetById(pastSet); const prev=S.past[p.id]||{best:0,count:0};
+  S.past[p.id]={best:1,count:prev.count+1}; save(); render();
+}
+function vPast(){
+  const list=PAST.filter(p=>pastCol==='all'||p.col===pastCol);
+  const totalQ=PAST.reduce((a,p)=>a+(p.qs?p.qs.length:0),0);
+  const doneN=PAST.filter(p=>S.past[p.id]&&S.past[p.id].count).length;
+  const wrongN=Object.keys(S.pastWrong).length;
+  const chip=(k,label)=>`<button class="chip ${pastCol===k?'on':''}" onclick="pastCol='${k}';render()">${label}</button>`;
+  return `
+  <div class="card">
+    <h2>📝 往年真题考场 <span class="tag a">${totalQ}题 · 全部标注年份</span></h2>
+    <p class="muted">题目全部来自<b>历年高考英语真题</b>，每套标注<b>年份+卷种</b>，做完自动判分出解析，错题自动进错题本。<br>⚠️ 你是 2027 届考生：<b>2025 年起四川考「新高考II卷」；2021–2024 年四川考生考的是「全国甲卷」</b>——甲卷真题含金量最高，优先刷。</p>
+    <div class="grid3" style="margin-top:10px">
+      <div class="stat"><b>${doneN}/${PAST.length}</b><span>已练套数</span></div>
+      <div class="stat"><b>${totalQ}</b><span>真题总题数</span></div>
+      <div class="stat"><b style="color:var(--red)">${wrongN}</b><span>真题错题</span></div>
+    </div>
+    <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+      ${chip('all','全部')}${chip('vocab','📖 单词')}${chip('grammar','✏️ 语法')}${chip('read','📃 完形/阅读')}${chip('write','🖊 写作')}
+    </div>
+  </div>
+  ${list.map(p=>{
+    const rec=S.past[p.id];
+    const n=p.qs?p.qs.length:p.essay.length;
+    const score=rec?`<span class="tag ${rec.best>=n?'g':'a'}">${p.essay?(rec.count?'已学':'未学'):'最高 '+rec.best+'/'+n}</span>`:'<span class="tag b">未练</span>';
+    return `<div class="card" style="margin-top:10px">
+      <div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap">
+        <b style="font-size:15px">${p.title}</b>${score}
+      </div>
+      <div style="margin:6px 0"><span class="tag p">${p.year}年·${p.paper}</span> <span class="tag b">${PAST_COL[p.col]}</span> <span class="tag b">${n}${p.qs?'题':'篇'}</span></div>
+      <p class="muted">${p.desc}</p>
+      <div style="margin-top:8px"><button class="btn" onclick="openPastSet('${p.id}')">${rec?'▶ 继续':'▶ 开始'}${p.essay?'读范文':'做题'}</button></div>
+    </div>`;
+  }).join('')}
+  <div class="card"><p class="muted">💡 真题切的「考点词」在词表里都有对应卡片（「💡考点」框）。做完真题回「背单词」对照，提分最快。</p></div>`;
+}
+function vPastSet(){
+  const p=pastSetById(pastSet);
+  if(!p) return '<div class="card"><p>题集不存在</p></div>';
+  const n=p.qs?p.qs.length:0;
+  const ansN=p.qs?p.qs.filter((q,i)=>pastAns[i]!=null&&pastAns[i]!=='').length:0;
+  const rec=S.past[p.id]||{best:0,count:0};
+  let body='';
+  if(p.essay){
+    body=`<p class="muted" style="margin-bottom:8px">📌 写作没有标准答案，先看题目自己动笔，再对照范文拆句式、背亮点表达。</p>
+    ${p.essay.map(e=>`
+      <div class="card" style="margin-top:10px;box-shadow:none">
+        <h3>${e.t}</h3>
+        <div class="pq-req">${e.req.replace(/\n/g,'<br>')}</div>
+        <div style="margin-top:8px">${e.tips.map((t,i)=>`<div class="pq-tip">${i+1}. ${t}</div>`).join('')}</div>
+        <div class="sc-ex" style="margin-top:8px"><div class="sc-ex-head"><span class="sc-ex-lab">参考范文</span></div>
+          <div class="sc-ex-en" style="white-space:pre-wrap">${e.sample}</div></div>
+      </div>`).join('')}
+    <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn ${rec.count?'gray':''}" onclick="markEssay()">${rec.count?'✓ 已标记学过':'✅ 读完范文，标记学会'}</button>
+      <button class="btn ghost" onclick="pastSet=null;render()">← 返回真题列表</button>
+    </div>`;
+  }else{
+    body=`
+    ${p.passage?`<div class="card" style="margin-top:10px;box-shadow:none"><h3>📄 真题原文</h3><div class="pq-passage">${p.passage}</div></div>`:''}
+    ${pastGraded?`<div class="card" style="margin-top:10px;box-shadow:none;border-color:var(--green)">
+      <h3>📊 本次得分</h3>
+      <div style="font-size:22px;font-weight:700;color:${rec.last>=n?'var(--green)':'var(--amber)'}">${rec.last} / ${n} 分 ${rec.last>=n?'🎉 全对，稳！':''}</div>
+      <p class="muted">已练 ${rec.count} 次 · 历史最好 ${rec.best}/${n}${rec.best<n?' · 错的题往下看逐题解析，搞懂再点「重做一次」':''}</p>
+      <div style="margin-top:8px;display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn" onclick="retryPast()">↻ 重做一次</button>
+        <button class="btn ghost" onclick="pastSet=null;render()">← 返回真题列表</button>
+      </div></div>`:''}
+    <div class="card" style="margin-top:10px;box-shadow:none">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h3>📋 题目（${n}）</h3>
+        ${pastGraded?'':`<button class="btn green" onclick="gradePast()">提交答卷（已答 ${ansN}/${n}）</button>`}
+      </div>
+      ${p.qs.map((q,i)=>{
+        const ok=pastGraded?pastCheck(q,pastAns[i]):null;
+        const kp=q.kp?`<span class="pq-kp">${q.kp}</span>`:'';
+        const head=q.n!=null?`<span class="tag b">第${q.n}题</span>`:'';
+        let ctrl='';
+        if(q.opts){
+          ctrl=`<div class="pq-opts">${q.opts.map((o,oi)=>{
+            const isAns=q.opts[oi]&&q.a.some(a=>normA(a)===normA('ABCD'[oi])||normA(a)===normA(o));
+            const cls=pastGraded?(isAns?'ok':(pastAns[i]===oi?'no':'')):(pastAns[i]===oi?'sel':'');
+            return `<button class="opt ${cls}" onclick="pickOpt(${i},${oi})">${'ABCD'[oi]}. ${o}</button>`;
+          }).join('')}</div>`;
+        }else{
+          ctrl=`<input class="fill" value="${escA(pastAns[i]||'')}" ${pastGraded?'disabled':''} oninput="fillAns(${i},this.value)" placeholder="输入答案（英文，注意大小写）">`;
+        }
+        const exp=pastGraded?`<div class="pq-exp ${ok?'':'no'}">${ok?'✅ 回答正确':'❌ 正确答案：<b>'+q.a[0]+'</b>'} ｜ 💡 解析：${q.exp}</div>`:'';
+        return `<div class="pq"><div class="pq-h">${head}${kp}</div><div class="pq-q">${q.q}</div>${ctrl}${exp}</div>`;
+      }).join('')}
+      ${pastGraded?'':`<div style="margin-top:10px"><button class="btn green" onclick="gradePast()">提交答卷（已答 ${ansN}/${n}）</button></div>`}
+    </div>`;
+  }
+  return `<div class="card">
+    <h2>${p.title}</h2>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
+      <span class="tag p">${p.year}年·${p.paper}</span><span class="tag b">${PAST_COL[p.col]}</span>
+      <span class="tag ${rec.count?'g':'r'}">${rec.count?(p.essay?'已学':'已练'+rec.count+'次'):'未开始'}</span>
+    </div>
+    <p class="muted">${p.desc}</p>
+    <div style="margin-top:8px"><button class="btn ghost" onclick="pastSet=null;render()">← 返回真题列表</button></div>
+    ${body}
+  </div>`;
+}
+
+/* ==================== 渲染入口 ==================== */
+let wrongFlag=false;
+function render(){
+  let html='';
+  if(study) html=vStudyCard();
+  else if(unitQuizState) html=vQuiz();
+  else if(unitListView!==null&&curView==='vocab'&&!wrongFlag) html=vUnitList(unitListView);
+  else if(curView==='home') html=vHome();
+  else if(curView==='res') html=vRes();
+  else if(curView==='vocab') html=wrongFlag?vWrong():vVocab();
+  else if(curView==='grammar') html=(gOpen!==null)?vGOpen():vGrammar();
+  else if(curView==='read') html=(rOpen!==null)?vROpen():vRead();
+  else if(curView==='write') html=vWrite();
+  else if(curView==='past') html=pastSet?vPastSet():vPast();
+  else if(curView==='policy') html=vPolicy();
+  else if(curView==='set') html=vSet();
+  $('#view').innerHTML=html;
+  renderTabs();
+}
+render();
+</script>
+</body>
+</html>
